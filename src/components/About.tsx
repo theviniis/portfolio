@@ -13,7 +13,7 @@ const About = () => {
       <h2>Sobre</h2>
       <div className="space-y-8">
         <div className="space-y-2">
-          <h3>Desenvolvedor front-end com foco em React</h3>
+          <h3>Desenvolvedor front-end com foco em JavaScript</h3>
           <div className="text-justify space-y-2">
             <p>
               Desenvolvedor front-end com experiência em React, TypeScript,
