@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Section } from "./ui/Section";
 import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
+import { ChevronDown } from "lucide-react";
 
 type ExperienceType = {
   role: string;
@@ -124,12 +127,37 @@ const ExperienceItem = ({
   );
 };
 
+const ITEMS_PER_PAGE = 3;
+
 const Experience = () => {
+  const [expanded, setExpanded] = useState(false);
+  const visibleExperiences = expanded
+    ? experiences
+    : experiences.slice(0, ITEMS_PER_PAGE);
+
   return (
     <Section id="experience">
       <h2>Experiência</h2>
       <div>
-        <ul className="space-y-6">{experiences.map(ExperienceItem)}</ul>
+        <ul className="space-y-6" id="experience-list">
+          {visibleExperiences.map(ExperienceItem)}
+        </ul>
+        {experiences.length > ITEMS_PER_PAGE && (
+          <div className="flex justify-center mt-6">
+            <Button
+              variant="ghost"
+              size="sm"
+              aria-expanded={expanded}
+              aria-controls="experience-list"
+              onClick={() => setExpanded(!expanded)}
+            >
+              {expanded ? "Ver menos" : "Ver mais"}
+              <ChevronDown
+                className={`transition-transform ${expanded ? "rotate-180" : ""}`}
+              />
+            </Button>
+          </div>
+        )}
       </div>
     </Section>
   );
