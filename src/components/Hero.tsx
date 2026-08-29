@@ -17,7 +17,7 @@ const Hero = () => {
             <h1>Vinícius Costa.</h1>
           </div>
           <p>
-            Desenvolvedor front-end localizado em{" "}
+            Sou desenvolvedor front-end localizado em{" "}
             <strong>Rio Grande, RS</strong>.
             <br />
             Tenho experiência com desenvolvimento de aplicações web.
