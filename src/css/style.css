@@ -53,6 +53,7 @@
   --ring: oklch(0.705 0.015 286.067);
   --radius: 0.875rem;
   --header-height: 84px;
+  --shadow-color: hsla(0, 0%, 20%, 0.18);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -72,6 +73,7 @@
     --border: oklch(1 0 0 / 10%);
     --input: oklch(1 0 0 / 15%);
     --ring: oklch(0.552 0.016 285.938);
+    --shadow-color: hsla(0, 0%, 10%, 0.7);
   }
 }
 
@@ -127,7 +129,6 @@ img {
 }
 
 @utility drop-shadow {
-  --shadow-color: hsla(0, 0%, 10%, 0.8);
   filter: drop-shadow(2px 4px 0px var(--shadow-color))
     drop-shadow(4px 8px 8px var(--shadow-color))
     drop-shadow(6px 10px 12px var(--shadow-color));
