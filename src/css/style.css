@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@200..800&display=swap");
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+
+@import "typography.css";
+
+@theme inline {
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(100% 0.00011 271.152);
+  --foreground: oklch(29.276% 0.00175 106.803);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --primary: hsl(72, 82%, 50%);
+  --primary-foreground: oklch(29.276% 0.00175 106.803);
+  --secondary: oklch(97.961% 0.00161 66.235);
+  --secondary-foreground: oklch(29.276% 0.00175 106.803);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.705 0.015 286.067);
+  --radius: 0.875rem;
+  --header-height: 84px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: oklch(21.342% 0.00002 271.152);
+    --foreground: oklch(92.494% 0.00011 271.152);
+    --card: oklch(0.21 0.006 285.885);
+    --card-foreground: oklch(0.985 0 0);
+    --primary: hsl(72, 72%, 70%);
+    --primary-foreground: oklch(0.141 0.005 285.823);
+    --secondary: oklch(0.274 0.006 286.033);
+    --secondary-foreground: oklch(92.494% 0.00011 271.152);
+    --muted: oklch(0.274 0.006 286.033);
+    --muted-foreground: hsl(240, 5%, 70%);
+    --accent: oklch(0.274 0.006 286.033);
+    --accent-foreground: oklch(0.985 0 0);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.552 0.016 285.938);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    color-scheme: light dark;
+    @apply font-sans;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@utility wrapper {
+  --viewport-padding: 16px;
+  --recommended-width: 120ch;
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(var(--recommended-width), calc(100% - var(--viewport-padding) * 2))
+    1fr;
+  gap: 0 var(--viewport-padding);
+}
+
+.wrapper > * {
+  grid-column: 2;
+}
+
+@utility full-bleed {
+  width: 100%;
+  grid-column: 1 / 4;
+}
+
+@utility drop-shadow {
+  --shadow-color: hsla(0, 0%, 10%, 0.8);
+  filter: drop-shadow(2px 4px 0px var(--shadow-color))
+    drop-shadow(4px 8px 8px var(--shadow-color))
+    drop-shadow(6px 10px 12px var(--shadow-color));
+}
+
+@keyframes hero-image-parallax {
+  from {
+    translate: 0 calc(var(--hero-parallax-offset) * -1);
+  }
+  to {
+    translate: 0 var(--hero-parallax-offset);
+  }
+}
+
+@utility hero-image-parallax {
+  --hero-parallax-offset: 32px;
+  transform-origin: bottom center;
+  scale: 1.1;
+  animation: hero-image-parallax linear both;
+  animation-timeline: view();
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-image-parallax {
+    animation: none;
+    scale: 1;
+  }
+}

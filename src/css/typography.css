@@ -1,0 +1,63 @@
+@theme static {
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "Work Sans", sans-serif;
+  --font-accent: "Bebas Neue", sans-serif;
+
+  --vw-scale: calc(48.62px + 3.568vw);
+
+  --text-h1: clamp(54px, var(--vw-scale), 100px);
+  --text-h1--line-height: 100%;
+  --text-h1--font-weight: 700;
+
+  --text-h2: calc(var(--text-h1) * 0.76);
+  --text-h2--line-height: 100%;
+  --text-h2--font-weight: 400;
+
+  --text-h3: calc(var(--text-h1) * 0.375);
+  --text-h3--line-height: 150%;
+  --text-h3--font-weight: 500;
+
+  --text-h4: clamp(18px, var(--vw-scale), 20px);
+  --text-h4--line-height: 150%;
+  --text-h4--font-weight: 600;
+
+  --text-h5: clamp(16px, var(--vw-scale), 18px);
+  --text-h5--line-height: 150%;
+  --text-h5--font-weight: 400;
+
+  --text-accent: 32px;
+  --text-accent--line-height: 100%;
+  --text-accent--letter-spacing: -0.01em;
+}
+
+@layer base {
+  html {
+    letter-spacing: 0;
+    @apply antialiased;
+  }
+  h1 {
+    @apply font-display uppercase text-h1 wrap-break-word;
+  }
+  h2 {
+    @apply font-display uppercase text-h2 wrap-break-word;
+  }
+  h3 {
+    @apply text-h3 wrap-break-word text-pretty leading-tight;
+  }
+  h4 {
+    @apply font-display text-h4;
+  }
+  h5 {
+    @apply font-display text-h5;
+  }
+  p {
+    @apply text-muted-foreground;
+  }
+}
+
+@utility logo {
+  font-family: var(--font-accent);
+  font-size: var(--text-accent);
+  line-height: var(--text-accent--line-height);
+  letter-spacing: var(--text-accent--letter-spacing);
+}
