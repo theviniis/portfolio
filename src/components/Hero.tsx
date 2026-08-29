@@ -29,7 +29,7 @@ const Hero = () => {
               <span>Entre em contato</span>
               <Button asChild variant="secondary" size="icon-sm">
                 <span>
-                  <Pointer />
+                  <Pointer className="text-primary" />
                 </span>
               </Button>
             </a>

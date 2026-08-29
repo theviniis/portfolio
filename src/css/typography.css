@@ -1,7 +1,6 @@
 @theme static {
   --font-sans: "Manrope", sans-serif;
-  --font-display: "Work Sans", sans-serif;
-  --font-accent: "Bebas Neue", sans-serif;
+  --font-display: "Bebas Neue", sans-serif;
 
   --vw-scale: calc(48.62px + 3.568vw);
 
@@ -45,10 +44,10 @@
     @apply text-h3 wrap-break-word text-pretty leading-tight;
   }
   h4 {
-    @apply font-display text-h4;
+    @apply font-sans text-h4;
   }
   h5 {
-    @apply font-display text-h5;
+    @apply font-sans text-h5;
   }
   p {
     @apply text-muted-foreground;
@@ -56,7 +55,7 @@
 }
 
 @utility logo {
-  font-family: var(--font-accent);
+  font-family: var(--font-display);
   font-size: var(--text-accent);
   line-height: var(--text-accent--line-height);
   letter-spacing: var(--text-accent--letter-spacing);
