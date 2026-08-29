@@ -11,7 +11,6 @@ Personal portfolio website built with React, TypeScript, Vite, and Tailwind CSS.
 - **Forms**: React Hook Form + Zod
 - **Icons**: Lucide React
 - **Theme**: next-themes (dark/light mode)
-- **Deployment**: Netlify
 
 ## Features
 
@@ -67,10 +66,6 @@ pnpm preview
 # Run linting
 pnpm lint
 ```
-
-## Deployment
-
-This project is configured for deployment on Netlify. The `@netlify/vite-plugin` handles the integration automatically.
 
 ## License
 
