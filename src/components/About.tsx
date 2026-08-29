@@ -2,10 +2,10 @@ import { Download } from "lucide-react";
 import { Section } from "./ui/Section";
 import { Button } from "./ui/button";
 import { ButtonGroup } from "./ui/button-group";
-
-import cvUrl from "../assets/vinicius_costa_cv.docx?url";
 import { LinkedInButton } from "./ui/linkedin-button";
 import { GitHubButton } from "./ui/github-button";
+
+import cvUrl from "../assets/vinicius_costa_cv.docx?url";
 
 const About = () => {
   return (
@@ -14,20 +14,26 @@ const About = () => {
       <div className="space-y-8">
         <div className="space-y-2">
           <h3>Desenvolvedor front-end com foco em React</h3>
-          <p className="text-justify">
-            Desenvolvedor front-end com experiência em React, TypeScript,
-            Next.js, HTML, CSS, SCSS e Tailwind.
-            <br />
-            Na Sympla, implementei analytics com Mixpanel, push notifications
-            com Braze e Service Worker, e realizei a migração de banco de dados
-            AWS Redshift para Athena para redução de custos.
-            <br />
-            Possuo experiência em documentação técnica, publicação de pacotes
-            npm no GitLab Registry e adoção de desenvolvimento assistido por IA.
-            <br />
-            Habilidades em colaboração, resolução de problemas e adaptabilidade
-            em equipes multidisciplinares.
-          </p>
+          <div className="text-justify space-y-2">
+            <p>
+              Desenvolvedor front-end com experiência em React, TypeScript,
+              Next.js, HTML, CSS, SCSS e Tailwind.
+            </p>
+            <p>
+              Na Sympla, implementei tracking de analytics com Mixpanel, push
+              notifications com Braze e Service Worker, e realizei a migração de
+              banco de dados AWS Redshift para Athena para redução de custos.
+            </p>
+            <p>
+              Possuo experiência em documentação técnica, publicação de pacotes
+              npm no GitLab Registry e adoção de desenvolvimento assistido por
+              IA.
+            </p>
+            <p>
+              Habilidades em colaboração, resolução de problemas e
+              adaptabilidade em equipes multidisciplinares.
+            </p>
+          </div>
         </div>
         <div className="flex items-center gap-4">
           <Button size="lg" className="pe-1" asChild>
