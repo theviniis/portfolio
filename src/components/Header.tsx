@@ -83,7 +83,7 @@ const Header = () => {
           <Button
             key={name}
             asChild
-            variant="ghost"
+            variant="link"
             className="text-2xl w-full"
             onClick={() => setIsOpen(false)}
             size="lg"
