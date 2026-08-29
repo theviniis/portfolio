@@ -44,7 +44,7 @@ const Hero = () => {
         <img
           src={profile}
           alt="Imagem de perfil"
-          className="hero-image-parallax drop-shadow absolute bottom-0"
+          className="drop-shadow absolute bottom-0"
         />
       </div>
     </Section>

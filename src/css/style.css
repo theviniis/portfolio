@@ -39,7 +39,7 @@
   --foreground: oklch(29.276% 0.00175 106.803);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
-  --primary: hsl(72, 82%, 50%);
+  --primary: hsl(72, 60%, 45%);
   --primary-foreground: oklch(29.276% 0.00175 106.803);
   --secondary: oklch(97.961% 0.00161 66.235);
   --secondary-foreground: oklch(29.276% 0.00175 106.803);
@@ -132,23 +132,6 @@ img {
   filter: drop-shadow(2px 4px 0px var(--shadow-color))
     drop-shadow(4px 8px 8px var(--shadow-color))
     drop-shadow(6px 10px 12px var(--shadow-color));
-}
-
-@keyframes hero-image-parallax {
-  from {
-    translate: 0 calc(var(--hero-parallax-offset) * -1);
-  }
-  to {
-    translate: 0 var(--hero-parallax-offset);
-  }
-}
-
-@utility hero-image-parallax {
-  --hero-parallax-offset: 32px;
-  transform-origin: bottom center;
-  scale: 1.1;
-  animation: hero-image-parallax linear both;
-  animation-timeline: view();
 }
 
 @media (prefers-reduced-motion: reduce) {
