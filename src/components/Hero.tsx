@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+import { Pointer } from "lucide-react";
 import { Button } from "./ui/button";
 import { ButtonGroup } from "./ui/button-group";
 
@@ -29,7 +29,7 @@ const Hero = () => {
               <span>Entre em contato</span>
               <Button asChild variant="secondary" size="icon-sm">
                 <span>
-                  <ExternalLink />
+                  <Pointer />
                 </span>
               </Button>
             </a>
