@@ -82,6 +82,46 @@ const experiences: ExperienceType[] = [
       "GitHub",
     ],
   },
+
+  {
+    role: "Desenvolvedor de front-end",
+    company: "Bornlogic",
+    period: {
+      start: "ago/2022",
+      end: "jan/2023",
+    },
+    responsibilities: [
+      "Projetei e implementei Design System completo usando React, Storybook e Styled-Components com documentação de componentes em MDX.",
+    ],
+    skills: [
+      "React",
+      "TypeScript",
+      "Storybook",
+      "Jest + React Testing Library",
+      "Git",
+      "GitHub",
+    ],
+  },
+
+  {
+    role: "Desenvolvedor de front-end",
+    company: "Bornlogic",
+    period: {
+      start: "ago/2022",
+      end: "jan/2023",
+    },
+    responsibilities: [
+      "Projetei e implementei Design System completo usando React, Storybook e Styled-Components com documentação de componentes em MDX.",
+    ],
+    skills: [
+      "React",
+      "TypeScript",
+      "Storybook",
+      "Jest + React Testing Library",
+      "Git",
+      "GitHub",
+    ],
+  },
 ];
 
 const ExperienceItem = ({
@@ -153,7 +193,7 @@ const Experience = () => {
             >
               {expanded ? "Ver menos" : "Ver mais"}
               <ChevronDown
-                className={expanded ? "rotate-180" : ""}
+                className={`transition-transform motion-reduce:transition-none ${expanded ? "rotate-180" : ""}`}
               />
             </Button>
           </div>
