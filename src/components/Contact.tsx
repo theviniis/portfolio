@@ -117,22 +117,24 @@ const Contact = () => {
     <Section id="contact">
       <div>
         <h2 className="mb-4">Contato</h2>
-        <span className="flex items-center gap-1">
-          <p>Entre em contato através do meu email</p>
+
+        <p>
+          Entre em contato através do meu email{" "}
           <Button className="p-0 text-base" variant="link" asChild>
             <a href="mailto:vinicius.dsc95@gmail.com">
               vinicius.dsc95@gmail.com
             </a>
           </Button>
-        </span>
-        <div className="flex items-center gap-1">
-          <p>Para mais informações, baixe o meu currículo</p>
+        </p>
+
+        <p>
+          Para mais informações, baixe o meu{" "}
           <Button className="p-0 text-base" variant="link" asChild>
             <a href={cvUrl} download="vinicius_costa_cv.docx">
               currículo
             </a>
           </Button>
-        </div>
+        </p>
 
         <ButtonGroup className="mt-8">
           <LinkedInButton />
