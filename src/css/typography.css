@@ -41,7 +41,7 @@
     @apply font-display uppercase text-h2 wrap-break-word;
   }
   h3 {
-    @apply text-h3 wrap-break-word text-pretty leading-tight;
+    @apply font-sans text-h3 wrap-break-word text-pretty leading-tight;
   }
   h4 {
     @apply font-sans text-h4;
