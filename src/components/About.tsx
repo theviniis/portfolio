@@ -4,35 +4,48 @@ import { Button } from "./ui/button";
 import { ButtonGroup } from "./ui/button-group";
 import { LinkedInButton } from "./ui/linkedin-button";
 import { GitHubButton } from "./ui/github-button";
-
-import cvUrl from "../assets/vinicius_costa_cv.docx?url";
+import { useProfile } from "@/lib/use-strapi";
 
 const About = () => {
+  const { data: profile, loading } = useProfile();
+
+  const cvUrl = profile?.cvFile?.url
+    ? `${import.meta.env.VITE_STRAPI_URL}${profile.cvFile.url}`
+    : "#";
+
   return (
     <Section id="about-me">
       <h2>Sobre</h2>
       <div className="space-y-8">
         <div className="space-y-4">
-          <h3>Desenvolvedor front-end com foco em JavaScript</h3>
+          <h3>{profile?.title || "Desenvolvedor front-end com foco em JavaScript"}</h3>
           <div className="text-justify space-y-2">
-            <p>
-              Desenvolvedor front-end com experiência em React, TypeScript,
-              Next.js, HTML, CSS, SCSS e Tailwind.
-            </p>
-            <p>
-              Na Sympla, implementei tracking de analytics com Mixpanel, push
-              notifications com Braze e Service Worker, e realizei a migração de
-              banco de dados AWS Redshift para Athena para redução de custos.
-            </p>
-            <p>
-              Possuo experiência em documentação técnica, publicação de pacotes
-              npm no GitLab Registry e adoção de desenvolvimento assistido por
-              IA.
-            </p>
-            <p>
-              Habilidades em colaboração, resolução de problemas e
-              adaptabilidade em equipes multidisciplinares.
-            </p>
+            {loading ? (
+              <p>Carregando...</p>
+            ) : profile?.bio ? (
+              <p>{profile.bio}</p>
+            ) : (
+              <>
+                <p>
+                  Desenvolvedor front-end com experiência em React, TypeScript,
+                  Next.js, HTML, CSS, SCSS e Tailwind.
+                </p>
+                <p>
+                  Na Sympla, implementei tracking de analytics com Mixpanel, push
+                  notifications com Braze e Service Worker, e realizei a migração de
+                  banco de dados AWS Redshift para Athena para redução de custos.
+                </p>
+                <p>
+                  Possuo experiência em documentação técnica, publicação de pacotes
+                  npm no GitLab Registry e adoção de desenvolvimento assistido por
+                  IA.
+                </p>
+                <p>
+                  Habilidades em colaboração, resolução de problemas e
+                  adaptabilidade em equipes multidisciplinares.
+                </p>
+              </>
+            )}
           </div>
         </div>
         <div className="flex items-center gap-4">

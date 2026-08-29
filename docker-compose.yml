@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  strapi:
+    build:
+      context: ./strapi
+      dockerfile: Dockerfile
+    ports:
+      - "1337:1337"
+    environment:
+      - DATABASE_CLIENT=sqlite
+      - DATABASE_FILENAME=.tmp/data.db
+    volumes:
+      - ./strapi:/app
+      - strapi_node_modules:/app/node_modules
+      - strapi_data:/app/.tmp
+    restart: unless-stopped
+
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile.portfolio
+      args:
+        - VITE_STRAPI_URL=http://strapi:1337
+    ports:
+      - "3000:80"
+    depends_on:
+      - strapi
+    restart: unless-stopped
+
+volumes:
+  strapi_node_modules:
+  strapi_data:

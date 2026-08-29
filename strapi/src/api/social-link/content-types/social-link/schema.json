@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "social-links",
+  "info": {
+    "singularName": "social-link",
+    "pluralName": "social-links",
+    "displayName": "SocialLink"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "platform": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
