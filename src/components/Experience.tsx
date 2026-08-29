@@ -153,7 +153,7 @@ const Experience = () => {
             >
               {expanded ? "Ver menos" : "Ver mais"}
               <ChevronDown
-                className={`transition-transform ${expanded ? "rotate-180" : ""}`}
+                className={expanded ? "rotate-180" : ""}
               />
             </Button>
           </div>
