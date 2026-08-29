@@ -115,8 +115,8 @@ const ContactForm = () => {
 const Contact = () => {
   return (
     <Section id="contact">
-      <div>
-        <h2 className="mb-4">Contato</h2>
+      <div className="space-y-4">
+        <h2>Contato</h2>
 
         <p>
           Entre em contato através do meu email{" "}

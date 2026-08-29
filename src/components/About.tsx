@@ -12,7 +12,7 @@ const About = () => {
     <Section id="about-me">
       <h2>Sobre</h2>
       <div className="space-y-8">
-        <div className="space-y-2">
+        <div className="space-y-4">
           <h3>Desenvolvedor front-end com foco em JavaScript</h3>
           <div className="text-justify space-y-2">
             <p>

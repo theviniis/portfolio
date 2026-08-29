@@ -10,7 +10,7 @@ import { GitHubButton } from "./ui/github-button";
 const Hero = () => {
   return (
     <Section>
-      <div className="grid place-content-center gap-y-4 lg:gap-y-8">
+      <div className="grid place-content-center gap-y-8 lg:gap-y-16">
         <div className="space-y-2 lg:space-y-4">
           <div>
             <span className="text-h3">Olá, me chamo</span>
