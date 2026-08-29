@@ -115,7 +115,7 @@ const ContactForm = () => {
 
 const Contact = () => {
   return (
-    <Section>
+    <Section id="contact">
       <h2>Contato</h2>
       <ContactForm />
     </Section>
