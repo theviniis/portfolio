@@ -11,6 +11,9 @@ import { GitHubButton } from "./ui/github-button";
 import { sendContactEmail } from "@/lib/service";
 import { sendContactSchema } from "@/lib/schemas";
 import { LoadingButton } from "./ui/loading-button";
+import { Button } from "./ui/button";
+
+import cvUrl from "../assets/vinicius_costa_cv.docx?url";
 
 const ContactForm = () => {
   const form = useForm({
@@ -97,10 +100,6 @@ const ContactForm = () => {
       </div>
       <Separator />
       <div className="flex gap-4 justify-end">
-        <ButtonGroup>
-          <LinkedInButton />
-          <GitHubButton />
-        </ButtonGroup>
         <LoadingButton
           className="min-w-20"
           size="lg"
@@ -116,7 +115,30 @@ const ContactForm = () => {
 const Contact = () => {
   return (
     <Section id="contact">
-      <h2>Contato</h2>
+      <div>
+        <h2 className="mb-4">Contato</h2>
+        <span className="flex items-center gap-1">
+          <p>Entre em contato através do meu email</p>
+          <Button className="p-0 text-base" variant="link" asChild>
+            <a href="mailto:vinicius.dsc95@gmail.com">
+              vinicius.dsc95@gmail.com
+            </a>
+          </Button>
+        </span>
+        <div className="flex items-center gap-1">
+          <p>Para mais informações, baixe o meu currículo</p>
+          <Button className="p-0 text-base" variant="link" asChild>
+            <a href={cvUrl} download="vinicius_costa_cv.docx">
+              currículo
+            </a>
+          </Button>
+        </div>
+
+        <ButtonGroup className="mt-8">
+          <LinkedInButton />
+          <GitHubButton />
+        </ButtonGroup>
+      </div>
       <ContactForm />
     </Section>
   );
