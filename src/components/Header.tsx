@@ -49,7 +49,12 @@ const Header = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center">
             {headerItems.map(({ name, url }) => (
-              <Button key={name} asChild variant="link">
+              <Button
+                key={name}
+                asChild
+                variant="link"
+                className="text-md transition-all motion-reduce:transition-none"
+              >
                 <a href={url}>{name}</a>
               </Button>
             ))}
