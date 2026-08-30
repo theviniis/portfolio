@@ -117,25 +117,25 @@ const Contact = () => {
     <Section id="contact">
       <div className="space-y-4">
         <h2>Contato</h2>
+        <div>
+          <p>
+            Entre em contato através do meu email{" "}
+            <Button className="p-0 text-base" variant="link" asChild>
+              <a href="mailto:vinicius.dsc95@gmail.com">
+                vinicius.dsc95@gmail.com
+              </a>
+            </Button>
+          </p>
 
-        <p>
-          Entre em contato através do meu email{" "}
-          <Button className="p-0 text-base" variant="link" asChild>
-            <a href="mailto:vinicius.dsc95@gmail.com">
-              vinicius.dsc95@gmail.com
-            </a>
-          </Button>
-        </p>
-
-        <p>
-          Para mais informações, baixe o meu{" "}
-          <Button className="p-0 text-base" variant="link" asChild>
-            <a href={cvUrl} download="vinicius_costa_cv.docx">
-              currículo
-            </a>
-          </Button>
-        </p>
-
+          <p>
+            Para mais informações, baixe o meu{" "}
+            <Button className="p-0 text-base" variant="link" asChild>
+              <a href={cvUrl} download="vinicius_costa_cv.docx">
+                currículo
+              </a>
+            </Button>
+          </p>
+        </div>
         <ButtonGroup className="mt-8">
           <LinkedInButton />
           <GitHubButton />
