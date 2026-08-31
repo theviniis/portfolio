@@ -75,7 +75,7 @@
       {
         "role": "Front-end Developer",
         "company": "InfoPrice",
-        "period": { "start": "jun/2023", "end": "out/2025" },
+        "period": { "start": "jun/2023", "end": "oct/2025" },
         "responsibilities": [
           "Architected front-end solutions with React, TypeScript, Redux and SASS/SCSS for a B2B SaaS retail pricing platform.",
           "Developed reusable, scalable and accessible components significantly improving the platform's user experience."
@@ -93,7 +93,7 @@
       {
         "role": "Front-end Developer",
         "company": "Bornlogic",
-        "period": { "start": "ago/2022", "end": "jan/2023" },
+        "period": { "start": "aug/2022", "end": "jan/2023" },
         "responsibilities": [
           "Designed and implemented a complete Design System using React, Storybook and Styled-Components with MDX component documentation."
         ],
