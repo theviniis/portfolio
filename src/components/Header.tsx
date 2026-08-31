@@ -2,20 +2,13 @@ import { useState, useEffect } from "react";
 import { Logo } from "./Logo";
 import { Button } from "./ui/button";
 import { HamburgerButton } from "./ui/hamburger-button";
-
-const headerItems = [
-  { url: "#about-me", name: "Sobre" },
-  { url: "#skills", name: "Habilidades" },
-  { url: "#experience", name: "Experiência" },
-  { url: "#contact", name: "Contato" },
-];
+import headerData from "../data/header.json";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
-  // Fecha o menu mobile se a tela for redimensionada para desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -27,7 +20,6 @@ const Header = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Controla o bloqueio de scroll da página
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -46,9 +38,8 @@ const Header = () => {
         <nav className="flex justify-between items-center">
           <Logo />
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center">
-            {headerItems.map(({ name, url }) => (
+            {headerData.items.map(({ name, url }) => (
               <Button
                 key={name}
                 asChild
@@ -60,12 +51,10 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Botão Hamburger (Mobile) */}
           <HamburgerButton isOpen={isOpen} onClick={toggleMenu} />
         </nav>
       </header>
 
-      {/* Mobile Menu Overlay */}
       <div
         className={`
           fixed inset-0 z-40 bg-background/95 backdrop-blur-xl
@@ -79,7 +68,7 @@ const Header = () => {
           }
         `}
       >
-        {headerItems.map(({ name, url }) => (
+        {headerData.items.map(({ name, url }) => (
           <Button
             key={name}
             asChild
