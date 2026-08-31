@@ -2,7 +2,8 @@ export interface HeroData {
   greeting: string;
   name: string;
   location: string;
-  description: string;
+  descriptionPrefix: string;
+  descriptionSuffix: string;
   cta: string;
   alt: string;
 }

@@ -2,7 +2,8 @@
   "greeting": "Olá, me chamo",
   "name": "Vinícius Costa.",
   "location": "Rio Grande, RS",
-  "description": "Sou desenvolvedor front-end localizado em {location}.\nTenho experiência com desenvolvimento de aplicações web.",
+  "descriptionPrefix": "Sou desenvolvedor front-end localizado em ",
+  "descriptionSuffix": "Tenho experiência com desenvolvimento de aplicações web.",
   "cta": "Entre em contato",
   "alt": "Imagem de perfil"
 }

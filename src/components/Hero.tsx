@@ -18,7 +18,10 @@ const Hero = () => {
             <h1>{heroData.name}</h1>
           </div>
           <p>
-            {heroData.description.replace("{location}", heroData.location)}
+            {heroData.descriptionPrefix}
+            <strong>{heroData.location}</strong>.
+            <br />
+            {heroData.descriptionSuffix}
           </p>
         </div>
         <div className="flex items-center gap-4">
