@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const SEO_DATA: Record<string, { title: string; description: string }> = {
-  pt: {
+  'pt-BR': {
     title: 'Vinícius Costa - Desenvolvedor Front-end',
     description: 'Vinícius Costa — desenvolvedor front-end. Experiência com React, TypeScript, Next.js e Tailwind.'
   },
