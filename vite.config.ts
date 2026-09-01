@@ -12,8 +12,7 @@ export default defineConfig({
     tailwindcss(),
     svgr(),
     ViteImageOptimizer({
-      png: { quality: 80 },
-      webp: { lossless: false, quality: 80 },
+      png: { quality: 65 },
     }),
   ],
   assetsInclude: ["**/*.docx"],
