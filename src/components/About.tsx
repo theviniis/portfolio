@@ -6,10 +6,17 @@ import { ButtonGroup } from "./ui/button-group";
 import { LinkedInButton } from "./ui/linkedin-button";
 import { GitHubButton } from "./ui/github-button";
 
-import cvUrl from "../assets/vinicius_costa_cv.docx?url";
+import cvUrlPt from "../assets/vinicius_costa_cv.docx?url";
+import cvUrlEn from "../assets/vinicius_costa_cv_en.docx?url";
+
+const CV_MAP: Record<string, { url: string; filename: string }> = {
+  'pt-BR': { url: cvUrlPt, filename: 'vinicius_costa_cv.docx' },
+  'en-US': { url: cvUrlEn, filename: 'vinicius_costa_cv_en.docx' }
+};
 
 const About = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const cv = CV_MAP[i18n.language] || CV_MAP['pt-BR'];
 
   return (
     <Section id="about-me">
@@ -25,7 +32,7 @@ const About = () => {
         </div>
         <div className="flex items-center gap-4">
           <Button size="lg" className="pe-1" asChild>
-            <a href={cvUrl} download="vinicius_costa_cv.docx">
+            <a href={cv.url} download={cv.filename}>
               <span>{t('about.cvLabel')}</span>
               <Button asChild variant="secondary" size="icon-sm">
                 <span>

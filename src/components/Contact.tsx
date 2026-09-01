@@ -14,7 +14,13 @@ import { sendContactSchema } from "@/lib/schemas";
 import { LoadingButton } from "./ui/loading-button";
 import { Button } from "./ui/button";
 
-import cvUrl from "../assets/vinicius_costa_cv.docx?url";
+import cvUrlPt from "../assets/vinicius_costa_cv.docx?url";
+import cvUrlEn from "../assets/vinicius_costa_cv_en.docx?url";
+
+const CV_MAP: Record<string, { url: string; filename: string }> = {
+  'pt-BR': { url: cvUrlPt, filename: 'vinicius_costa_cv.docx' },
+  'en-US': { url: cvUrlEn, filename: 'vinicius_costa_cv_en.docx' }
+};
 
 const ContactForm = () => {
   const { t } = useTranslation();
@@ -115,7 +121,8 @@ const ContactForm = () => {
 };
 
 const Contact = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const cv = CV_MAP[i18n.language] || CV_MAP['pt-BR'];
 
   return (
     <Section id="contact">
@@ -134,7 +141,7 @@ const Contact = () => {
           <p>
             {t('contact.cvLabel')}{" "}
             <Button className="p-0 text-base" variant="link" asChild>
-              <a href={cvUrl} download="vinicius_costa_cv.docx">
+              <a href={cv.url} download={cv.filename}>
                 {t('contact.cvLink')}
               </a>
             </Button>
