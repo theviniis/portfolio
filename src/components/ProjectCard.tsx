@@ -58,7 +58,7 @@ const ProjectCard = ({
             aria-label={`Activate ${name} preview`}
           >
             <div className="flex flex-col items-center gap-2 text-muted-foreground group">
-              <MousePointerClick className="h-6 w-6 motion-reduce:animate-none md:group-hover:animate-bounce animate-bounce" />
+              <MousePointerClick className="h-6 w-6 animate-bounce motion-reduce:animate-none md:animate-none md:group-hover:animate-bounce" />
               <span className="text-xs font-medium">{t("projects.clickToInteract")}</span>
             </div>
           </button>
