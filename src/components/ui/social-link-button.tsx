@@ -1,20 +1,29 @@
 import { Button } from "./button";
-import { socialIconMap } from "@/lib/social-icons";
+import { socialIconMap, type SocialIcon } from "@/lib/social-icons";
 
 interface SocialLinkButtonProps {
   url: string;
-  iconName: string;
+  iconName: SocialIcon;
   ariaLabel: string;
 }
 
-const SocialLinkButton = ({ url, iconName, ariaLabel }: SocialLinkButtonProps) => {
+const SocialLinkButton = ({
+  url,
+  iconName,
+  ariaLabel,
+}: SocialLinkButtonProps) => {
   const Icon = socialIconMap[iconName];
 
   if (!Icon) return null;
 
   return (
     <Button variant="secondary" size="lg" asChild>
-      <a href={url} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel}>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={ariaLabel}
+      >
         <Icon className="text-primary size-6.5" />
       </a>
     </Button>

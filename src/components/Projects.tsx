@@ -33,11 +33,17 @@ const Projects = () => {
   }, [updateScrollState]);
 
   const scrollPrev = useCallback(() => {
-    scrollRef.current?.scrollBy({ left: -scrollRef.current.clientWidth, behavior: "smooth" });
+    scrollRef.current?.scrollBy({
+      left: -scrollRef.current.clientWidth,
+      behavior: "smooth",
+    });
   }, []);
 
   const scrollNext = useCallback(() => {
-    scrollRef.current?.scrollBy({ left: scrollRef.current.clientWidth, behavior: "smooth" });
+    scrollRef.current?.scrollBy({
+      left: scrollRef.current.clientWidth,
+      behavior: "smooth",
+    });
   }, []);
 
   if (!projects.length) return null;
@@ -57,7 +63,10 @@ const Projects = () => {
           className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {projects.map((project) => (
-            <div key={project.name} className="min-w-0 flex-none w-full snap-start">
+            <div
+              key={project.name}
+              className="min-w-0 flex-none w-full snap-start"
+            >
               <ProjectCard {...project} />
             </div>
           ))}
@@ -65,7 +74,6 @@ const Projects = () => {
 
         <div className="flex items-center justify-end gap-2 mt-4">
           <Button
-            variant="outline"
             size="icon"
             onClick={scrollPrev}
             disabled={!canScrollPrev}
@@ -74,7 +82,6 @@ const Projects = () => {
             <ChevronLeft className="h-4 w-4" />
           </Button>
           <Button
-            variant="outline"
             size="icon"
             onClick={scrollNext}
             disabled={!canScrollNext}
