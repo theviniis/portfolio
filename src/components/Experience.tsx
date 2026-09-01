@@ -1,10 +1,10 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Section } from "./ui/Section";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { ChevronDown } from "lucide-react";
-import experienceData from "../data/experience.json";
 
 type ExperienceType = {
   role: string;
@@ -60,19 +60,21 @@ const ExperienceItem = ({
 const ITEMS_PER_PAGE = 3;
 
 const Experience = () => {
+  const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
+  const experiences = t('experience.experiences', { returnObjects: true }) as ExperienceType[];
   const visibleExperiences = expanded
-    ? experienceData.experiences
-    : experienceData.experiences.slice(0, ITEMS_PER_PAGE);
+    ? experiences
+    : experiences.slice(0, ITEMS_PER_PAGE);
 
   return (
     <Section id="experience">
-      <h2>{experienceData.title}</h2>
+      <h2>{t('experience.title')}</h2>
       <div>
         <ul className="space-y-6" id="experience-list">
           {visibleExperiences.map(ExperienceItem)}
         </ul>
-        {experienceData.experiences.length > ITEMS_PER_PAGE && (
+        {experiences.length > ITEMS_PER_PAGE && (
           <div className="flex justify-center mt-6">
             <Button
               variant="ghost"
@@ -81,7 +83,7 @@ const Experience = () => {
               aria-controls="experience-list"
               onClick={() => setExpanded(!expanded)}
             >
-              {expanded ? experienceData.showLess : experienceData.showMore}
+              {expanded ? t('experience.showLess') : t('experience.showMore')}
               <ChevronDown
                 className={`transition-transform motion-reduce:transition-none ${expanded ? "rotate-180" : ""}`}
               />
