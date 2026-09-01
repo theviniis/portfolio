@@ -1,10 +1,10 @@
 {
   "header": {
     "items": [
-      { "url": "#about-me", "name": "Sobre" },
-      { "url": "#skills", "name": "Habilidades" },
-      { "url": "#experience", "name": "Experiência" },
-      { "url": "#contact", "name": "Contato" }
+      { "url": "#sobre", "name": "Sobre" },
+      { "url": "#habilidades", "name": "Habilidades" },
+      { "url": "#experiencia", "name": "Experiência" },
+      { "url": "#contato", "name": "Contato" }
     ]
   },
   "hero": {
@@ -17,6 +17,7 @@
     "alt": "Imagem de perfil"
   },
   "about": {
+    "id": "sobre",
     "heading": "Sobre",
     "title": "Desenvolvedor front-end com foco em JavaScript",
     "paragraphs": [
@@ -28,6 +29,7 @@
     "cvLabel": "Baixar currículo"
   },
   "skills": {
+    "id": "habilidades",
     "title": "Habilidades",
     "description": "Estou sempre em busca de aprender algo novo. Gosto de explorar ferramentas, práticas e jeitos diferentes de construir e ir somando isso ao que já faço no dia a dia.",
     "list": [
@@ -45,6 +47,7 @@
     ]
   },
   "experience": {
+    "id": "experiencia",
     "title": "Experiência",
     "showMore": "Ver mais",
     "showLess": "Ver menos",
@@ -109,6 +112,7 @@
     ]
   },
   "contact": {
+    "id": "contato",
     "title": "Contato",
     "emailLabel": "Entre em contato através do meu email",
     "email": "vinicius.dsc95@gmail.com",

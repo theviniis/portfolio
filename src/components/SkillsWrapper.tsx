@@ -6,7 +6,7 @@ const SkillsWrapper = () => {
   const { t } = useTranslation();
 
   return (
-    <Section id="skills">
+    <Section id={t('skills.id')}>
       <h2>{t('skills.title')}</h2>
       <div className="space-y-8">
         <p>{t('skills.description')}</p>
