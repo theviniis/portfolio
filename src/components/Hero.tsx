@@ -1,9 +1,10 @@
 import { Pointer } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "./ui/button";
-import profile from "../assets/profile.png";
 import { Section } from "./ui/Section";
 import { SocialLinks } from "./ui/social-links";
+
+import profile from "../assets/profile.png";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -42,6 +43,9 @@ const Hero = () => {
           src={profile}
           alt={t("hero.alt")}
           className="drop-shadow absolute bottom-0"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </div>
     </Section>
