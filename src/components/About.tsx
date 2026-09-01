@@ -1,44 +1,39 @@
 import { Download } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Section } from "./ui/Section";
 import { Button } from "./ui/button";
 import { ButtonGroup } from "./ui/button-group";
 import { LinkedInButton } from "./ui/linkedin-button";
 import { GitHubButton } from "./ui/github-button";
 
-import cvUrl from "../assets/vinicius_costa_cv.docx?url";
+import cvUrlPt from "../assets/vinicius_costa_cv.docx?url";
+import cvUrlEn from "../assets/vinicius_costa_cv_en.docx?url";
+
+const CV_MAP: Record<string, { url: string; filename: string }> = {
+  'pt-BR': { url: cvUrlPt, filename: 'vinicius_costa_cv.docx' },
+  'en-US': { url: cvUrlEn, filename: 'vinicius_costa_cv_en.docx' }
+};
 
 const About = () => {
+  const { t, i18n } = useTranslation();
+  const cv = CV_MAP[i18n.language] || CV_MAP['pt-BR'];
+
   return (
     <Section id="about-me">
-      <h2>Sobre</h2>
+      <h2>{t('about.heading')}</h2>
       <div className="space-y-8">
         <div className="space-y-4">
-          <h3>Desenvolvedor front-end com foco em JavaScript</h3>
+          <h3>{t('about.title')}</h3>
           <div className="text-justify space-y-2">
-            <p>
-              Desenvolvedor front-end com experiência em React, TypeScript,
-              Next.js, HTML, CSS, SCSS e Tailwind.
-            </p>
-            <p>
-              Na Sympla, implementei tracking de analytics com Mixpanel, push
-              notifications com Braze e Service Worker, e realizei a migração de
-              banco de dados AWS Redshift para Athena para redução de custos.
-            </p>
-            <p>
-              Possuo experiência em documentação técnica, publicação de pacotes
-              npm no GitLab Registry e adoção de desenvolvimento assistido por
-              IA.
-            </p>
-            <p>
-              Habilidades em colaboração, resolução de problemas e
-              adaptabilidade em equipes multidisciplinares.
-            </p>
+            {(t('about.paragraphs', { returnObjects: true }) as string[]).map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
           </div>
         </div>
         <div className="flex items-center gap-4">
           <Button size="lg" className="pe-1" asChild>
-            <a href={cvUrl} download="vinicius_costa_cv.docx">
-              <span>Baixar currículo</span>
+            <a href={cv.url} download={cv.filename}>
+              <span>{t('about.cvLabel')}</span>
               <Button asChild variant="secondary" size="icon-sm">
                 <span>
                   <Download />

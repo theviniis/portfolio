@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Section } from "./ui/Section";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -13,11 +14,18 @@ import { sendContactSchema } from "@/lib/schemas";
 import { LoadingButton } from "./ui/loading-button";
 import { Button } from "./ui/button";
 
-import cvUrl from "../assets/vinicius_costa_cv.docx?url";
+import cvUrlPt from "../assets/vinicius_costa_cv.docx?url";
+import cvUrlEn from "../assets/vinicius_costa_cv_en.docx?url";
+
+const CV_MAP: Record<string, { url: string; filename: string }> = {
+  'pt-BR': { url: cvUrlPt, filename: 'vinicius_costa_cv.docx' },
+  'en-US': { url: cvUrlEn, filename: 'vinicius_costa_cv_en.docx' }
+};
 
 const ContactForm = () => {
+  const { t } = useTranslation();
   const form = useForm({
-    resolver: zodResolver(sendContactSchema),
+    resolver: zodResolver(sendContactSchema(t)),
     defaultValues: {
       name: "",
       email: "",
@@ -30,7 +38,7 @@ const ContactForm = () => {
     <form
       className="space-y-8"
       id="contact-form"
-      onSubmit={form.handleSubmit(sendContactEmail)}
+      onSubmit={form.handleSubmit((data) => sendContactEmail(data, t))}
     >
       <div>
         <input
@@ -46,7 +54,7 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel>Nome</FieldLabel>
+                <FieldLabel>{t('contact.formFields.name')}</FieldLabel>
                 <Input {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
@@ -60,7 +68,7 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel>Assunto</FieldLabel>
+                <FieldLabel>{t('contact.formFields.subject')}</FieldLabel>
                 <Input {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
@@ -74,7 +82,7 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel>Email</FieldLabel>
+                <FieldLabel>{t('contact.formFields.email')}</FieldLabel>
                 <Input {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
@@ -88,7 +96,7 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel>Mensagem</FieldLabel>
+                <FieldLabel>{t('contact.formFields.message')}</FieldLabel>
                 <Textarea {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
@@ -105,7 +113,7 @@ const ContactForm = () => {
           size="lg"
           isLoading={form.formState.isSubmitting}
         >
-          Enviar
+          {t('contact.sendButton')}
         </LoadingButton>
       </div>
     </form>
@@ -113,25 +121,28 @@ const ContactForm = () => {
 };
 
 const Contact = () => {
+  const { t, i18n } = useTranslation();
+  const cv = CV_MAP[i18n.language] || CV_MAP['pt-BR'];
+
   return (
     <Section id="contact">
       <div className="space-y-4">
-        <h2>Contato</h2>
+        <h2>{t('contact.title')}</h2>
         <div>
           <p>
-            Entre em contato através do meu email{" "}
+            {t('contact.emailLabel')}{" "}
             <Button className="p-0 text-base" variant="link" asChild>
-              <a href="mailto:vinicius.dsc95@gmail.com">
-                vinicius.dsc95@gmail.com
+              <a href={`mailto:${t('contact.email')}`}>
+                {t('contact.email')}
               </a>
             </Button>
           </p>
 
           <p>
-            Para mais informações, baixe o meu{" "}
+            {t('contact.cvLabel')}{" "}
             <Button className="p-0 text-base" variant="link" asChild>
-              <a href={cvUrl} download="vinicius_costa_cv.docx">
-                currículo
+              <a href={cv.url} download={cv.filename}>
+                {t('contact.cvLink')}
               </a>
             </Button>
           </p>

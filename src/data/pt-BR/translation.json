@@ -1,0 +1,141 @@
+{
+  "header": {
+    "items": [
+      { "url": "#about-me", "name": "Sobre" },
+      { "url": "#skills", "name": "Habilidades" },
+      { "url": "#experience", "name": "Experiência" },
+      { "url": "#contact", "name": "Contato" }
+    ]
+  },
+  "hero": {
+    "greeting": "Olá, me chamo",
+    "name": "Vinícius Costa.",
+    "location": "Rio Grande, RS",
+    "descriptionPrefix": "Sou desenvolvedor front-end localizado em ",
+    "descriptionSuffix": "Tenho experiência com desenvolvimento de aplicações web.",
+    "cta": "Entre em contato",
+    "alt": "Imagem de perfil"
+  },
+  "about": {
+    "heading": "Sobre",
+    "title": "Desenvolvedor front-end com foco em JavaScript",
+    "paragraphs": [
+      "Desenvolvedor front-end com experiência em React, TypeScript, Next.js, HTML, CSS, SCSS e Tailwind.",
+      "Na Sympla, implementei tracking de analytics com Mixpanel, push notifications com Braze e Service Worker, e realizei a migração de banco de dados AWS Redshift para Athena para redução de custos.",
+      "Possuo experiência em documentação técnica, publicação de pacotes npm no GitLab Registry e adoção de desenvolvimento assistido por IA.",
+      "Habilidades em colaboração, resolução de problemas e adaptabilidade em equipes multidisciplinares."
+    ],
+    "cvLabel": "Baixar currículo"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "description": "Estou sempre em busca de aprender algo novo. Gosto de explorar ferramentas, práticas e jeitos diferentes de construir e ir somando isso ao que já faço no dia a dia.",
+    "list": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Redux",
+      "React Query",
+      "Testes Unitários",
+      "Analytics",
+      "Spec Driven Development",
+      "API Rest",
+      "NodeJS"
+    ]
+  },
+  "experience": {
+    "title": "Experiência",
+    "showMore": "Ver mais",
+    "showLess": "Ver menos",
+    "experiences": [
+      {
+        "role": "Desenvolvedor de front-end",
+        "company": "Sympla",
+        "period": { "start": "nov/2025", "end": "jun/2026" },
+        "responsibilities": [
+          "Criei o SDK de analytics da plataforma para alternar facilmente entre ferramentas como Mixpanel, Google Analytics e PostHog, viabilizando troca ágil de ferramentas.",
+          "Implementei 100+ eventos estruturados de analytics em diversas aplicações (JavaScript Vanilla, React, Next.js, Vue e Polymer), contribuindo para grande aumento no uso da plataforma.",
+          "Refatorei a fila de eventos baseada em Promise eliminando condições de corrida no React e conduzi treinamentos para desenvolvedores garantindo adoção adequada da ferramenta."
+        ],
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Web Components",
+          "Monorepo",
+          "Jest + Vitest",
+          "Ghost Inspector",
+          "Mixpanel",
+          "Analytics",
+          "Docker",
+          "AWS"
+        ]
+      },
+      {
+        "role": "Desenvolvedor de front-end",
+        "company": "InfoPrice",
+        "period": { "start": "jun/2023", "end": "out/2025" },
+        "responsibilities": [
+          "Arquitetei soluções front-end com React, TypeScript, Redux e SASS/SCSS para plataforma SaaS B2B de precificação no varejo.",
+          "Desenvolvi componentes reutilizáveis, escaláveis e acessíveis aprimorando significativamente a experiência do usuário da plataforma."
+        ],
+        "skills": [
+          "React",
+          "TypeScript",
+          "Redux",
+          "Storybook",
+          "Jest + React Testing Library",
+          "Git",
+          "GitHub"
+        ]
+      },
+      {
+        "role": "Desenvolvedor de front-end",
+        "company": "Bornlogic",
+        "period": { "start": "ago/2022", "end": "jan/2023" },
+        "responsibilities": [
+          "Projetei e implementei Design System completo usando React, Storybook e Styled-Components com documentação de componentes em MDX."
+        ],
+        "skills": [
+          "React",
+          "TypeScript",
+          "Storybook",
+          "Jest + React Testing Library",
+          "Git",
+          "GitHub"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contato",
+    "emailLabel": "Entre em contato através do meu email",
+    "email": "vinicius.dsc95@gmail.com",
+    "cvLabel": "Para mais informações, baixe o meu",
+    "cvLink": "currículo",
+    "sendButton": "Enviar",
+    "formFields": {
+      "name": "Nome",
+      "subject": "Assunto",
+      "email": "Email",
+      "message": "Mensagem"
+    }
+  },
+  "common": {
+    "sending": "Enviando...",
+    "closeMenu": "Fechar menu",
+    "openMenu": "Abrir menu"
+  },
+  "validation": {
+    "nameMin": "O nome precisa ter pelo menos 3 caractéres",
+    "emailInvalid": "O email precisa ser válido",
+    "subjectMin": "O assunto precisa ter pelo menos 3 caractéres",
+    "messageMin": "A mensagem precisa ter pelo menos 5 caractéres"
+  },
+  "toast": {
+    "sendSuccess": "Email encaminhado com sucesso",
+    "sendError": "Não foi possível enviar o email",
+    "sendFail": "Falha ao enviar o formulário"
+  }
+}

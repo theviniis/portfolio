@@ -1,32 +1,17 @@
+import { useTranslation } from "react-i18next";
 import { Section } from "./ui/Section";
 import { Button } from "./ui/button";
 
-const skills = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Tailwind CSS",
-  "Redux",
-  "React Query",
-  "Testes Unitários",
-  "Analytics",
-  "Spec Driven Development",
-  "API Rest",
-  "NodeJS",
-];
-
 const SkillsWrapper = () => {
+  const { t } = useTranslation();
+
   return (
     <Section id="skills">
-      <h2>Habilidades</h2>
+      <h2>{t('skills.title')}</h2>
       <div className="space-y-8">
-        <p>
-          Estou sempre em busca de aprender algo novo. Gosto de explorar
-          ferramentas, práticas e jeitos diferentes de construir e ir somando
-          isso ao que já faço no dia a dia.
-        </p>
+        <p>{t('skills.description')}</p>
         <ul className="flex flex-wrap gap-2">
-          {skills.map((skill, index) => (
+          {(t('skills.list', { returnObjects: true }) as string[]).map((skill, index) => (
             <Button
               key={skill}
               variant={index > 2 ? "outline" : "default"}
