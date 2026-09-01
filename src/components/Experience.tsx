@@ -20,40 +20,37 @@ const ExperienceItem = ({
   period,
   role,
   skills,
-}: ExperienceType) => {
+  isLast,
+}: ExperienceType & { isLast: boolean }) => {
   return (
-    <div key={company}>
-      <li className="space-y-4">
-        <div>
-          <h3 className="text-h4">{company}</h3>
-          <h4 className="text-h5">{role}</h4>
-          <p>
-            {period.start} — {period.end}
-          </p>
-          <ul className="flex flex-wrap items-center gap-2 mt-2">
-            {skills.map((skill, index) => (
-              <li key={skill}>
-                <Badge variant={index > 2 ? "outline" : "default"}>
-                  {skill}
-                </Badge>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <ul className="space-y-1">
-          {responsibilities.map((resp) => (
-            <li
-              key={resp}
-              className="text-muted-foreground text-justify hyphens-auto"
-            >
-              • {resp}
+    <li className="space-y-4">
+      <div>
+        <h3 className="text-h4">{company}</h3>
+        <h4 className="text-h5">{role}</h4>
+        <p>
+          {period.start} — {period.end}
+        </p>
+        <ul className="flex flex-wrap items-center gap-2 mt-2">
+          {skills.map((skill, index) => (
+            <li key={skill}>
+              <Badge variant={index > 2 ? "outline" : "default"}>{skill}</Badge>
             </li>
           ))}
         </ul>
-      </li>
-      <Separator className="last:hidden" />
-    </div>
+      </div>
+
+      <ul className="space-y-1">
+        {responsibilities.map((resp) => (
+          <li
+            key={resp}
+            className="text-muted-foreground text-justify hyphens-auto"
+          >
+            • {resp}
+          </li>
+        ))}
+      </ul>
+      {!isLast && <Separator />}
+    </li>
   );
 };
 
@@ -74,7 +71,13 @@ const Experience = () => {
       <h2>{t("experience.title")}</h2>
       <div>
         <ul className="space-y-6" id="experience-list">
-          {visibleExperiences.map(ExperienceItem)}
+          {visibleExperiences.map((item, index) => (
+            <ExperienceItem
+              key={item.company}
+              {...item}
+              isLast={index === visibleExperiences.length - 1}
+            />
+          ))}
         </ul>
         {experiences.length > ITEMS_PER_PAGE && (
           <li className="flex justify-center mt-6">
