@@ -206,7 +206,7 @@
   },
   "contact": {
     "id": "contact",
-    "title": "Contact",
+    "title": "Let’s connect",
     "emailLabel": "Get in touch via my email",
     "email": "vinicius.dsc95@gmail.com",
     "cvLabel": "For more information, download my",
@@ -249,7 +249,7 @@
       "iconName": "linkedin"
     },
     {
-      "url": "https://wa.me/+5511987372296?text=Ol%C3%A1!%20Estou%20precisando%20de%20um%20desenvolvedor%20front-end!",
+      "url": "https://wa.me/+5511987372296?text=Hello!%20I'm%20looking%20for%20a%20front-end%20developer!",
       "name": "Whatsapp",
       "ariaLabel": "Whatsapp profile",
       "iconName": "whatsapp"
