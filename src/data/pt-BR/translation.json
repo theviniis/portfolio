@@ -197,6 +197,12 @@
       "name": "LinkedIn",
       "ariaLabel": "Perfil no LinkedIn",
       "iconName": "linkedin"
+    },
+    {
+      "url": "https://wa.me/+5511987372296",
+      "name": "Whatsapp",
+      "ariaLabel": "Perdil no Whatsapp",
+      "iconName": "whatsapp"
     }
   ]
 }

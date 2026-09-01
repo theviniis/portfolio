@@ -197,6 +197,12 @@
       "name": "LinkedIn",
       "ariaLabel": "LinkedIn profile",
       "iconName": "linkedin"
+    },
+    {
+      "url": "https://wa.me/+5511987372296",
+      "name": "Whatsapp",
+      "ariaLabel": "Whatsapp profile",
+      "iconName": "whatsapp"
     }
   ]
 }
