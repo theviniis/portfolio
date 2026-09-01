@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Logo } from "./Logo";
 import { Button } from "./ui/button";
 import { HamburgerButton } from "./ui/hamburger-button";
-import headerData from "../data/header.json";
 
 const Header = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const headerItems = t('header.items', { returnObjects: true }) as Array<{ url: string; name: string }>;
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
@@ -39,7 +41,7 @@ const Header = () => {
           <Logo />
 
           <div className="hidden md:flex items-center">
-            {headerData.items.map(({ name, url }) => (
+            {headerItems.map(({ name, url }) => (
               <Button
                 key={name}
                 asChild
@@ -68,7 +70,7 @@ const Header = () => {
           }
         `}
       >
-        {headerData.items.map(({ name, url }) => (
+        {headerItems.map(({ name, url }) => (
           <Button
             key={name}
             asChild
