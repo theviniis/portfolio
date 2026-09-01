@@ -41,8 +41,8 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel>{t("contact.formFields.name")}</FieldLabel>
-                <Input {...field} />
+                <FieldLabel htmlFor={field.name}>{t("contact.formFields.name")}</FieldLabel>
+                <Input id={field.name} {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
                 )}
@@ -55,8 +55,8 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel>{t("contact.formFields.subject")}</FieldLabel>
-                <Input {...field} />
+                <FieldLabel htmlFor={field.name}>{t("contact.formFields.subject")}</FieldLabel>
+                <Input id={field.name} {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
                 )}
@@ -69,8 +69,8 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel>{t("contact.formFields.email")}</FieldLabel>
-                <Input {...field} />
+                <FieldLabel htmlFor={field.name}>{t("contact.formFields.email")}</FieldLabel>
+                <Input id={field.name} {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
                 )}
@@ -83,8 +83,8 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel>{t("contact.formFields.message")}</FieldLabel>
-                <Textarea {...field} />
+                <FieldLabel htmlFor={field.name}>{t("contact.formFields.message")}</FieldLabel>
+                <Textarea id={field.name} {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
                 )}
