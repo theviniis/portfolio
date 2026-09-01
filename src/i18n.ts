@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 import pt from './data/pt/translation.json';
-import en from './data/en/translation.json';
+import enUS from './data/en/translation.json';
 
 i18n
   .use(LanguageDetector)
@@ -11,7 +11,7 @@ i18n
   .init({
     resources: {
       pt: { translation: pt },
-      en: { translation: en }
+      'en-US': { translation: enUS }
     },
     fallbackLng: 'pt',
     interpolation: {
@@ -20,8 +20,7 @@ i18n
     detection: {
       order: ['navigator', 'htmlTag'],
       lookupQuerystring: 'lang',
-      caches: ['localStorage'],
-      convertDetectedLanguage: (lng: string) => lng.split('-')[0]
+      caches: ['localStorage']
     }
   });
 

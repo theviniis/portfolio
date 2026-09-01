@@ -6,7 +6,7 @@ const SEO_DATA: Record<string, { title: string; description: string }> = {
     title: 'Vinícius Costa - Desenvolvedor Front-end',
     description: 'Vinícius Costa — desenvolvedor front-end. Experiência com React, TypeScript, Next.js e Tailwind.'
   },
-  en: {
+  'en-US': {
     title: 'Vinícius Costa - Front-end Developer',
     description: 'Vinícius Costa — front-end developer. Experience with React, TypeScript, Next.js and Tailwind.'
   }
