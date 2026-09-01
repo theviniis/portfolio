@@ -38,7 +38,7 @@ const Hero = () => {
           <SocialLinks />
         </div>
       </div>
-      <div className="bg-secondary rounded-4xl overflow-hidden relative aspect-square lg:aspect-3/4">
+      <div className="bg-secondary rounded-4xl overflow-hidden relative aspect-square lg:aspect-3/4 isolate transform-gpu [-webkit-mask-image:-webkit-radial-gradient(white,black)]">
         <img
           src={profile}
           alt={t("hero.alt")}
