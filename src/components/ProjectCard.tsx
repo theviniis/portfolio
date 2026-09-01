@@ -54,10 +54,10 @@ const ProjectCard = ({
           <button
             type="button"
             onClick={handleOverlayClick}
-            className="absolute inset-0 z-10 flex items-center justify-center cursor-pointer bg-background/60 backdrop-blur-[1px] transition-colors hover:bg-background/70"
+            className="absolute inset-0 z-10 flex items-center justify-center cursor-pointer bg-background/60 backdrop-blur-[1px] transition-colors hover:bg-background/70 group"
             aria-label={`Activate ${name} preview`}
           >
-            <div className="flex flex-col items-center gap-2 text-muted-foreground group">
+            <div className="flex flex-col items-center gap-2 text-muted-foreground">
               <MousePointerClick className="h-6 w-6 animate-bounce motion-reduce:animate-none md:animate-none md:group-hover:animate-bounce" />
               <span className="text-xs font-medium">{t("projects.clickToInteract")}</span>
             </div>
