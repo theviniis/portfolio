@@ -63,5 +63,5 @@ export interface SocialLinkItem {
   url: string;
   name: string;
   ariaLabel: string;
-  iconName: string;
+  iconName: "linkedin" | "github" | "whatsapp";
 }
