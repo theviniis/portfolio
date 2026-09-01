@@ -10,13 +10,13 @@ type Project = {
 
 const ProjectCard = ({ name, deployUrl, githubUrl, skills, description }: Project) => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 min-w-0">
       <div className="relative w-full aspect-video overflow-hidden rounded-lg border bg-muted">
         <iframe
           src={deployUrl}
           title={name}
           loading="lazy"
-          className="absolute inset-0 h-full w-full border-0"
+          className="absolute inset-0 h-full w-full min-w-0 min-h-0 border-0"
           sandbox="allow-scripts allow-same-origin"
         />
       </div>

@@ -51,7 +51,7 @@ const Projects = () => {
         </p>
       </div>
 
-      <div className="relative">
+      <div className="relative overflow-hidden">
         <div
           ref={scrollRef}
           className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
