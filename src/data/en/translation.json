@@ -4,6 +4,7 @@
       { "url": "#about-me", "name": "About" },
       { "url": "#skills", "name": "Skills" },
       { "url": "#experience", "name": "Experience" },
+      { "url": "#projects", "name": "Projects" },
       { "url": "#contact", "name": "Contact" }
     ]
   },
@@ -153,6 +154,12 @@
         ]
       }
     ]
+  },
+  "projects": {
+    "id": "projects",
+    "title": "Projects",
+    "description": "A selection of projects I've built. Each one is a live preview you can interact with.",
+    "list": []
   },
   "contact": {
     "id": "contact",
