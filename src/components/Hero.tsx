@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import { Section } from "./ui/Section";
 import { SocialLinks } from "./ui/social-links";
 
-import profile from "../assets/profile.png";
+import profile from "../assets/profile.webp";
 
 const Hero = () => {
   const { t } = useTranslation();

@@ -13,6 +13,7 @@ export default defineConfig({
     svgr(),
     ViteImageOptimizer({
       png: { quality: 65 },
+      webp: { quality: 80 },
     }),
   ],
   assetsInclude: ["**/*.docx"],
