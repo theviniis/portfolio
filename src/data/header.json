@@ -1,8 +1,0 @@
-{
-  "items": [
-    { "url": "#about-me", "name": "Sobre" },
-    { "url": "#skills", "name": "Habilidades" },
-    { "url": "#experience", "name": "Experiência" },
-    { "url": "#contact", "name": "Contato" }
-  ]
-}
