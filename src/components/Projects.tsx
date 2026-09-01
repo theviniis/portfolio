@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -13,7 +13,28 @@ const Projects = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: "start",
+    keyboard: true,
   });
+
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+
+  const onSelect = useCallback((emblaApi: any) => {
+    if (!emblaApi) return;
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+  }, []);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect(emblaApi);
+    emblaApi.on("reInit", onSelect);
+    emblaApi.on("select", onSelect);
+    return () => {
+      emblaApi.off("reInit", onSelect);
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi, onSelect]);
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
@@ -45,6 +66,7 @@ const Projects = () => {
             variant="outline"
             size="icon"
             onClick={scrollPrev}
+            disabled={!canScrollPrev}
             aria-label="Previous project"
           >
             <ChevronLeft className="h-4 w-4" />
@@ -53,6 +75,7 @@ const Projects = () => {
             variant="outline"
             size="icon"
             onClick={scrollNext}
+            disabled={!canScrollNext}
             aria-label="Next project"
           >
             <ChevronRight className="h-4 w-4" />
