@@ -9,7 +9,13 @@ type Project = {
   description?: string;
 };
 
-const ProjectCard = ({ name, deployUrl, githubUrl, skills, description }: Project) => {
+const ProjectCard = ({
+  name,
+  deployUrl,
+  githubUrl,
+  skills,
+  description,
+}: Project) => {
   return (
     <div className="flex flex-col gap-4 min-w-0">
       <div className="relative w-full aspect-video overflow-hidden rounded-lg border bg-muted">
@@ -24,7 +30,7 @@ const ProjectCard = ({ name, deployUrl, githubUrl, skills, description }: Projec
 
       <div className="space-y-3">
         <div className="flex items-center justify-between">
-          <h4>{name}</h4>
+          <h3 className="text-h4">{name}</h3>
           <div className="flex items-center gap-3">
             <a
               href={deployUrl}
@@ -67,9 +73,7 @@ const ProjectCard = ({ name, deployUrl, githubUrl, skills, description }: Projec
         <ul className="flex flex-wrap gap-2">
           {skills.map((skill, index) => (
             <li key={skill}>
-              <Badge variant={index > 2 ? "outline" : "default"}>
-                {skill}
-              </Badge>
+              <Badge variant={index > 2 ? "outline" : "default"}>{skill}</Badge>
             </li>
           ))}
         </ul>

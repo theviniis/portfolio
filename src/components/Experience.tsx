@@ -25,8 +25,8 @@ const ExperienceItem = ({
     <div key={company}>
       <li className="space-y-4">
         <div>
-          <h4>{company}</h4>
-          <h5>{role}</h5>
+          <h3 className="text-h4">{company}</h3>
+          <h4 className="text-h5">{role}</h4>
           <p>
             {period.start} — {period.end}
           </p>
@@ -62,20 +62,22 @@ const ITEMS_PER_PAGE = 3;
 const Experience = () => {
   const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
-  const experiences = t('experience.experiences', { returnObjects: true }) as ExperienceType[];
+  const experiences = t("experience.experiences", {
+    returnObjects: true,
+  }) as ExperienceType[];
   const visibleExperiences = expanded
     ? experiences
     : experiences.slice(0, ITEMS_PER_PAGE);
 
   return (
-    <Section id={t('experience.id')}>
-      <h2>{t('experience.title')}</h2>
+    <Section id={t("experience.id")}>
+      <h2>{t("experience.title")}</h2>
       <div>
         <ul className="space-y-6" id="experience-list">
           {visibleExperiences.map(ExperienceItem)}
         </ul>
         {experiences.length > ITEMS_PER_PAGE && (
-          <div className="flex justify-center mt-6">
+          <li className="flex justify-center mt-6">
             <Button
               variant="ghost"
               size="sm"
@@ -83,12 +85,12 @@ const Experience = () => {
               aria-controls="experience-list"
               onClick={() => setExpanded(!expanded)}
             >
-              {expanded ? t('experience.showLess') : t('experience.showMore')}
+              {expanded ? t("experience.showLess") : t("experience.showMore")}
               <ChevronDown
                 className={`transition-transform motion-reduce:transition-none ${expanded ? "rotate-180" : ""}`}
               />
             </Button>
-          </div>
+          </li>
         )}
       </div>
     </Section>
