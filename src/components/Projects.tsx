@@ -1,7 +1,5 @@
-import { useCallback, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import type { EmblaCarouselType } from "embla-carousel";
-import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Section } from "./ui/Section";
 import { Button } from "./ui/button";
@@ -11,34 +9,36 @@ const Projects = () => {
   const { t } = useTranslation();
   const projects = t("projects.list", { returnObjects: true }) as Project[];
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: false,
-    align: "start",
-  });
-
+  const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
-  const onEmblaSelect = useCallback((api: EmblaCarouselType) => {
-    setCanScrollPrev(api.canScrollPrev());
-    setCanScrollNext(api.canScrollNext());
+  const updateScrollState = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollPrev(el.scrollLeft > 0);
+    setCanScrollNext(el.scrollLeft < el.scrollWidth - el.clientWidth - 1);
   }, []);
 
   useEffect(() => {
-    if (!emblaApi) return;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setCanScrollPrev(emblaApi.canScrollPrev());
-    setCanScrollNext(emblaApi.canScrollNext());
-    emblaApi.on("reInit", onEmblaSelect);
-    emblaApi.on("select", onEmblaSelect);
+    const el = scrollRef.current;
+    if (!el) return;
+    updateScrollState();
+    el.addEventListener("scroll", updateScrollState, { passive: true });
+    window.addEventListener("resize", updateScrollState);
     return () => {
-      emblaApi.off("reInit", onEmblaSelect);
-      emblaApi.off("select", onEmblaSelect);
+      el.removeEventListener("scroll", updateScrollState);
+      window.removeEventListener("resize", updateScrollState);
     };
-  }, [emblaApi, onEmblaSelect]);
+  }, [updateScrollState]);
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  const scrollPrev = useCallback(() => {
+    scrollRef.current?.scrollBy({ left: -scrollRef.current.clientWidth, behavior: "smooth" });
+  }, []);
+
+  const scrollNext = useCallback(() => {
+    scrollRef.current?.scrollBy({ left: scrollRef.current.clientWidth, behavior: "smooth" });
+  }, []);
 
   if (!projects.length) return null;
 
@@ -52,14 +52,15 @@ const Projects = () => {
       </div>
 
       <div className="relative">
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-6">
-            {projects.map((project) => (
-              <div key={project.name} className="min-w-0 flex-none w-full">
-                <ProjectCard {...project} />
-              </div>
-            ))}
-          </div>
+        <div
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        >
+          {projects.map((project) => (
+            <div key={project.name} className="min-w-0 flex-none w-full snap-start">
+              <ProjectCard {...project} />
+            </div>
+          ))}
         </div>
 
         <div className="flex items-center justify-end gap-2 mt-4">
