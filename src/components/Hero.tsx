@@ -25,7 +25,7 @@ const Hero = () => {
         </div>
         <div className="flex items-center gap-4">
           <Button size="lg" className="pe-1 " asChild>
-            <a href="#contact">
+            <a href={`#${t("contact.id")}`}>
               <span>{t("hero.cta")}</span>
               <Button asChild variant="secondary" size="icon-sm">
                 <span>
