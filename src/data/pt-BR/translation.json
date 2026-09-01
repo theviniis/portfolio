@@ -21,10 +21,11 @@
     "heading": "Sobre",
     "title": "Desenvolvedor front-end com foco em JavaScript",
     "paragraphs": [
-      "Desenvolvedor front-end com experiência em React, TypeScript, Next.js, HTML, CSS, SCSS e Tailwind.",
-      "Na Sympla, implementei tracking de analytics com Mixpanel, push notifications com Braze e Service Worker, e realizei a migração de banco de dados AWS Redshift para Athena para redução de custos.",
-      "Possuo experiência em documentação técnica, publicação de pacotes npm no GitLab Registry e adoção de desenvolvimento assistido por IA.",
-      "Habilidades em colaboração, resolução de problemas e adaptabilidade em equipes multidisciplinares."
+      "Sou Front-End Developer com experiência na construção e evolução de aplicações web escaláveis, acessíveis e de alta performance. Minha principal experiência está no ecossistema JavaScript, TypeScript, React e Next.js, atuando principalmente no desenvolvimento de produtos SaaS B2B.",
+      "Ao longo da minha carreira, trabalhei com React, TypeScript, Next.js, JavaScript, HTML, CSS, Design Systems, componentes reutilizáveis, REST APIs e automated testing, utilizando ferramentas como Jest e React Testing Library. Também tenho experiência com AWS, Mixpanel, Braze e Service Workers, além de práticas voltadas para performance, acessibilidade, qualidade de código e escalabilidade.",
+      "Gosto de participar de decisões técnicas e trabalhar em colaboração com equipes multidisciplinares, utilizando metodologias Agile/Scrum para transformar necessidades de negócio em soluções robustas e sustentáveis.",
+      "Tenho interesse constante em novas tecnologias e ferramentas que possam melhorar o processo de desenvolvimento, incluindo o uso de AI tools como GitHub Copilot e Claude no workflow de engenharia.",
+      "Atualmente, estou aberto a oportunidades em Front-End e Web Development, especialmente posições envolvendo React, TypeScript, Next.js, Node.js ou Vue.js. Busco desafios técnicos que permitam continuar evoluindo, contribuir com decisões de engenharia e gerar impacto real no produto e no negócio."
     ],
     "cvLabel": "Baixar currículo"
   },
@@ -43,7 +44,8 @@
       "Analytics",
       "Spec Driven Development",
       "API Rest",
-      "NodeJS"
+      "NodeJS",
+      "Git"
     ]
   },
   "experience": {
@@ -57,9 +59,12 @@
         "company": "Sympla",
         "period": { "start": "nov/2025", "end": "jun/2026" },
         "responsibilities": [
-          "Criei o SDK de analytics da plataforma para alternar facilmente entre ferramentas como Mixpanel, Google Analytics e PostHog, viabilizando troca ágil de ferramentas.",
-          "Implementei 100+ eventos estruturados de analytics em diversas aplicações (JavaScript Vanilla, React, Next.js, Vue e Polymer), contribuindo para grande aumento no uso da plataforma.",
-          "Refatorei a fila de eventos baseada em Promise eliminando condições de corrida no React e conduzi treinamentos para desenvolvedores garantindo adoção adequada da ferramenta."
+          "Desenvolvi e mantive aplicações da plataforma de ingressos utilizando React, Next.js e TypeScript, com foco em performance, tipagem e experiência na jornada de compra.",
+          "Implementei tracking de analytics com Mixpanel em 5 aplicações, estruturando 100+ eventos para análise do comportamento dos usuários e acompanhamento da jornada de compra, contribuindo para um aumento de 400% no uso da plataforma.",
+          "Conduzi a migração arquitetural do banco de dados analítico do AWS Redshift para o AWS Athena, criando scripts de equiparação de dados e controlando o rollout via feature flags, reduzindo significativamente os custos de infraestrutura.",
+          "Desenvolvi um sistema de notificações push customizadas integrando o SDK da Braze com Service Workers, gerenciando as lógicas de background e foreground, com confiabilidade garantida por testes unitários no Jest.",
+          "Estruturei a publicação de pacotes npm privados no GitLab Registry, criando um fluxo que viabilizou o reúso eficiente de bibliotecas de código (como a lib de analytics) entre múltiplas aplicações.",
+          "Documentei processos técnicos relacionados ao gerenciamento de URLs e variáveis de ambiente utilizando Markdown e incorporei ferramentas de inteligência artificial, como GitHub Copilot e Claude, ao fluxo de desenvolvimento."
         ],
         "skills": [
           "React",
@@ -80,8 +85,10 @@
         "company": "InfoPrice",
         "period": { "start": "jun/2023", "end": "out/2025" },
         "responsibilities": [
-          "Arquitetei soluções front-end com React, TypeScript, Redux e SASS/SCSS para plataforma SaaS B2B de precificação no varejo.",
-          "Desenvolvi componentes reutilizáveis, escaláveis e acessíveis aprimorando significativamente a experiência do usuário da plataforma."
+          "Desenvolvi e mantive o front-end de uma plataforma SaaS B2B de precificação utilizada por mais de 27.000 lojas, utilizando React, TypeScript e Redux para gerenciamento de estado global.",
+          "Desenvolvi e evoluí componentes do Design System utilizando SASS e LESS, promovendo consistência visual e reutilização de código.",
+          "Implementei testes automatizados com Jest e React Testing Library, cobrindo cenários críticos de negócio e aumentando a confiabilidade das entregas.",
+          "Integrei aplicações front-end a serviços de back-end por meio de APIs REST, participando das decisões relacionadas à arquitetura e aos contratos de comunicação entre os serviços."
         ],
         "skills": [
           "React",
@@ -98,7 +105,11 @@
         "company": "Bornlogic",
         "period": { "start": "ago/2022", "end": "jan/2023" },
         "responsibilities": [
-          "Projetei e implementei Design System completo usando React, Storybook e Styled-Components com documentação de componentes em MDX."
+          "Estruturei o Design System da empresa utilizando Storybook e MDX, estabelecendo um ambiente para desenvolvimento, documentação e reúso de componentes.",
+          "Desenvolvi componentes de interface escaláveis, responsivos e acessíveis utilizando React e TypeScript, com estilos encapsulados por Styled-components.",
+          "Implementei testes automatizados com Jest e React Testing Library, cobrindo comportamentos críticos dos componentes e reduzindo regressões nas entregas.",
+          "Atuei em revisões de código por meio de Pull Requests, contribuindo para a padronização técnica e qualidade do código.",
+          "Mantive a documentação técnica relacionada ao Sistema de Gestão da Qualidade (SGQ), garantindo a conformidade dos processos de desenvolvimento."
         ],
         "skills": [
           "React",
@@ -108,13 +119,45 @@
           "Git",
           "GitHub"
         ]
+      },
+      {
+        "role": "Desenvolvedor de front-end",
+        "company": "E-SHOOTS LTD",
+        "period": { "start": "mai/2022", "end": "jul/2022" },
+        "responsibilities": [
+          "Desenvolvi a interface de uma aplicação web para uma plataforma fotográfica, atuando de ponta a ponta na estruturação do front-end com Ruby on Rails.",
+          "Estruturei e apliquei a estilização do projeto utilizando SASS, entregando uma experiência visual coesa, responsiva e de navegação intuitiva para os usuários."
+        ],
+        "skills": [
+          "Ruby on Rails",
+          "SASS",
+          "HTML5",
+          "CSS3",
+          "JavaScript (Vanilla)"
+        ]
+      },
+      {
+        "role": "Desenvolvedor de front-end",
+        "company": "Espaço Plannar",
+        "period": { "start": "mai/2021", "end": "jul/2021" },
+        "responsibilities": [
+          "Construí uma landing page interativa e responsiva do zero utilizando HTML5, CSS3 e JavaScript vanilla, com foco em semântica, performance e conversão de usuários.",
+          "Migrei a interface desenvolvida para o ecossistema WordPress, implementando e configurando Custom Fields (CMS) para viabilizar a gestão autônoma e dinâmica de conteúdo por parte do cliente."
+        ],
+        "skills": [
+          "HTML5",
+          "CSS3",
+          "JavaScript (Vanilla)",
+          "WordPress",
+          "Figma"
+        ]
       }
     ]
   },
   "contact": {
     "id": "contato",
     "title": "Contato",
-    "emailLabel": "Entre em contato através do meu email",
+    "emailLabel": "Entre em contato através do email",
     "email": "vinicius.dsc95@gmail.com",
     "cvLabel": "Para mais informações, baixe o meu",
     "cvLink": "currículo",

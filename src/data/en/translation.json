@@ -8,9 +8,9 @@
     ]
   },
   "hero": {
-    "greeting": "Hello, my name is",
+    "greeting": "Hello, I'm",
     "name": "Vinícius Costa.",
-    "location": "Rio Grande, RS",
+    "location": "Rio Grande, RS - Brasil",
     "descriptionPrefix": "I'm a front-end developer based in ",
     "descriptionSuffix": "I have experience building web applications.",
     "cta": "Get in touch",
@@ -21,10 +21,11 @@
     "heading": "About",
     "title": "Front-end developer focused on JavaScript",
     "paragraphs": [
-      "Front-end developer with experience in React, TypeScript, Next.js, HTML, CSS, SCSS and Tailwind.",
-      "At Sympla, I implemented analytics tracking with Mixpanel, push notifications with Braze and Service Worker, and migrated the AWS Redshift database to Athena to reduce costs.",
-      "I have experience in technical documentation, publishing npm packages to GitLab Registry, and adopting AI-assisted development.",
-      "Skills in collaboration, problem-solving, and adaptability in multidisciplinary teams."
+      "I’m a Front-End Developer with experience building and evolving scalable, accessible, and high-performance web applications. My primary expertise is in the JavaScript, TypeScript, React, and Next.js ecosystem, with a strong focus on B2B SaaS products.",
+      "Throughout my career, I’ve worked with React, TypeScript, Next.js, JavaScript, HTML, CSS, Design Systems, reusable components, REST APIs, and automated testing, using tools such as Jest and React Testing Library. I also have hands-on experience with AWS, Mixpanel, Braze, and Service Workers, along with practices focused on performance, accessibility, code quality, and scalability.",
+      "I enjoy contributing to technical decisions and collaborating with cross-functional teams, using Agile/Scrum methodologies to turn business requirements into robust and maintainable solutions.",
+      "I’m always interested in exploring new technologies and tools that can improve the development process, including AI tools such as GitHub Copilot and Claude as part of my engineering workflow.",
+      "I’m currently open to opportunities in Front-End and Web Development, particularly roles involving React, TypeScript, Next.js, Node.js, or Vue.js. I’m looking for technical challenges that allow me to continue growing, contribute to engineering decisions, and create meaningful impact on products and businesses."
     ],
     "cvLabel": "Download resume"
   },
@@ -43,7 +44,8 @@
       "Analytics",
       "Spec Driven Development",
       "REST API",
-      "NodeJS"
+      "NodeJS",
+      "Git"
     ]
   },
   "experience": {
@@ -57,9 +59,12 @@
         "company": "Sympla",
         "period": { "start": "nov/2025", "end": "jun/2026" },
         "responsibilities": [
-          "Created the platform's analytics SDK to easily switch between tools like Mixpanel, Google Analytics and PostHog, enabling agile tool switching.",
-          "Implemented 100+ structured analytics events across multiple applications (Vanilla JavaScript, React, Next.js, Vue and Polymer), contributing to significant platform usage growth.",
-          "Refactored the Promise-based event queue eliminating race conditions in React and conducted developer training ensuring proper tool adoption."
+          "Developed and maintained applications for a ticketing platform using React, Next.js, and TypeScript, focusing on performance, type safety, and the buyer journey experience.",
+          "Implemented analytics tracking with Mixpanel across 5 applications, structuring 100+ events to analyze user behavior and monitor the buyer journey, contributing to a 400% increase in platform usage.",
+          "Led the architectural migration of the analytics database from AWS Redshift to AWS Athena, developing data reconciliation scripts and managing the rollout through feature flags, significantly reducing infrastructure costs.",
+          "Developed a custom push notification system integrating the Braze SDK with Service Workers, handling background and foreground logic with reliability supported by Jest unit tests.",
+          "Established a workflow for publishing private npm packages to the GitLab Registry, enabling efficient reuse of shared libraries, including the analytics library, across multiple applications.",
+          "Documented technical processes related to URL and environment variable management using Markdown and incorporated AI tools such as GitHub Copilot and Claude into the development workflow."
         ],
         "skills": [
           "React",
@@ -80,8 +85,10 @@
         "company": "InfoPrice",
         "period": { "start": "jun/2023", "end": "oct/2025" },
         "responsibilities": [
-          "Architected front-end solutions with React, TypeScript, Redux and SASS/SCSS for a B2B SaaS retail pricing platform.",
-          "Developed reusable, scalable and accessible components significantly improving the platform's user experience."
+          "Developed and maintained the front end of a B2B SaaS pricing platform used by more than 27,000 stores, using React, TypeScript, and Redux for global state management.",
+          "Developed and evolved Design System components using SASS and LESS, promoting visual consistency and code reuse.",
+          "Implemented automated tests with Jest and React Testing Library, covering critical business scenarios and increasing delivery reliability.",
+          "Integrated front-end applications with back-end services through REST APIs, actively participating in architectural decisions and API contract design."
         ],
         "skills": [
           "React",
@@ -98,7 +105,11 @@
         "company": "Bornlogic",
         "period": { "start": "aug/2022", "end": "jan/2023" },
         "responsibilities": [
-          "Designed and implemented a complete Design System using React, Storybook and Styled-Components with MDX component documentation."
+          "Structured the company's Design System using Storybook and MDX, establishing an environment for component development, documentation, and reuse.",
+          "Developed scalable, responsive, and accessible UI components using React and TypeScript, with styles encapsulated through Styled-components.",
+          "Implemented automated tests with Jest and React Testing Library, covering critical component behavior and reducing regressions in production.",
+          "Participated in code reviews through Pull Requests, contributing to technical standardization and code quality.",
+          "Maintained technical documentation related to the Quality Management System (QMS), ensuring compliance with development processes."
         ],
         "skills": [
           "React",
@@ -107,6 +118,38 @@
           "Jest + React Testing Library",
           "Git",
           "GitHub"
+        ]
+      },
+      {
+        "role": "Front-end Developer",
+        "company": "E-SHOOTS LTD",
+        "period": { "start": "may/2022", "end": "jul/2022" },
+        "responsibilities": [
+          "Developed the interface of a web application for a photography platform, working end-to-end on front-end structuring with Ruby on Rails.",
+          "Structured and applied project styling using SASS, delivering a cohesive, responsive, and intuitively navigable visual experience for users."
+        ],
+        "skills": [
+          "Ruby on Rails",
+          "SASS",
+          "HTML5",
+          "CSS3",
+          "JavaScript (Vanilla)"
+        ]
+      },
+      {
+        "role": "Front-end Developer",
+        "company": "E-SHOOTS LTD",
+        "period": { "start": "may/2022", "end": "jul/2022" },
+        "responsibilities": [
+          "Built an interactive and responsive landing page from scratch using HTML5, CSS3, and vanilla JavaScript, focusing on semantics, performance, and user conversion.",
+          "Migrated the developed interface to the WordPress ecosystem, implementing and configuring Custom Fields (CMS) to enable autonomous and dynamic content management by the client."
+        ],
+        "skills": [
+          "HTML5",
+          "CSS3",
+          "JavaScript (Vanilla)",
+          "WordPress",
+          "Figma"
         ]
       }
     ]
