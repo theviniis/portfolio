@@ -1,3 +1,4 @@
+import { useState, useCallback, useEffect } from "react";
 import { ExternalLink } from "lucide-react";
 import { Badge } from "./ui/badge";
 
@@ -16,6 +17,27 @@ const ProjectCard = ({
   skills,
   description,
 }: Project) => {
+  const [active, setActive] = useState(false);
+
+  const handleOverlayClick = useCallback(() => setActive(true), []);
+
+  useEffect(() => {
+    if (!active) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActive(false);
+    };
+    const handleMouseDown = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest("iframe")) setActive(false);
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("mousedown", handleMouseDown, true);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("mousedown", handleMouseDown, true);
+    };
+  }, [active]);
+
   return (
     <div className="flex flex-col gap-4 min-w-0">
       <div className="relative w-full aspect-[3/4] md:aspect-video overflow-hidden rounded-lg border bg-muted">
@@ -23,9 +45,17 @@ const ProjectCard = ({
           src={deployUrl}
           title={name}
           loading="lazy"
-          className="absolute inset-0 h-full w-full min-w-0 min-h-0 border-0"
+          className={`absolute inset-0 h-full w-full min-w-0 min-h-0 border-0 ${active ? "pointer-events-auto" : "pointer-events-none"}`}
           sandbox="allow-scripts allow-same-origin"
         />
+        {!active && (
+          <button
+            type="button"
+            onClick={handleOverlayClick}
+            className="absolute inset-0 z-10 cursor-pointer bg-transparent"
+            aria-label={`Activate ${name} preview`}
+          />
+        )}
       </div>
 
       <div className="space-y-3">
