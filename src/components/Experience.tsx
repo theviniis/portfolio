@@ -80,7 +80,7 @@ const Experience = () => {
           ))}
         </ul>
         {experiences.length > ITEMS_PER_PAGE && (
-          <li className="flex justify-center mt-6">
+          <div className="flex justify-center mt-6">
             <Button
               variant="ghost"
               size="sm"
@@ -93,7 +93,7 @@ const Experience = () => {
                 className={`transition-transform motion-reduce:transition-none ${expanded ? "rotate-180" : ""}`}
               />
             </Button>
-          </li>
+          </div>
         )}
       </div>
     </Section>
