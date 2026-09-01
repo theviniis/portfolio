@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Section } from "./ui/Section";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -14,11 +15,11 @@ import { LoadingButton } from "./ui/loading-button";
 import { Button } from "./ui/button";
 
 import cvUrl from "../assets/vinicius_costa_cv.docx?url";
-import contactData from "../data/contact.json";
 
 const ContactForm = () => {
+  const { t } = useTranslation();
   const form = useForm({
-    resolver: zodResolver(sendContactSchema),
+    resolver: zodResolver(sendContactSchema(t)),
     defaultValues: {
       name: "",
       email: "",
@@ -31,7 +32,7 @@ const ContactForm = () => {
     <form
       className="space-y-8"
       id="contact-form"
-      onSubmit={form.handleSubmit(sendContactEmail)}
+      onSubmit={form.handleSubmit((data) => sendContactEmail(data, t))}
     >
       <div>
         <input
@@ -47,7 +48,7 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel>{contactData.formFields.name}</FieldLabel>
+                <FieldLabel>{t('contact.formFields.name')}</FieldLabel>
                 <Input {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
@@ -61,7 +62,7 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel>{contactData.formFields.subject}</FieldLabel>
+                <FieldLabel>{t('contact.formFields.subject')}</FieldLabel>
                 <Input {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
@@ -75,7 +76,7 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel>{contactData.formFields.email}</FieldLabel>
+                <FieldLabel>{t('contact.formFields.email')}</FieldLabel>
                 <Input {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
@@ -89,7 +90,7 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel>{contactData.formFields.message}</FieldLabel>
+                <FieldLabel>{t('contact.formFields.message')}</FieldLabel>
                 <Textarea {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
@@ -106,7 +107,7 @@ const ContactForm = () => {
           size="lg"
           isLoading={form.formState.isSubmitting}
         >
-          {contactData.sendButton}
+          {t('contact.sendButton')}
         </LoadingButton>
       </div>
     </form>
@@ -114,25 +115,27 @@ const ContactForm = () => {
 };
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <Section id="contact">
       <div className="space-y-4">
-        <h2>{contactData.title}</h2>
+        <h2>{t('contact.title')}</h2>
         <div>
           <p>
-            {contactData.emailLabel}{" "}
+            {t('contact.emailLabel')}{" "}
             <Button className="p-0 text-base" variant="link" asChild>
-              <a href={`mailto:${contactData.email}`}>
-                {contactData.email}
+              <a href={`mailto:${t('contact.email')}`}>
+                {t('contact.email')}
               </a>
             </Button>
           </p>
 
           <p>
-            {contactData.cvLabel}{" "}
+            {t('contact.cvLabel')}{" "}
             <Button className="p-0 text-base" variant="link" asChild>
               <a href={cvUrl} download="vinicius_costa_cv.docx">
-                {contactData.cvLink}
+                {t('contact.cvLink')}
               </a>
             </Button>
           </p>

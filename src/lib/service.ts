@@ -4,19 +4,22 @@ import { toast } from "sonner";
 
 const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT;
 
-export const sendContactEmail = async (data: SendContactSchemaType) => {
+export const sendContactEmail = async (
+  data: SendContactSchemaType,
+  t: (key: string) => string,
+) => {
   try {
     const response = await axios.post(FORMSPREE_ENDPOINT, data);
 
     if (response.status !== 200) {
-      throw new Error("Falha ao enviar o formulário");
+      throw new Error(t("toast.sendFail"));
     }
 
-    toast.success("Email encaminhado com sucesso", {
+    toast.success(t("toast.sendSuccess"), {
       position: "bottom-right",
     });
   } catch {
-    toast.error("Não foi possível enviar o email", {
+    toast.error(t("toast.sendError"), {
       position: "bottom-right",
     });
   }

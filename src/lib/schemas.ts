@@ -1,11 +1,14 @@
 import z from "zod";
 
-export const sendContactSchema = z.object({
-  name: z.string().min(3, "O nome precisa ter pelo menos 3 caractéres"),
-  email: z.email("O email precisa ser válido"),
-  subject: z.string().min(3, "O assunto precisa ter pelo menos 3 caractéres"),
-  message: z.string().min(5, "A mensagem precisa ter pelo menos 3 caractéres"),
-  _gotcha: z.string().optional(),
-});
+export const sendContactSchema = (t: (key: string) => string) =>
+  z.object({
+    name: z.string().min(3, t("validation.nameMin")),
+    email: z.email(t("validation.emailInvalid")),
+    subject: z.string().min(3, t("validation.subjectMin")),
+    message: z.string().min(5, t("validation.messageMin")),
+    _gotcha: z.string().optional(),
+  });
 
-export type SendContactSchemaType = z.infer<typeof sendContactSchema>;
+export type SendContactSchemaType = z.infer<
+  ReturnType<typeof sendContactSchema>
+>;
