@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, MousePointerClick } from "lucide-react";
 import { Badge } from "./ui/badge";
 
 type Project = {
@@ -52,9 +52,14 @@ const ProjectCard = ({
           <button
             type="button"
             onClick={handleOverlayClick}
-            className="absolute inset-0 z-10 cursor-pointer bg-transparent"
+            className="absolute inset-0 z-10 flex items-center justify-center cursor-pointer bg-background/60 backdrop-blur-[1px] transition-colors hover:bg-background/40"
             aria-label={`Activate ${name} preview`}
-          />
+          >
+            <div className="flex flex-col items-center gap-2 text-muted-foreground animate-pulse">
+              <MousePointerClick className="h-6 w-6" />
+              <span className="text-xs font-medium">Clique para interagir</span>
+            </div>
+          </button>
         )}
       </div>
 
