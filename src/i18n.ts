@@ -16,6 +16,12 @@ i18n
     fallbackLng: 'pt',
     interpolation: {
       escapeValue: false
+    },
+    detection: {
+      order: ['navigator', 'htmlTag'],
+      lookupQuerystring: 'lang',
+      caches: ['localStorage'],
+      convertDetectedLanguage: (lng: string) => lng.split('-')[0]
     }
   });
 
