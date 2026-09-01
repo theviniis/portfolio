@@ -1,6 +1,7 @@
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { Experience } from "./components/Experience";
+import { Projects } from "./components/Projects";
 import { Header } from "./components/Header";
 import { SkillsWrapper } from "./components/SkillsWrapper";
 import { Separator } from "./components/ui/separator";
@@ -22,6 +23,8 @@ function App() {
         <SkillsWrapper />
         <Separator />
         <Experience />
+        <Separator />
+        <Projects />
         <Separator />
         <Contact />
       </main>

@@ -4,6 +4,7 @@
       { "url": "#sobre", "name": "Sobre" },
       { "url": "#habilidades", "name": "Habilidades" },
       { "url": "#experiencia", "name": "Experiência" },
+      { "url": "#projetos", "name": "Projetos" },
       { "url": "#contato", "name": "Contato" }
     ]
   },
@@ -151,6 +152,55 @@
           "WordPress",
           "Figma"
         ]
+      }
+    ]
+  },
+  "projects": {
+    "id": "projetos",
+    "title": "Projetos",
+    "description": "Uma seleção de projetos que desenvolvi. Cada um tem uma pré-visualização ao vivo que você pode interagir.",
+    "list": [
+      {
+        "name": "Espaço Plannar",
+        "deployUrl": "https://theviniis.github.io/espaco-plannar/",
+        "githubUrl": "https://github.com/theviniis/espaco-plannar/",
+        "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3", "Git"],
+        "description": "Landing Page criada para cliente do Espaço Plannar"
+      },
+      {
+        "name": "Animais Fantásticos",
+        "deployUrl": "https://theviniis.github.io/animais-fantasticos/",
+        "githubUrl": "https://github.com/theviniis/animais-fantasticos",
+        "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],
+        "description": "Projeto construido no curso de JavaScript da Origamid"
+      },
+      {
+        "name": "Whatsapp Button",
+        "deployUrl": "https://theviniis.github.io/whatsapp-button/",
+        "githubUrl": "https://github.com/theviniis/whatsapp-button/",
+        "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],
+        "description": "Pequena interface pop-up de um chatbot do Whatsapp"
+      },
+      {
+        "name": "Wildbeast",
+        "deployUrl": "https://theviniis.github.io/wildbeast/",
+        "githubUrl": "https://github.com/theviniis/wildbeast/",
+        "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],
+        "description": "Projeto criado no curso CSS Grid Layout da Origamid"
+      },
+      {
+        "name": "FlexBlog",
+        "deployUrl": "https://theviniis.github.io/flexblog/",
+        "githubUrl": "https://github.com/theviniis/flexblog/",
+        "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],
+        "description": "Projeto criado no curso CSS Grid Layout da Origamid"
+      },
+      {
+        "name": "Bikcraft",
+        "deployUrl": "https://theviniis.github.io/bikcraft_clone/",
+        "githubUrl": "https://github.com/theviniis/bikcraft_clone/",
+        "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],
+        "description": "Projeto criado no curso WebDesign Completo Origamid"
       }
     ]
   },
