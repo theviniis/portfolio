@@ -6,9 +6,7 @@ import { Field, FieldError, FieldGroup, FieldLabel } from "./ui/field";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Separator } from "./ui/separator";
-import { ButtonGroup } from "./ui/button-group";
-import { LinkedInButton } from "./ui/linkedin-button";
-import { GitHubButton } from "./ui/github-button";
+import { SocialLinks } from "./ui/social-links";
 import { sendContactEmail } from "@/lib/service";
 import { sendContactSchema } from "@/lib/schemas";
 import { LoadingButton } from "./ui/loading-button";
@@ -147,10 +145,7 @@ const Contact = () => {
             </Button>
           </p>
         </div>
-        <ButtonGroup className="mt-8">
-          <LinkedInButton />
-          <GitHubButton />
-        </ButtonGroup>
+        <SocialLinks />
       </div>
       <ContactForm />
     </Section>

@@ -58,3 +58,10 @@ export interface ContactData {
     message: string;
   };
 }
+
+export interface SocialLinkItem {
+  url: string;
+  name: string;
+  ariaLabel: string;
+  iconName: string;
+}

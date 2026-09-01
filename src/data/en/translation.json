@@ -184,5 +184,19 @@
     "sendSuccess": "Email sent successfully",
     "sendError": "Could not send email",
     "sendFail": "Failed to send form"
-  }
+  },
+  "links": [
+    {
+      "url": "https://github.com/theviniis/",
+      "name": "GitHub",
+      "ariaLabel": "GitHub profile",
+      "iconName": "github"
+    },
+    {
+      "url": "https://www.linkedin.com/in/viniis/",
+      "name": "LinkedIn",
+      "ariaLabel": "LinkedIn profile",
+      "iconName": "linkedin"
+    }
+  ]
 }

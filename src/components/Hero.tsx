@@ -1,12 +1,9 @@
 import { Pointer } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "./ui/button";
-import { ButtonGroup } from "./ui/button-group";
-
 import profile from "../assets/profile.png";
 import { Section } from "./ui/Section";
-import { LinkedInButton } from "./ui/linkedin-button";
-import { GitHubButton } from "./ui/github-button";
+import { SocialLinks } from "./ui/social-links";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -37,10 +34,7 @@ const Hero = () => {
               </Button>
             </a>
           </Button>
-          <ButtonGroup>
-            <LinkedInButton />
-            <GitHubButton />
-          </ButtonGroup>
+          <SocialLinks />
         </div>
       </div>
       <div className="bg-secondary rounded-4xl overflow-hidden relative aspect-square lg:aspect-3/4">
