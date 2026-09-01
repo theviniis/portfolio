@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { ExternalLink, MousePointerClick } from "lucide-react";
+import { ExternalLink, MouseLeft } from "lucide-react";
 import { Badge } from "./ui/badge";
 
 type Project = {
@@ -58,7 +58,7 @@ const ProjectCard = ({
             aria-label={`Activate ${name} preview`}
           >
             <div className="flex flex-col items-center gap-2 text-muted-foreground">
-              <MousePointerClick className="h-6 w-6 animate-bounce motion-reduce:animate-none md:animate-none md:group-hover:animate-bounce" />
+              <MouseLeft className="h-6 w-6 animate-bounce motion-reduce:animate-none md:animate-none md:group-hover:animate-bounce" />
               <span className="text-xs font-medium">
                 {t("projects.clickToInteract")}
               </span>
@@ -70,7 +70,7 @@ const ProjectCard = ({
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <h3 className="text-h4">{name}</h3>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <a
               href={deployUrl}
               target="_blank"
