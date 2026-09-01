@@ -1,5 +1,6 @@
 import { useCallback, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import type { EmblaCarouselType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Section } from "./ui/Section";
@@ -18,22 +19,23 @@ const Projects = () => {
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
-  const onSelect = useCallback((emblaApi: any) => {
-    if (!emblaApi) return;
-    setCanScrollPrev(emblaApi.canScrollPrev());
-    setCanScrollNext(emblaApi.canScrollNext());
+  const onEmblaSelect = useCallback((api: EmblaCarouselType) => {
+    setCanScrollPrev(api.canScrollPrev());
+    setCanScrollNext(api.canScrollNext());
   }, []);
 
   useEffect(() => {
     if (!emblaApi) return;
-    onSelect(emblaApi);
-    emblaApi.on("reInit", onSelect);
-    emblaApi.on("select", onSelect);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+    emblaApi.on("reInit", onEmblaSelect);
+    emblaApi.on("select", onEmblaSelect);
     return () => {
-      emblaApi.off("reInit", onSelect);
-      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onEmblaSelect);
+      emblaApi.off("select", onEmblaSelect);
     };
-  }, [emblaApi, onSelect]);
+  }, [emblaApi, onEmblaSelect]);
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
