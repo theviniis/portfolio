@@ -6,8 +6,11 @@ import { SkillsWrapper } from "./components/SkillsWrapper";
 import { Separator } from "./components/ui/separator";
 import { Hero } from "@/components/Hero";
 import { Toaster } from "./components/ui/sonner";
+import { useDocumentLang } from "./hooks/useDocumentLang";
 
 function App() {
+  useDocumentLang();
+
   return (
     <>
       <main className="bg-background">
