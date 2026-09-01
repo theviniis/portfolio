@@ -13,14 +13,17 @@ i18n
       'pt-BR': { translation: ptBR },
       'en-US': { translation: enUS }
     },
-    fallbackLng: 'pt-BR',
+    fallbackLng: 'en-US',
     interpolation: {
       escapeValue: false
     },
     detection: {
       order: ['navigator', 'htmlTag'],
       lookupQuerystring: 'lang',
-      caches: ['localStorage']
+      caches: ['localStorage'],
+      convertDetectedLanguage: (lng: string) => {
+        return lng.startsWith('pt') ? 'pt-BR' : 'en-US';
+      }
     }
   });
 
