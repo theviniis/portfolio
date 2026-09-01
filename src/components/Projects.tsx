@@ -13,7 +13,6 @@ const Projects = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: "start",
-    keyboard: true,
   });
 
   const [canScrollPrev, setCanScrollPrev] = useState(false);
