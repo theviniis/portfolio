@@ -159,6 +159,7 @@
     "id": "projects",
     "title": "Projects",
     "description": "A selection of projects I've built. Each one is a live preview you can interact with.",
+    "clickToInteract": "Click to interact",
     "list": [
       {
         "name": "Espaço Plannar",

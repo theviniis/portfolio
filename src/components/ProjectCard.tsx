@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { ExternalLink, MousePointerClick } from "lucide-react";
 import { Badge } from "./ui/badge";
 
@@ -17,6 +18,7 @@ const ProjectCard = ({
   skills,
   description,
 }: Project) => {
+  const { t } = useTranslation();
   const [active, setActive] = useState(false);
 
   const handleOverlayClick = useCallback(() => setActive(true), []);
@@ -57,7 +59,7 @@ const ProjectCard = ({
           >
             <div className="flex flex-col items-center gap-2 text-muted-foreground animate-pulse">
               <MousePointerClick className="h-6 w-6" />
-              <span className="text-xs font-medium">Clique para interagir</span>
+              <span className="text-xs font-medium">{t("projects.clickToInteract")}</span>
             </div>
           </button>
         )}
