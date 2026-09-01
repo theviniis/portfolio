@@ -19,7 +19,7 @@ const About = () => {
   const cv = CV_MAP[i18n.language] || CV_MAP['pt-BR'];
 
   return (
-    <Section id="about-me">
+    <Section id={t('about.id')}>
       <h2>{t('about.heading')}</h2>
       <div className="space-y-8">
         <div className="space-y-4">

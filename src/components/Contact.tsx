@@ -125,7 +125,7 @@ const Contact = () => {
   const cv = CV_MAP[i18n.language] || CV_MAP['pt-BR'];
 
   return (
-    <Section id="contact">
+    <Section id={t('contact.id')}>
       <div className="space-y-4">
         <h2>{t('contact.title')}</h2>
         <div>
