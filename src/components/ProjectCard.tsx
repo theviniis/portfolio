@@ -42,7 +42,7 @@ const ProjectCard = ({
 
   return (
     <div className="flex flex-col gap-4 min-w-0">
-      <div className="relative w-full aspect-[3/4] md:aspect-video overflow-hidden rounded-lg border bg-muted">
+      <div className="relative w-full aspect-3/4 md:aspect-video overflow-hidden rounded-lg border bg-muted">
         <iframe
           src={deployUrl}
           title={name}
@@ -59,7 +59,9 @@ const ProjectCard = ({
           >
             <div className="flex flex-col items-center gap-2 text-muted-foreground">
               <MousePointerClick className="h-6 w-6 animate-bounce motion-reduce:animate-none md:animate-none md:group-hover:animate-bounce" />
-              <span className="text-xs font-medium">{t("projects.clickToInteract")}</span>
+              <span className="text-xs font-medium">
+                {t("projects.clickToInteract")}
+              </span>
             </div>
           </button>
         )}
