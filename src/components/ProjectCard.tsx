@@ -18,7 +18,7 @@ const ProjectCard = ({
 }: Project) => {
   return (
     <div className="flex flex-col gap-4 min-w-0">
-      <div className="relative w-full aspect-video overflow-hidden rounded-lg border bg-muted">
+      <div className="relative w-full aspect-[9/16] md:aspect-video overflow-hidden rounded-lg border bg-muted">
         <iframe
           src={deployUrl}
           title={name}
