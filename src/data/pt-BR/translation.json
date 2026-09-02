@@ -172,7 +172,14 @@
           "React Hook Form",
           "Zod"
         ],
-        "description": "Rede social para cachorros!"
+        "description": "Rede social para cachorros"
+      },
+      {
+        "name": "Swars",
+        "deployUrl": "swars-wine.vercel.app",
+        "githubUrl": "https://github.com/theviniis/swars",
+        "skills": ["React", "JavaScript", "SCSS", "API Rest"],
+        "description": "Rede social do Star Wars"
       },
       {
         "name": "Espaço Plannar",

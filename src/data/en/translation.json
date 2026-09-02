@@ -175,6 +175,13 @@
         "description": "Social network for dogs"
       },
       {
+        "name": "Swars",
+        "deployUrl": "swars-wine.vercel.app",
+        "githubUrl": "https://github.com/theviniis/swars",
+        "skills": ["React", "JavaScript", "SCSS", "API Rest"],
+        "description": "Star Wars social network"
+      },
+      {
         "name": "Espaço Plannar",
         "deployUrl": "https://theviniis.github.io/espaco-plannar/",
         "githubUrl": "https://github.com/theviniis/espaco-plannar/",
