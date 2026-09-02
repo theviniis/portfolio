@@ -1,0 +1,42 @@
+{
+  "pt": [
+    {
+      "url": "https://github.com/theviniis/",
+      "name": "GitHub",
+      "ariaLabel": "Perfil no GitHub",
+      "iconName": "github"
+    },
+    {
+      "url": "https://www.linkedin.com/in/viniis/",
+      "name": "LinkedIn",
+      "ariaLabel": "Perfil no LinkedIn",
+      "iconName": "linkedin"
+    },
+    {
+      "url": "https://wa.me/+5511987372296?text=Ol%C3%A1!%20Estou%20precisando%20de%20um%20desenvolvedor%20front-end!",
+      "name": "Whatsapp",
+      "ariaLabel": "Perdil no Whatsapp",
+      "iconName": "whatsapp"
+    }
+  ],
+  "en": [
+    {
+      "url": "https://github.com/theviniis/",
+      "name": "GitHub",
+      "ariaLabel": "GitHub profile",
+      "iconName": "github"
+    },
+    {
+      "url": "https://www.linkedin.com/in/viniis/",
+      "name": "LinkedIn",
+      "ariaLabel": "LinkedIn profile",
+      "iconName": "linkedin"
+    },
+    {
+      "url": "https://wa.me/+5511987372296?text=Hello!%20I'm%20looking%20for%20a%20front-end%20developer!",
+      "name": "Whatsapp",
+      "ariaLabel": "Whatsapp profile",
+      "iconName": "whatsapp"
+    }
+  ]
+}
