@@ -162,6 +162,19 @@
     "clickToInteract": "Clique para interagir",
     "list": [
       {
+        "name": "Dogs",
+        "deployUrl": "https://dogs-liard-three.vercel.app/",
+        "githubUrl": "https://github.com/theviniis/dogs",
+        "skills": [
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "React Hook Form",
+          "Zod"
+        ],
+        "description": "Rede social para cachorros!"
+      },
+      {
         "name": "Espaço Plannar",
         "deployUrl": "https://theviniis.github.io/espaco-plannar/",
         "githubUrl": "https://github.com/theviniis/espaco-plannar/",
