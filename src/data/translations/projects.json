@@ -22,9 +22,9 @@
         },
         {
           "name": "Swars",
-          "deployUrl": "swars-wine.vercel.app",
+          "deployUrl": "https://swars-wine.vercel.app/",
           "githubUrl": "https://github.com/theviniis/swars",
-          "skills": ["React", "JavaScript", "SCSS", "API Rest"],
+          "skills": ["React", "JavaScript", "SCSS", "REST API"],
           "description": "Rede social do Star Wars"
         },
         {
@@ -60,7 +60,7 @@
           "deployUrl": "https://theviniis.github.io/flexblog/",
           "githubUrl": "https://github.com/theviniis/flexblog/",
           "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],
-          "description": "Projeto criado no curso CSS Grid Layout da Origamid"
+          "description": "Projeto criado no curso CSS Flexbox da Origamid"
         },
         {
           "name": "Bikcraft",
@@ -95,9 +95,9 @@
         },
         {
           "name": "Swars",
-          "deployUrl": "swars-wine.vercel.app",
+          "deployUrl": "https://swars-wine.vercel.app/",
           "githubUrl": "https://github.com/theviniis/swars",
-          "skills": ["React", "JavaScript", "SCSS", "API Rest"],
+          "skills": ["React", "JavaScript", "SCSS", "REST API"],
           "description": "Star Wars social network"
         },
         {
@@ -105,7 +105,7 @@
           "deployUrl": "https://theviniis.github.io/espaco-plannar/",
           "githubUrl": "https://github.com/theviniis/espaco-plannar/",
           "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],
-          "description": "Landing Page created Espaço Plannar clients"
+          "description": "Landing Page created for Espaço Plannar clients"
         },
         {
           "name": "Animais Fantásticos",
