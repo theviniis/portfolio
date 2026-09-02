@@ -175,6 +175,13 @@
         "description": "Rede social para cachorros"
       },
       {
+        "name": "Tibia Tools",
+        "deployUrl": "https://tibia-tools-amber.vercel.app/",
+        "githubUrl": "https://github.com/theviniis/tibia-tools",
+        "skills": ["Next.js", "TypeScript", "Tailwind CSS"],
+        "description": "Plataforma para realizar o calculo de speed no Tibia"
+      },
+      {
         "name": "Swars",
         "deployUrl": "swars-wine.vercel.app",
         "githubUrl": "https://github.com/theviniis/swars",

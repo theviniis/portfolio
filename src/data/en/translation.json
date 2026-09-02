@@ -175,6 +175,13 @@
         "description": "Social network for dogs"
       },
       {
+        "name": "Tibia Tools",
+        "deployUrl": "https://tibia-tools-amber.vercel.app/",
+        "githubUrl": "https://github.com/theviniis/tibia-tools",
+        "skills": ["Next.js", "TypeScript", "Tailwind CSS"],
+        "description": "Platform for calculating Tibia speed"
+      },
+      {
         "name": "Swars",
         "deployUrl": "swars-wine.vercel.app",
         "githubUrl": "https://github.com/theviniis/swars",
