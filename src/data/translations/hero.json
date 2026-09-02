@@ -1,0 +1,24 @@
+{
+  "pt": {
+    "hero": {
+      "greeting": "Olá, me chamo",
+      "name": "Vinícius Costa.",
+      "location": "Rio Grande, RS",
+      "descriptionPrefix": "Sou desenvolvedor front-end localizado em ",
+      "descriptionSuffix": "Tenho experiência com desenvolvimento de aplicações web.",
+      "cta": "Entre em contato",
+      "alt": "Imagem de perfil"
+    }
+  },
+  "en": {
+    "hero": {
+      "greeting": "Hello, I'm",
+      "name": "Vinícius Costa.",
+      "location": "Rio Grande, RS - Brasil",
+      "descriptionPrefix": "I'm a front-end developer based in ",
+      "descriptionSuffix": "I have experience building web applications.",
+      "cta": "Get in touch",
+      "alt": "Profile picture"
+    }
+  }
+}
