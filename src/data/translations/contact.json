@@ -1,0 +1,36 @@
+{
+  "pt": {
+    "contact": {
+      "id": "contato",
+      "title": "Contato",
+      "emailLabel": "Entre em contato através do email",
+      "email": "vinicius.dsc95@gmail.com",
+      "cvLabel": "Para mais informações, baixe o meu",
+      "cvLink": "currículo",
+      "sendButton": "Enviar",
+      "formFields": {
+        "name": "Nome",
+        "subject": "Assunto",
+        "email": "Email",
+        "message": "Mensagem"
+      }
+    }
+  },
+  "en": {
+    "contact": {
+      "id": "contact",
+      "title": "Let's connect",
+      "emailLabel": "Get in touch via my email",
+      "email": "vinicius.dsc95@gmail.com",
+      "cvLabel": "For more information, download my",
+      "cvLink": "resume",
+      "sendButton": "Send",
+      "formFields": {
+        "name": "Name",
+        "subject": "Subject",
+        "email": "Email",
+        "message": "Message"
+      }
+    }
+  }
+}
