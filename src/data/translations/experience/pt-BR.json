@@ -6,16 +6,15 @@
     "showLess": "Ver menos",
     "experiences": [
       {
-        "role": "Desenvolvedor de front-end",
+        "role": "Desenvolvedor Frontend Pleno",
         "company": "Sympla",
         "period": { "start": "nov/2025", "end": "jun/2026" },
         "responsibilities": [
-          "Desenvolvi e mantive aplicações da plataforma de ingressos utilizando React, Next.js e TypeScript, com foco em performance, tipagem e experiência na jornada de compra.",
-          "Implementei tracking de analytics com Mixpanel em 5 aplicações, estruturando 100+ eventos para análise do comportamento dos usuários e acompanhamento da jornada de compra, contribuindo para um aumento de 400% no uso da plataforma.",
-          "Conduzi a migração arquitetural do banco de dados analítico do AWS Redshift para o AWS Athena, criando scripts de equiparação de dados e controlando o rollout via feature flags, reduzindo significativamente os custos de infraestrutura.",
-          "Desenvolvi um sistema de notificações push customizadas integrando o SDK da Braze com Service Workers, gerenciando as lógicas de background e foreground, com confiabilidade garantida por testes unitários no Jest.",
-          "Estruturei a publicação de pacotes npm privados no GitLab Registry, criando um fluxo que viabilizou o reúso eficiente de bibliotecas de código (como a lib de analytics) entre múltiplas aplicações.",
-          "Documentei processos técnicos relacionados ao gerenciamento de URLs e variáveis de ambiente utilizando Markdown e incorporei ferramentas de inteligência artificial, como GitHub Copilot e Claude, ao fluxo de desenvolvimento."
+          "Liderei o desenvolvimento e a manutenção da plataforma de ingressos com React, Next.js e TypeScript, otimizando a performance e a experiência do usuário na jornada de compra.",
+          "Estruturei o tracking de analytics via Mixpanel em 5 aplicações, mapeando 100+ eventos para análise de comportamento, o que impulsionou o uso da plataforma em 400%.",
+          "Gerenciei a migração arquitetural do AWS Redshift para o AWS Athena, reduzindo custos de infraestrutura através de scripts de equiparação e controle de rollout via feature flags.",
+          "Desenvolvi um sistema de notificações push customizadas com Braze SDK e Service Workers, garantindo alta confiabilidade por meio de testes unitários com Jest.",
+          "Padronizei o fluxo de publicação de pacotes npm privados no GitLab Registry, promovendo a reutilização eficiente de bibliotecas e acelerando o desenvolvimento entre times."
         ],
         "skills": [
           "React",
@@ -36,10 +35,10 @@
         "company": "InfoPrice",
         "period": { "start": "jun/2023", "end": "out/2025" },
         "responsibilities": [
-          "Desenvolvi e mantive o front-end de uma plataforma SaaS B2B de precificação utilizada por mais de 27.000 lojas, utilizando React, TypeScript e Redux para gerenciamento de estado global.",
-          "Desenvolvi e evoluí componentes do Design System utilizando SASS e LESS, promovendo consistência visual e reutilização de código.",
-          "Implementei testes automatizados com Jest e React Testing Library, cobrindo cenários críticos de negócio e aumentando a confiabilidade das entregas.",
-          "Integrei aplicações front-end a serviços de back-end por meio de APIs REST, participando das decisões relacionadas à arquitetura e aos contratos de comunicação entre os serviços."
+          "Liderei a evolução do front-end de uma plataforma SaaS B2B de precificação para 27.000 lojas, utilizando React, TypeScript e Redux para garantir escalabilidade e performance.",
+          "Otimizei o ciclo de desenvolvimento em 30% ao padronizar componentes no Design System com SASS e LESS, assegurando consistência visual e alta reutilização de código.",
+          "Mitiguei 40% dos bugs em produção ao implementar testes automatizados com Jest e React Testing Library, alcançando 80% de cobertura em fluxos críticos de negócio.",
+          "Orquestrei a integração de aplicações front-end com APIs REST, atuando ativamente na definição de arquitetura e contratos de comunicação entre serviços."
         ],
         "skills": [
           "React",
@@ -56,11 +55,10 @@
         "company": "Bornlogic",
         "period": { "start": "ago/2022", "end": "jan/2023" },
         "responsibilities": [
-          "Estruturei o Design System da empresa utilizando Storybook e MDX, estabelecendo um ambiente para desenvolvimento, documentação e reúso de componentes.",
-          "Desenvolvi componentes de interface escaláveis, responsivos e acessíveis utilizando React e TypeScript, com estilos encapsulados por Styled-components.",
-          "Implementei testes automatizados com Jest e React Testing Library, cobrindo comportamentos críticos dos componentes e reduzindo regressões nas entregas.",
-          "Atuei em revisões de código por meio de Pull Requests, contribuindo para a padronização técnica e qualidade do código.",
-          "Mantive a documentação técnica relacionada ao Sistema de Gestão da Qualidade (SGQ), garantindo a conformidade dos processos de desenvolvimento."
+          "Liderei a estruturação do Design System com Storybook e MDX, otimizando a produtividade do time através da criação de 50+ componentes reutilizáveis e reduzindo o tempo de desenvolvimento em 30%.",
+          "Arquitetei interfaces escaláveis, responsivas e acessíveis com React, TypeScript e Styled-components, mitigando em 40% o retrabalho por inconsistências visuais através da padronização técnica.",
+          "Assegurei a qualidade e estabilidade do produto em um time ágil de 5 desenvolvedores, implementando testes automatizados com Jest e React Testing Library e conduzindo revisões críticas de código.",
+          "Gerenciei a documentação técnica do Sistema de Gestão da Qualidade (SGQ), garantindo a conformidade dos processos e a excelência na entrega de software."
         ],
         "skills": [
           "React",
