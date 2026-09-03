@@ -1,0 +1,17 @@
+{
+  "contact": {
+    "id": "contact",
+    "title": "Let's connect",
+    "emailLabel": "Get in touch via my email",
+    "email": "vinicius.dsc95@gmail.com",
+    "cvLabel": "For more information, download my",
+    "cvLink": "resume",
+    "sendButton": "Send",
+    "formFields": {
+      "name": "Name",
+      "subject": "Subject",
+      "email": "Email",
+      "message": "Message"
+    }
+  }
+}

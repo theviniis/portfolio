@@ -1,0 +1,17 @@
+{
+  "contact": {
+    "id": "contato",
+    "title": "Contato",
+    "emailLabel": "Entre em contato através do email",
+    "email": "vinicius.dsc95@gmail.com",
+    "cvLabel": "Para mais informações, baixe o meu",
+    "cvLink": "currículo",
+    "sendButton": "Enviar",
+    "formFields": {
+      "name": "Nome",
+      "subject": "Assunto",
+      "email": "Email",
+      "message": "Mensagem"
+    }
+  }
+}
