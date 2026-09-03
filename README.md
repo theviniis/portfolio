@@ -23,6 +23,17 @@ Personal portfolio website built with React, TypeScript, Vite, and Tailwind CSS.
 - SEO optimized
 - Automatic language detection (pt-BR / en-US)
 
+## Adding a New Social Link
+
+1. Add the SVG icon to `src/assets/social/` using kebab-case naming (e.g., `twitter.svg`)
+2. Add the link data to `src/data/translations/links/en-US.json`:
+   ```json
+   { "url": "https://...", "name": "Twitter", "ariaLabel": "Twitter profile", "iconName": "twitter" }
+   ```
+3. Add the same entry to `src/data/translations/links/pt-BR.json`
+
+The `iconName` must match the SVG filename converted to camelCase (e.g., `git-hub.svg` → `gitHub`).
+
 ## Internationalization (i18n)
 
 The portfolio supports two languages with automatic detection based on browser settings:

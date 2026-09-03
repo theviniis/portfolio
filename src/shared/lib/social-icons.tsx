@@ -1,13 +1,21 @@
-import GitHub from "@/assets/github.svg?react";
-import LinkedIn from "@/assets/linkedin.svg?react";
-import Whatsapp from "@/assets/whatsapp.svg?react";
+import type { ComponentType } from "react";
 
-export type SocialIcon = "github" | "linkedin" | "whatsapp";
+type Component = ComponentType<{ className?: string }>;
 
-type Component = React.ComponentType<{ className?: string }>;
+function kebabToCamel(str: string): string {
+  return str.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+}
 
-export const socialIconMap: Record<SocialIcon, Component> = {
-  github: GitHub,
-  linkedin: LinkedIn,
-  whatsapp: Whatsapp,
-};
+const iconModules = import.meta.glob(
+  "/src/assets/social/*.svg",
+  { query: "?react", eager: true }
+);
+
+export const socialIconMap: Record<string, Component> = Object.fromEntries(
+  Object.entries(iconModules).map(([path, mod]) => {
+    const name = path.match(/\/([^/]+)\.svg/)?.[1] ?? path;
+    return [kebabToCamel(name), (mod as { default: Component }).default];
+  })
+);
+
+export type SocialIcon = keyof typeof socialIconMap;
