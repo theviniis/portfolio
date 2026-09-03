@@ -1,10 +1,10 @@
-import { useTranslation } from "react-i18next";
-import { Section } from "@/shared/ui/Section";
-import { Button } from "@/shared/ui/button";
-import { SkillList } from "@/shared/components/SkillList";
+import { useTranslation } from 'react-i18next'
+import { Section } from '@/shared/ui/Section'
+import { Button } from '@/shared/ui/button'
+import { SkillList } from '@/shared/components/SkillList'
 
 const SkillsWrapper = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <Section id={t('skills.id')}>
@@ -16,16 +16,16 @@ const SkillsWrapper = () => {
           renderItem={(skill, variant) => (
             <Button
               variant={variant}
-              className="pointer-events-none"
+              className="pointer-events-none flex-1"
               asChild
             >
-              <li className="flex-1">{skill}</li>
+              <span>{skill}</span>
             </Button>
           )}
         />
       </div>
     </Section>
-  );
-};
+  )
+}
 
-export { SkillsWrapper };
+export { SkillsWrapper }
