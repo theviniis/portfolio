@@ -7,8 +7,8 @@ Personal portfolio website built with React, TypeScript, Vite, and Tailwind CSS.
 - **Framework**: React 19 with TypeScript
 - **Build Tool**: Vite 8
 - **Styling**: Tailwind CSS 4
-- **UI Components**: Radix UI + shadcn/ui
-- **Forms**: React Hook Form + Zod
+- **UI Components**: Radix UI + shadcn/ui (in `src/shared/ui/`)
+- **Forms**: React Hook Form + Zod (schemas in `src/shared/lib/schemas.ts`)
 - **Icons**: Lucide React
 - **Theme**: next-themes (dark/light mode)
 - **Internationalization**: react-i18next with automatic language detection
@@ -22,17 +22,17 @@ Personal portfolio website built with React, TypeScript, Vite, and Tailwind CSS.
 - Downloadable CV (different versions for pt-BR and en-US)
 - SEO optimized
 - Automatic language detection (pt-BR / en-US)
+- Code-split bundle with lazy-loaded sections
 
 ## Adding a New Social Link
 
-1. Add the SVG icon to `src/assets/social/` using kebab-case naming (e.g., `twitter.svg`)
-2. Add the link data to `src/data/translations/links/en-US.json`:
+1. Add the SVG icon to `src/assets/` using kebab-case naming (e.g., `twitter.svg`)
+2. Import it in `src/shared/lib/social-icons.tsx` and add to the icon map
+3. Add the link data to `src/data/translations/links/en-US.json`:
    ```json
    { "url": "https://...", "name": "Twitter", "ariaLabel": "Twitter profile", "iconName": "twitter" }
    ```
-3. Add the same entry to `src/data/translations/links/pt-BR.json`
-
-The `iconName` must match the SVG filename converted to camelCase (e.g., `git-hub.svg` → `gitHub`).
+4. Add the same entry to `src/data/translations/links/pt-BR.json`
 
 ## Internationalization (i18n)
 
@@ -44,43 +44,53 @@ The portfolio supports two languages with automatic detection based on browser s
 ### How it works
 
 - Uses `i18next-browser-languagedetector` to detect browser language
-- Translation files are in `src/data/pt-BR/` and `src/data/en/`
+- Translation files are per-section in `src/data/translations/{section}/{pt-BR,en-US}.json`
+- Only `header` and `links` translations are loaded eagerly; all others load on demand
 - All components use the `useTranslation` hook
 - CV downloads are language-specific
 - SEO meta tags update dynamically
 
+### Adding a new section
+
+1. Create `src/data/translations/{section}/pt-BR.json` and `en-US.json`
+2. Create `src/features/{section}/i18n.ts` with a `mount*Translations()` function
+3. Register translations in that function using `i18n.addResourceBundle()`
+
 ### Adding a new language
 
-1. Create a new folder in `src/data/` (e.g., `es/`)
-2. Add `translation.json` with the same structure as existing files
-3. Update `src/i18n.ts` to include the new language
-4. Update `src/hooks/useDocumentLang.ts` with SEO data
+1. Add `{locale}.json` files in each existing section folder under `src/data/translations/`
+2. Register the new locale in `src/i18n.ts` via the `i18next` init options
 
 ## Project Structure
 
 ```
 src/
-├── components/
-│   ├── ui/           # Reusable UI components (shadcn/ui)
-│   ├── Hero.tsx      # Landing section
-│   ├── About.tsx     # About me section
-│   ├── Experience.tsx # Work experience
-│   ├── SkillsWrapper.tsx # Skills showcase
-│   ├── Contact.tsx   # Contact form
-│   ├── Header.tsx    # Navigation header
-│   └── Logo.tsx      # Logo component
+├── features/
+│   ├── header/        # Navigation header + Logo
+│   ├── hero/          # Landing section
+│   ├── about/         # About me section
+│   ├── skills/        # Skills showcase
+│   ├── experience/    # Work experience
+│   ├── projects/      # Project cards (lazy-loaded)
+│   └── contact/       # Contact form (lazy-loaded)
+├── shared/
+│   ├── components/    # CtaButton, SkillList, SectionHeader, HorizontalCarousel, SectionLoading
+│   ├── hooks/         # useDocumentMeta, useBodyScrollLock, useClickOutsideEscape, useCarouselScroll
+│   ├── lib/           # utils, schemas, service, cv, social-icons
+│   ├── ui/            # shadcn/ui primitives (button, skeleton, input, etc.)
+│   └── types.ts
 ├── data/
-│   ├── pt-BR/        # Portuguese translations
-│   └── en/           # English translations
-├── hooks/
-│   └── useDocumentLang.ts  # Dynamic language updates
-├── assets/           # Images, icons, CV files
-├── css/              # Global styles
-├── lib/              # Utility functions
-├── i18n.ts           # i18next configuration
-├── App.tsx           # Main app component
-└── main.tsx          # Entry point
+│   └── translations/  # {section}/{pt-BR,en-US}.json
+├── assets/            # Images, icons, CV files
+├── css/               # Global styles
+├── i18n.ts            # i18next init (header + links only)
+├── App.tsx            # Lazy loading with React.lazy + Suspense
+└── main.tsx           # Entry point
 ```
+
+## Lazy Loading
+
+Heavy sections (`Projects` and `Contact`) are lazy-loaded via `React.lazy()`. Translations for lazy sections load on demand when the chunk mounts, keeping the initial bundle small.
 
 ## Getting Started
 
@@ -106,6 +116,9 @@ pnpm preview
 
 # Run linting
 pnpm lint
+
+# Type check
+pnpm exec tsc --noEmit -p tsconfig.app.json
 ```
 
 ## License
