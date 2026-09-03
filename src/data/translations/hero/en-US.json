@@ -1,0 +1,11 @@
+{
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Vinícius Costa.",
+    "location": "Rio Grande, RS - Brasil",
+    "descriptionPrefix": "I'm a front-end developer based in ",
+    "descriptionSuffix": "I have experience building web applications.",
+    "cta": "Get in touch",
+    "alt": "Profile picture"
+  }
+}
