@@ -1,7 +1,6 @@
 import { useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { ExternalLink, MouseLeft } from "lucide-react";
-import { Badge } from "@/shared/ui/badge";
 import { Button } from "@/shared/ui/button";
 import { SkillList } from "@/shared/components/SkillList";
 import { useClickOutsideEscape } from "@/shared/hooks/useClickOutsideEscape";

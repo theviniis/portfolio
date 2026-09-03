@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { ButtonGroup } from "./button-group";
 import { SocialLinkButton } from "./social-link-button";
-import type { SocialLinkItem } from "@/data/types";
+import type { SocialLinkItem } from "@/shared/types";
 
 const SocialLinks = () => {
   const { t } = useTranslation();

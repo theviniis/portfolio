@@ -1,16 +1,23 @@
-import { About } from "./components/About";
-import { Contact } from "./components/Contact";
-import { Experience } from "./components/Experience";
-import { Projects } from "./components/Projects";
-import { Header } from "./components/Header";
-import { SkillsWrapper } from "./components/SkillsWrapper";
+import { lazy, Suspense } from "react";
+import { Header } from "@/features/header";
+import { Hero } from "@/features/hero";
+import { About } from "@/features/about";
+import { SkillsWrapper } from "@/features/skills";
+import { Experience } from "@/features/experience";
 import { Separator } from "@/shared/ui/separator";
-import { Hero } from "@/components/Hero";
 import { Toaster } from "@/shared/ui/sonner";
-import { useDocumentLang } from "./hooks/useDocumentLang";
+import { SectionLoading } from "@/shared/components/SectionLoading";
+import { useDocumentMeta } from "@/shared/hooks/useDocumentMeta";
+
+const Projects = lazy(() =>
+  import("@/features/projects").then((m) => ({ default: m.Projects }))
+);
+const Contact = lazy(() =>
+  import("@/features/contact").then((m) => ({ default: m.Contact }))
+);
 
 function App() {
-  useDocumentLang();
+  useDocumentMeta();
 
   return (
     <>
@@ -24,9 +31,13 @@ function App() {
         <Separator />
         <Experience />
         <Separator />
-        <Projects />
+        <Suspense fallback={<SectionLoading variant="projects" />}>
+          <Projects />
+        </Suspense>
         <Separator />
-        <Contact />
+        <Suspense fallback={<SectionLoading variant="contact" />}>
+          <Contact />
+        </Suspense>
       </main>
       <Toaster />
     </>
