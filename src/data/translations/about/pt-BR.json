@@ -1,0 +1,15 @@
+{
+  "about": {
+    "id": "sobre",
+    "heading": "Sobre",
+    "title": "Desenvolvedor front-end com foco em JavaScript",
+    "paragraphs": [
+      "Sou Front-End Developer com experiência na construção e evolução de aplicações web escaláveis, acessíveis e de alta performance. Minha principal experiência está no ecossistema JavaScript, TypeScript, React e Next.js, atuando principalmente no desenvolvimento de produtos SaaS B2B.",
+      "Ao longo da minha carreira, trabalhei com React, TypeScript, Next.js, JavaScript, HTML, CSS, Design Systems, componentes reutilizáveis, REST APIs e automated testing, utilizando ferramentas como Jest e React Testing Library. Também tenho experiência com AWS, Mixpanel, Braze e Service Workers, além de práticas voltadas para performance, acessibilidade, qualidade de código e escalabilidade.",
+      "Gosto de participar de decisões técnicas e trabalhar em colaboração com equipes multidisciplinares, utilizando metodologias Agile/Scrum para transformar necessidades de negócio em soluções robustas e sustentáveis.",
+      "Tenho interesse constante em novas tecnologias e ferramentas que possam melhorar o processo de desenvolvimento, incluindo o uso de AI tools como GitHub Copilot e Claude no workflow de engenharia.",
+      "Atualmente, estou aberto a oportunidades em Front-End e Web Development, especialmente posições envolvendo React, TypeScript, Next.js, Node.js ou Vue.js. Busco desafios técnicos que permitam continuar evoluindo, contribuir com decisões de engenharia e gerar impacto real no produto e no negócio."
+    ],
+    "cvLabel": "Baixar currículo"
+  }
+}

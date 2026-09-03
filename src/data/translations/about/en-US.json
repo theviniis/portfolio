@@ -1,0 +1,15 @@
+{
+  "about": {
+    "id": "about-me",
+    "heading": "About",
+    "title": "Front-end developer focused on JavaScript",
+    "paragraphs": [
+      "I'm a Front-End Developer with experience building and evolving scalable, accessible, and high-performance web applications. My primary expertise is in the JavaScript, TypeScript, React, and Next.js ecosystem, with a strong focus on B2B SaaS products.",
+      "Throughout my career, I've worked with React, TypeScript, Next.js, JavaScript, HTML, CSS, Design Systems, reusable components, REST APIs, and automated testing, using tools such as Jest and React Testing Library. I also have hands-on experience with AWS, Mixpanel, Braze, and Service Workers, along with practices focused on performance, accessibility, code quality, and scalability.",
+      "I enjoy contributing to technical decisions and collaborating with cross-functional teams, using Agile/Scrum methodologies to turn business requirements into robust and maintainable solutions.",
+      "I'm always interested in exploring new technologies and tools that can improve the development process, including AI tools such as GitHub Copilot and Claude as part of my engineering workflow.",
+      "I'm currently open to opportunities in Front-End and Web Development, particularly roles involving React, TypeScript, Next.js, Node.js, or Vue.js. I'm looking for technical challenges that allow me to continue growing, contribute to engineering decisions, and create meaningful impact on products and businesses."
+    ],
+    "cvLabel": "Download resume"
+  }
+}
