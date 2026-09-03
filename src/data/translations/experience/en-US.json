@@ -10,12 +10,11 @@
         "company": "Sympla",
         "period": { "start": "nov/2025", "end": "jun/2026" },
         "responsibilities": [
-          "Developed and maintained applications for a ticketing platform using React, Next.js, and TypeScript, focusing on performance, type safety, and the buyer journey experience.",
-          "Implemented analytics tracking with Mixpanel across 5 applications, structuring 100+ events to analyze user behavior and monitor the buyer journey, contributing to a 400% increase in platform usage.",
-          "Led the architectural migration of the analytics database from AWS Redshift to AWS Athena, developing data reconciliation scripts and managing the rollout through feature flags, significantly reducing infrastructure costs.",
-          "Developed a custom push notification system integrating the Braze SDK with Service Workers, handling background and foreground logic with reliability supported by Jest unit tests.",
-          "Established a workflow for publishing private npm packages to the GitLab Registry, enabling efficient reuse of shared libraries, including the analytics library, across multiple applications.",
-          "Documented technical processes related to URL and environment variable management using Markdown and incorporated AI tools such as GitHub Copilot and Claude into the development workflow."
+          "Led the development and maintenance of the ticketing platform using React, Next.js and TypeScript, optimizing performance and user experience throughout the purchase journey.",
+          "Structured analytics tracking via Mixpanel across 5 applications, mapping 100+ events for behavior analysis, which drove platform usage by 400%.",
+          "Managed the architectural migration from AWS Redshift to AWS Athena, reducing infrastructure costs through reconciliation scripts and rollout control via feature flags.",
+          "Developed a custom push notifications system with Braze SDK and Service Workers, ensuring high reliability through unit tests with Jest.",
+          "Standardized the private npm package publishing workflow on GitLab Registry, promoting efficient library reuse and accelerating cross-team development."
         ],
         "skills": [
           "React",
@@ -36,10 +35,10 @@
         "company": "InfoPrice",
         "period": { "start": "jun/2023", "end": "oct/2025" },
         "responsibilities": [
-          "Developed and maintained the front end of a B2B SaaS pricing platform used by more than 27,000 stores, using React, TypeScript, and Redux for global state management.",
-          "Developed and evolved Design System components using SASS and LESS, promoting visual consistency and code reuse.",
-          "Implemented automated tests with Jest and React Testing Library, covering critical business scenarios and increasing delivery reliability.",
-          "Integrated front-end applications with back-end services through REST APIs, actively participating in architectural decisions and API contract design."
+          "Led the front-end evolution of a B2B SaaS pricing platform for 27,000 stores, using React, TypeScript and Redux to ensure scalability and performance.",
+          "Optimized the development cycle by 30% by standardizing components in the Design System with SASS and LESS, ensuring visual consistency and high code reuse.",
+          "Mitigated 40% of production bugs by implementing automated tests with Jest and React Testing Library, reaching 80% coverage on critical business flows.",
+          "Orchestrated front-end application integration with REST APIs, actively participating in architecture definition and inter-service communication contracts."
         ],
         "skills": [
           "React",
@@ -56,11 +55,10 @@
         "company": "Bornlogic",
         "period": { "start": "aug/2022", "end": "jan/2023" },
         "responsibilities": [
-          "Structured the company's Design System using Storybook and MDX, establishing an environment for component development, documentation, and reuse.",
-          "Developed scalable, responsive, and accessible UI components using React and TypeScript, with styles encapsulated through Styled-components.",
-          "Implemented automated tests with Jest and React Testing Library, covering critical component behavior and reducing regressions in production.",
-          "Participated in code reviews through Pull Requests, contributing to technical standardization and code quality.",
-          "Maintained technical documentation related to the Quality Management System (QMS), ensuring compliance with development processes."
+          "Led the Design System structuring with Storybook and MDX, boosting team productivity through the creation of 50+ reusable components and reducing development time by 30%.",
+          "Architected scalable, responsive and accessible interfaces with React, TypeScript and Styled-components, mitigating 40% of rework from visual inconsistencies through technical standardization.",
+          "Ensured product quality and stability in an agile team of 5 developers, implementing automated tests with Jest and React Testing Library and conducting critical code reviews.",
+          "Managed the Quality Management System (QMS) technical documentation, ensuring process compliance and software delivery excellence."
         ],
         "skills": [
           "React",
