@@ -1,0 +1,73 @@
+{
+  "projects": {
+    "id": "projetos",
+    "title": "Projetos",
+    "description": "Uma seleção de projetos que desenvolvi. Cada um tem uma pré-visualização ao vivo que você pode interagir.",
+    "clickToInteract": "Clique para interagir",
+    "list": [
+      {
+        "name": "Dogs",
+        "deployUrl": "https://dogs-liard-three.vercel.app/",
+        "githubUrl": "https://github.com/theviniis/dogs",
+        "skills": ["Next.js", "TypeScript", "Tailwind CSS", "React Hook Form", "Zod"],
+        "description": "Rede social para cachorros"
+      },
+      {
+        "name": "Tibia Tools",
+        "deployUrl": "https://tibia-tools-amber.vercel.app/",
+        "githubUrl": "https://github.com/theviniis/tibia-tools",
+        "skills": ["Next.js", "TypeScript", "Tailwind CSS"],
+        "description": "Plataforma para realizar o calculo de speed no Tibia"
+      },
+      {
+        "name": "Swars",
+        "deployUrl": "https://swars-wine.vercel.app/",
+        "githubUrl": "https://github.com/theviniis/swars",
+        "skills": ["React", "JavaScript", "SCSS", "REST API"],
+        "description": "Rede social do Star Wars"
+      },
+      {
+        "name": "Espaço Plannar",
+        "deployUrl": "https://theviniis.github.io/espaco-plannar/",
+        "githubUrl": "https://github.com/theviniis/espaco-plannar/",
+        "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3", "Git"],
+        "description": "Landing Page criada para cliente do Espaço Plannar"
+      },
+      {
+        "name": "Animais Fantásticos",
+        "deployUrl": "https://theviniis.github.io/animais-fantasticos/",
+        "githubUrl": "https://github.com/theviniis/animais-fantasticos",
+        "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],
+        "description": "Projeto construido no curso de JavaScript da Origamid"
+      },
+      {
+        "name": "Whatsapp Button",
+        "deployUrl": "https://theviniis.github.io/whatsapp-button/",
+        "githubUrl": "https://github.com/theviniis/whatsapp-button/",
+        "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],
+        "description": "Pequena interface pop-up de um chatbot do Whatsapp"
+      },
+      {
+        "name": "Wildbeast",
+        "deployUrl": "https://theviniis.github.io/wildbeast/",
+        "githubUrl": "https://github.com/theviniis/wildbeast/",
+        "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],
+        "description": "Projeto criado no curso CSS Grid Layout da Origamid"
+      },
+      {
+        "name": "FlexBlog",
+        "deployUrl": "https://theviniis.github.io/flexblog/",
+        "githubUrl": "https://github.com/theviniis/flexblog/",
+        "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],
+        "description": "Projeto criado no curso CSS Flexbox da Origamid"
+      },
+      {
+        "name": "Bikcraft",
+        "deployUrl": "https://theviniis.github.io/bikcraft_clone/",
+        "githubUrl": "https://github.com/theviniis/bikcraft_clone/",
+        "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],
+        "description": "Projeto criado no curso WebDesign Completo Origamid"
+      }
+    ]
+  }
+}
