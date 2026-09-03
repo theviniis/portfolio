@@ -1,15 +1,15 @@
-import { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/shared/ui/button";
-import { useCarouselScroll } from "@/shared/hooks/useCarouselScroll";
-import { cn } from "@/shared/lib/utils";
+import { useRef } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { Button } from '@/shared/ui/button'
+import { useCarouselScroll } from '@/shared/hooks/useCarouselScroll'
+import { cn } from '@/shared/lib/utils'
 
 interface HorizontalCarouselProps {
-  itemKeys: string[];
-  renderItem: (key: string) => React.ReactNode;
-  prevLabel: string;
-  nextLabel: string;
-  itemClassName?: string;
+  itemKeys: string[]
+  renderItem: (key: string) => React.ReactNode
+  prevLabel: string
+  nextLabel: string
+  itemClassName?: string
 }
 
 export function HorizontalCarousel({
@@ -17,11 +17,11 @@ export function HorizontalCarousel({
   renderItem,
   prevLabel,
   nextLabel,
-  itemClassName,
+  itemClassName
 }: HorizontalCarouselProps) {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null)
   const { canScrollPrev, canScrollNext, scrollPrev, scrollNext } =
-    useCarouselScroll(scrollRef as React.RefObject<HTMLDivElement>);
+    useCarouselScroll(scrollRef as React.RefObject<HTMLDivElement>)
 
   return (
     <div className="relative overflow-hidden">
@@ -32,7 +32,7 @@ export function HorizontalCarousel({
         {itemKeys.map((key) => (
           <div
             key={key}
-            className={cn("min-w-0 flex-none w-full snap-start", itemClassName)}
+            className={cn('min-w-0 flex-none w-full snap-start', itemClassName)}
           >
             {renderItem(key)}
           </div>
@@ -58,5 +58,5 @@ export function HorizontalCarousel({
         </Button>
       </div>
     </div>
-  );
+  )
 }

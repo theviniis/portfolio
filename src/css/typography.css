@@ -1,6 +1,6 @@
 @theme static {
-  --font-sans: "Manrope", sans-serif;
-  --font-display: "Bebas Neue", sans-serif;
+  --font-sans: 'Manrope', sans-serif;
+  --font-display: 'Bebas Neue', sans-serif;
 
   --vw-scale: calc(48.62px + 3.568vw);
 

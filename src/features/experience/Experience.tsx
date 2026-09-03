@@ -1,26 +1,26 @@
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { ChevronDown } from "lucide-react";
-import { Section } from "@/shared/ui/Section";
-import { Button } from "@/shared/ui/button";
-import { ExperienceItem } from "./ExperienceItem";
-import type { ExperienceType } from "./types";
+import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { ChevronDown } from 'lucide-react'
+import { Section } from '@/shared/ui/Section'
+import { Button } from '@/shared/ui/button'
+import { ExperienceItem } from './ExperienceItem'
+import type { ExperienceType } from './types'
 
-const ITEMS_PER_PAGE = 3;
+const ITEMS_PER_PAGE = 3
 
 const Experience = () => {
-  const { t } = useTranslation();
-  const [expanded, setExpanded] = useState(false);
-  const experiences = t("experience.experiences", {
-    returnObjects: true,
-  }) as ExperienceType[];
+  const { t } = useTranslation()
+  const [expanded, setExpanded] = useState(false)
+  const experiences = t('experience.experiences', {
+    returnObjects: true
+  }) as ExperienceType[]
   const visibleExperiences = expanded
     ? experiences
-    : experiences.slice(0, ITEMS_PER_PAGE);
+    : experiences.slice(0, ITEMS_PER_PAGE)
 
   return (
-    <Section id={t("experience.id")}>
-      <h2>{t("experience.title")}</h2>
+    <Section id={t('experience.id')}>
+      <h2>{t('experience.title')}</h2>
       <div>
         <ul className="space-y-6" id="experience-list">
           {visibleExperiences.map((item, index) => (
@@ -40,16 +40,16 @@ const Experience = () => {
               aria-controls="experience-list"
               onClick={() => setExpanded(!expanded)}
             >
-              {expanded ? t("experience.showLess") : t("experience.showMore")}
+              {expanded ? t('experience.showLess') : t('experience.showMore')}
               <ChevronDown
-                className={`transition-transform motion-reduce:transition-none ${expanded ? "rotate-180" : ""}`}
+                className={`transition-transform motion-reduce:transition-none ${expanded ? 'rotate-180' : ''}`}
               />
             </Button>
           </div>
         )}
       </div>
     </Section>
-  );
-};
+  )
+}
 
-export { Experience };
+export { Experience }

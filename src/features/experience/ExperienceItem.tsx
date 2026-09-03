@@ -1,9 +1,9 @@
-import { Separator } from "@/shared/ui/separator";
-import { SkillList } from "@/shared/components/SkillList";
-import type { ExperienceType } from "./types";
+import { Separator } from '@/shared/ui/separator'
+import { SkillList } from '@/shared/components/SkillList'
+import type { ExperienceType } from './types'
 
 interface ExperienceItemProps extends ExperienceType {
-  isLast: boolean;
+  isLast: boolean
 }
 
 export function ExperienceItem({
@@ -12,7 +12,7 @@ export function ExperienceItem({
   period,
   role,
   skills,
-  isLast,
+  isLast
 }: ExperienceItemProps) {
   return (
     <li className="space-y-4">
@@ -37,5 +37,5 @@ export function ExperienceItem({
       </ul>
       {!isLast && <Separator />}
     </li>
-  );
+  )
 }

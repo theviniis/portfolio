@@ -1,25 +1,25 @@
-import { useTranslation } from "react-i18next";
-import { Controller, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Field, FieldError, FieldGroup, FieldLabel } from "@/shared/ui/field";
-import { Input } from "@/shared/ui/input";
-import { Textarea } from "@/shared/ui/textarea";
-import { Separator } from "@/shared/ui/separator";
-import { sendContactEmail } from "@/shared/lib/service";
-import { sendContactSchema } from "@/shared/lib/schemas";
-import { LoadingButton } from "@/shared/ui/loading-button";
+import { useTranslation } from 'react-i18next'
+import { Controller, useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Field, FieldError, FieldGroup, FieldLabel } from '@/shared/ui/field'
+import { Input } from '@/shared/ui/input'
+import { Textarea } from '@/shared/ui/textarea'
+import { Separator } from '@/shared/ui/separator'
+import { sendContactEmail } from '@/shared/lib/service'
+import { sendContactSchema } from '@/shared/lib/schemas'
+import { LoadingButton } from '@/shared/ui/loading-button'
 
 const ContactForm = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   const form = useForm({
     resolver: zodResolver(sendContactSchema(t)),
     defaultValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
-  });
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    }
+  })
 
   return (
     <form
@@ -41,7 +41,9 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel htmlFor={field.name}>{t("contact.formFields.name")}</FieldLabel>
+                <FieldLabel htmlFor={field.name}>
+                  {t('contact.formFields.name')}
+                </FieldLabel>
                 <Input id={field.name} {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
@@ -55,7 +57,9 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel htmlFor={field.name}>{t("contact.formFields.subject")}</FieldLabel>
+                <FieldLabel htmlFor={field.name}>
+                  {t('contact.formFields.subject')}
+                </FieldLabel>
                 <Input id={field.name} {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
@@ -69,7 +73,9 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel htmlFor={field.name}>{t("contact.formFields.email")}</FieldLabel>
+                <FieldLabel htmlFor={field.name}>
+                  {t('contact.formFields.email')}
+                </FieldLabel>
                 <Input id={field.name} {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
@@ -83,7 +89,9 @@ const ContactForm = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <Field>
-                <FieldLabel htmlFor={field.name}>{t("contact.formFields.message")}</FieldLabel>
+                <FieldLabel htmlFor={field.name}>
+                  {t('contact.formFields.message')}
+                </FieldLabel>
                 <Textarea id={field.name} {...field} />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
@@ -100,11 +108,11 @@ const ContactForm = () => {
           size="lg"
           isLoading={form.formState.isSubmitting}
         >
-          {t("contact.sendButton")}
+          {t('contact.sendButton')}
         </LoadingButton>
       </div>
     </form>
-  );
-};
+  )
+}
 
-export { ContactForm };
+export { ContactForm }

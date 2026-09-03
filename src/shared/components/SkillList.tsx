@@ -1,24 +1,24 @@
-import type { ReactNode } from 'react';
-import { Badge } from '@/shared/ui/badge';
-import { cn } from '@/shared/lib/utils';
+import type { ReactNode } from 'react'
+import { Badge } from '@/shared/ui/badge'
+import { cn } from '@/shared/lib/utils'
 
 interface SkillListProps {
-  skills: string[];
-  primaryCount?: number;
-  renderItem?: (skill: string, variant: 'default' | 'outline') => ReactNode;
-  className?: string;
+  skills: string[]
+  primaryCount?: number
+  renderItem?: (skill: string, variant: 'default' | 'outline') => ReactNode
+  className?: string
 }
 
 export function SkillList({
   skills,
   primaryCount = 3,
   renderItem,
-  className,
+  className
 }: SkillListProps) {
   return (
     <ul className={cn('flex flex-wrap gap-2', className)}>
       {skills.map((skill, index) => {
-        const variant = index > primaryCount - 1 ? 'outline' : 'default';
+        const variant = index > primaryCount - 1 ? 'outline' : 'default'
         return (
           <li key={skill}>
             {renderItem ? (
@@ -27,8 +27,8 @@ export function SkillList({
               <Badge variant={variant}>{skill}</Badge>
             )}
           </li>
-        );
+        )
       })}
     </ul>
-  );
+  )
 }

@@ -1,13 +1,13 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import headerPt from '@/data/translations/header/pt-BR.json';
-import headerEn from '@/data/translations/header/en-US.json';
-import linksPt from '@/data/translations/links/pt-BR.json';
-import linksEn from '@/data/translations/links/en-US.json';
+import i18n from 'i18next'
+import { initReactI18next } from 'react-i18next'
+import LanguageDetector from 'i18next-browser-languagedetector'
+import headerPt from '@/data/translations/header/pt-BR.json'
+import headerEn from '@/data/translations/header/en-US.json'
+import linksPt from '@/data/translations/links/pt-BR.json'
+import linksEn from '@/data/translations/links/en-US.json'
 
-const headerAndLinksPt = { ...headerPt, links: linksPt.links };
-const headerAndLinksEn = { ...headerEn, links: linksEn.links };
+const headerAndLinksPt = { ...headerPt, links: linksPt.links }
+const headerAndLinksEn = { ...headerEn, links: linksEn.links }
 
 i18n
   .use(LanguageDetector)
@@ -15,7 +15,7 @@ i18n
   .init({
     resources: {
       'pt-BR': { translation: headerAndLinksPt },
-      'en-US': { translation: headerAndLinksEn },
+      'en-US': { translation: headerAndLinksEn }
     },
     fallbackLng: 'en-US',
     interpolation: {
@@ -26,9 +26,9 @@ i18n
       lookupQuerystring: 'lang',
       caches: ['localStorage'],
       convertDetectedLanguage: (lng: string) => {
-        return lng.startsWith('pt') ? 'pt-BR' : 'en-US';
+        return lng.startsWith('pt') ? 'pt-BR' : 'en-US'
       }
     }
-  });
+  })
 
-export default i18n;
+export default i18n

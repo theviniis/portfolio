@@ -1,7 +1,7 @@
-import { Skeleton } from '@/shared/ui/skeleton';
+import { Skeleton } from '@/shared/ui/skeleton'
 
 interface SectionLoadingProps {
-  variant: 'projects' | 'contact';
+  variant: 'projects' | 'contact'
 }
 
 export function SectionLoading({ variant }: SectionLoadingProps) {
@@ -24,5 +24,5 @@ export function SectionLoading({ variant }: SectionLoadingProps) {
         )}
       </div>
     </section>
-  );
+  )
 }

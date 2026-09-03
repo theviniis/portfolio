@@ -1,28 +1,28 @@
-import { useState, useCallback } from "react";
-import { useTranslation } from "react-i18next";
-import { ExternalLink, MouseLeft } from "lucide-react";
-import { Button } from "@/shared/ui/button";
-import { SkillList } from "@/shared/components/SkillList";
-import { useClickOutsideEscape } from "@/shared/hooks/useClickOutsideEscape";
-import type { Project } from "./types";
+import { useState, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
+import { ExternalLink, MouseLeft } from 'lucide-react'
+import { Button } from '@/shared/ui/button'
+import { SkillList } from '@/shared/components/SkillList'
+import { useClickOutsideEscape } from '@/shared/hooks/useClickOutsideEscape'
+import type { Project } from './types'
 
 const ProjectCard = ({
   name,
   deployUrl,
   githubUrl,
   skills,
-  description,
+  description
 }: Project) => {
-  const { t } = useTranslation();
-  const [active, setActive] = useState(false);
+  const { t } = useTranslation()
+  const [active, setActive] = useState(false)
 
-  const handleOverlayClick = useCallback(() => setActive(true), []);
+  const handleOverlayClick = useCallback(() => setActive(true), [])
 
   useClickOutsideEscape({
     active,
-    ignoreInside: "iframe",
-    onDismiss: () => setActive(false),
-  });
+    ignoreInside: 'iframe',
+    onDismiss: () => setActive(false)
+  })
 
   return (
     <div className="flex flex-col gap-4 min-w-0">
@@ -31,7 +31,7 @@ const ProjectCard = ({
           src={deployUrl}
           title={name}
           loading="lazy"
-          className={`absolute inset-0 h-full w-full min-w-0 min-h-0 border-0 ${active ? "pointer-events-auto" : "pointer-events-none"}`}
+          className={`absolute inset-0 h-full w-full min-w-0 min-h-0 border-0 ${active ? 'pointer-events-auto' : 'pointer-events-none'}`}
           sandbox="allow-scripts allow-same-origin"
         />
         {!active && (
@@ -44,7 +44,7 @@ const ProjectCard = ({
             <div className="flex flex-col items-center gap-2 text-muted-foreground">
               <MouseLeft className="h-6 w-6 animate-bounce motion-reduce:animate-none md:animate-none md:group-hover:animate-bounce" />
               <span className="text-xs font-medium">
-                {t("projects.clickToInteract")}
+                {t('projects.clickToInteract')}
               </span>
             </div>
           </button>
@@ -100,7 +100,7 @@ const ProjectCard = ({
         <SkillList skills={skills} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export { ProjectCard };
+export { ProjectCard }

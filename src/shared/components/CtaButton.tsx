@@ -1,12 +1,12 @@
-import { Button, type ButtonProps } from '@/shared/ui/button';
-import { cn } from '@/shared/lib/utils';
+import { Button, type ButtonProps } from '@/shared/ui/button'
+import { cn } from '@/shared/lib/utils'
 
 interface CtaButtonProps extends Omit<ButtonProps, 'size' | 'asChild'> {
-  label: string;
-  icon: React.ReactNode;
-  href?: string;
-  download?: string;
-  size?: 'default' | 'lg';
+  label: string
+  icon: React.ReactNode
+  href?: string
+  download?: string
+  size?: 'default' | 'lg'
 }
 
 export function CtaButton({
@@ -27,5 +27,5 @@ export function CtaButton({
         </Button>
       </a>
     </Button>
-  );
+  )
 }

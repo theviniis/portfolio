@@ -1,15 +1,15 @@
-import i18n from '@/i18n';
-import { Projects } from './Projects';
-import { mountProjectsTranslations } from './i18n';
+import i18n from '@/i18n'
+import { Projects } from './Projects'
+import { mountProjectsTranslations } from './i18n'
 
-let registered = false;
+let registered = false
 function setup() {
   if (!registered) {
-    mountProjectsTranslations(i18n);
-    registered = true;
+    mountProjectsTranslations(i18n)
+    registered = true
   }
 }
 
-setup();
+setup()
 
-export { Projects };
+export { Projects }

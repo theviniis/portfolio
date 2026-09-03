@@ -9,7 +9,13 @@
         "name": "Dogs",
         "deployUrl": "https://dogs-liard-three.vercel.app/",
         "githubUrl": "https://github.com/theviniis/dogs",
-        "skills": ["Next.js", "TypeScript", "Tailwind CSS", "React Hook Form", "Zod"],
+        "skills": [
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "React Hook Form",
+          "Zod"
+        ],
         "description": "Rede social para cachorros"
       },
       {
