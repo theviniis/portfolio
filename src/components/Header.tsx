@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Logo } from "./Logo";
-import { Button } from "./ui/button";
-import { HamburgerButton } from "./ui/hamburger-button";
+import { Button } from "@/shared/ui/button";
+import { HamburgerButton } from "@/shared/ui/hamburger-button";
 
 const Header = () => {
   const { t } = useTranslation();

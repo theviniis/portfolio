@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Section } from "./ui/Section";
-import { Button } from "./ui/button";
+import { Section } from "@/shared/ui/Section";
+import { Button } from "@/shared/ui/button";
 import { ProjectCard, type Project } from "./ProjectCard";
 
 const Projects = () => {

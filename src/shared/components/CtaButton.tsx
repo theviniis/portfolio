@@ -1,4 +1,4 @@
-import { Button, type ButtonProps } from '@/components/ui/button';
+import { Button, type ButtonProps } from '@/shared/ui/button';
 import { cn } from '@/shared/lib/utils';
 
 interface CtaButtonProps extends Omit<ButtonProps, 'size' | 'asChild'> {

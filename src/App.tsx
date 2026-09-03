@@ -4,9 +4,9 @@ import { Experience } from "./components/Experience";
 import { Projects } from "./components/Projects";
 import { Header } from "./components/Header";
 import { SkillsWrapper } from "./components/SkillsWrapper";
-import { Separator } from "./components/ui/separator";
+import { Separator } from "@/shared/ui/separator";
 import { Hero } from "@/components/Hero";
-import { Toaster } from "./components/ui/sonner";
+import { Toaster } from "@/shared/ui/sonner";
 import { useDocumentLang } from "./hooks/useDocumentLang";
 
 function App() {

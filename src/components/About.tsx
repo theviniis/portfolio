@@ -1,8 +1,8 @@
 import { Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { Section } from "./ui/Section";
-import { Button } from "./ui/button";
-import { SocialLinks } from "./ui/social-links";
+import { Section } from "@/shared/ui/Section";
+import { Button } from "@/shared/ui/button";
+import { SocialLinks } from "@/shared/ui/social-links";
 
 import cvUrlPt from "../assets/vinicius_costa_cv.docx?url";
 import cvUrlEn from "../assets/vinicius_costa_cv_en.docx?url";

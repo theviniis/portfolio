@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/shared/ui/button';
 import { useCarouselScroll } from '@/shared/hooks/useCarouselScroll';
 import { cn } from '@/shared/lib/utils';
 

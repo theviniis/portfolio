@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
-import { Section } from "./ui/Section";
-import { SocialLinks } from "./ui/social-links";
-import { Button } from "./ui/button";
+import { Section } from "@/shared/ui/Section";
+import { SocialLinks } from "@/shared/ui/social-links";
+import { Button } from "@/shared/ui/button";
 
 import cvUrlPt from "../assets/vinicius_costa_cv.docx?url";
 import cvUrlEn from "../assets/vinicius_costa_cv_en.docx?url";
 import { lazy, Suspense } from "react";
-import { Spinner } from "./ui/spinner";
+import { Spinner } from "@/shared/ui/spinner";
 
 const ContactForm = lazy(async () => {
   const module = await import("./ContactForm");

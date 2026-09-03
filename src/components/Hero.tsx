@@ -1,8 +1,8 @@
 import { Pointer } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { Button } from "./ui/button";
-import { Section } from "./ui/Section";
-import { SocialLinks } from "./ui/social-links";
+import { Button } from "@/shared/ui/button";
+import { Section } from "@/shared/ui/Section";
+import { SocialLinks } from "@/shared/ui/social-links";
 
 import profile from "../assets/profile.webp";
 

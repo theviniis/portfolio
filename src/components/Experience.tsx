@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Section } from "./ui/Section";
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
-import { Separator } from "./ui/separator";
+import { Section } from "@/shared/ui/Section";
+import { Badge } from "@/shared/ui/badge";
+import { Button } from "@/shared/ui/button";
+import { Separator } from "@/shared/ui/separator";
 import { ChevronDown } from "lucide-react";
 
 type ExperienceType = {

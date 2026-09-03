@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { Button, type ButtonProps } from "@/components/ui/button";
-import { Spinner } from "@/components/ui/spinner";
+import { Button, type ButtonProps } from "@/shared/ui/button";
+import { Spinner } from "@/shared/ui/spinner";
 
 export function LoadingButton({
   isLoading,
