@@ -1,5 +1,5 @@
 import { Button } from "./button";
-import { socialIconMap, type SocialIcon } from "@/lib/social-icons";
+import { socialIconMap, type SocialIcon } from "@/shared/lib/social-icons";
 
 interface SocialLinkButtonProps {
   url: string;

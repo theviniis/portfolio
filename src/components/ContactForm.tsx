@@ -5,8 +5,8 @@ import { Field, FieldError, FieldGroup, FieldLabel } from "./ui/field";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Separator } from "./ui/separator";
-import { sendContactEmail } from "@/lib/service";
-import { sendContactSchema } from "@/lib/schemas";
+import { sendContactEmail } from "@/shared/lib/service";
+import { sendContactSchema } from "@/shared/lib/schemas";
 import { LoadingButton } from "./ui/loading-button";
 
 const ContactForm = () => {

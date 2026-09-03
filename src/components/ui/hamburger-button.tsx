@@ -1,7 +1,7 @@
 import type { ComponentProps } from "react";
 import { useTranslation } from "react-i18next";
 import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 
 const HamburgerButton = ({
   isOpen = false,
