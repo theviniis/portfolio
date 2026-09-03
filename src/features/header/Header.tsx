@@ -8,21 +8,28 @@ import { useBodyScrollLock } from "@/shared/hooks/useBodyScrollLock";
 const Header = () => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const headerItems = t('header.items', { returnObjects: true }) as Array<{ url: string; name: string }>;
-  const projects = t('projects.list', { returnObjects: true }) as unknown[];
+  const headerItems = t("header.items", { returnObjects: true }) as Array<{
+    url: string;
+    name: string;
+  }>;
+  const projects = t("projects.list", { returnObjects: true }) as unknown[];
   const hasProjects = projects.length > 0;
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
   const filteredItems = hasProjects
     ? headerItems
-    : headerItems.filter(({ url }) => url !== "#projects" && url !== "#projetos");
+    : headerItems.filter(
+        ({ url }) => url !== "#projects" && url !== "#projetos",
+      );
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsOpen(false);
-      }
+      setTimeout(() => {
+        if (window.innerWidth >= 768) {
+          setIsOpen(false);
+        }
+      }, 500);
     };
 
     window.addEventListener("resize", handleResize);
