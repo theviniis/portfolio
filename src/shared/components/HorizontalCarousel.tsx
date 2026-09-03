@@ -1,8 +1,8 @@
-import { useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/shared/ui/button';
-import { useCarouselScroll } from '@/shared/hooks/useCarouselScroll';
-import { cn } from '@/shared/lib/utils';
+import { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/shared/ui/button";
+import { useCarouselScroll } from "@/shared/hooks/useCarouselScroll";
+import { cn } from "@/shared/lib/utils";
 
 interface HorizontalCarouselProps {
   itemKeys: string[];
@@ -27,12 +27,12 @@ export function HorizontalCarousel({
     <div className="relative overflow-hidden">
       <div
         ref={scrollRef}
-        className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none"
       >
         {itemKeys.map((key) => (
           <div
             key={key}
-            className={cn('min-w-0 flex-none w-full snap-start', itemClassName)}
+            className={cn("min-w-0 flex-none w-full snap-start", itemClassName)}
           >
             {renderItem(key)}
           </div>
