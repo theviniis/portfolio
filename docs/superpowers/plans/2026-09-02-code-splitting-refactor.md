@@ -12,73 +12,73 @@
 
 ## File Structure
 
-| Path | Action | Purpose |
-|------|--------|---------|
-| `src/shared/lib/cv.ts` | Create | Single source of truth for CV_MAP |
-| `src/shared/lib/utils.ts` | Move | From `src/lib/utils.ts` |
-| `src/shared/lib/schemas.ts` | Move | From `src/lib/schemas.ts` (used by Contact) |
-| `src/shared/lib/service.ts` | Move | From `src/lib/service.ts` (used by Contact) |
-| `src/shared/hooks/useDocumentMeta.ts` | Create | Replaces `useDocumentLang` |
-| `src/shared/hooks/useBodyScrollLock.ts` | Create | Extract from Header |
-| `src/shared/hooks/useClickOutsideEscape.ts` | Create | Extract from ProjectCard |
-| `src/shared/hooks/useCarouselScroll.ts` | Create | Extract from Projects |
-| `src/shared/components/CtaButton.tsx` | Create | Hero + About CTA pattern |
-| `src/shared/components/SkillList.tsx` | Create | Badge list with index > 2 rule |
-| `src/shared/components/SectionHeader.tsx` | Create | h2 + description |
-| `src/shared/components/HorizontalCarousel.tsx` | Create | Generic carousel with prev/next |
-| `src/shared/components/SectionLoading.tsx` | Create | Skeleton fallback for Suspense |
-| `src/shared/ui/skeleton.tsx` | Create | shadcn skeleton primitive |
-| `src/shared/ui/Section.tsx` | Move | From `src/components/ui/Section.tsx` |
-| `src/shared/ui/*` | Move | All shadcn primitives from `src/components/ui/` |
-| `src/features/header/index.ts` | Create | Barrel export |
-| `src/features/header/Header.tsx` | Move | From `src/components/Header.tsx` |
-| `src/features/header/Logo.tsx` | Move | From `src/components/Logo.tsx` |
-| `src/features/header/i18n.ts` | Create | Register header translations |
-| `src/features/hero/index.ts` | Create | Barrel export |
-| `src/features/hero/Hero.tsx` | Move | From `src/components/Hero.tsx` |
-| `src/features/hero/i18n.ts` | Create | Register hero translations |
-| `src/features/about/index.ts` | Create | Barrel export |
-| `src/features/about/About.tsx` | Move | From `src/components/About.tsx` |
-| `src/features/about/i18n.ts` | Create | Register about translations |
-| `src/features/skills/index.ts` | Create | Barrel export |
-| `src/features/skills/SkillsWrapper.tsx` | Move | From `src/components/SkillsWrapper.tsx` |
-| `src/features/skills/i18n.ts` | Create | Register skills translations |
-| `src/features/experience/index.ts` | Create | Barrel export |
-| `src/features/experience/Experience.tsx` | Move | From `src/components/Experience.tsx` |
-| `src/features/experience/ExperienceItem.tsx` | Create | Extract from Experience.tsx |
-| `src/features/experience/types.ts` | Create | ExperienceType |
-| `src/features/experience/i18n.ts` | Create | Register experience translations |
-| `src/features/projects/index.ts` | Create | Barrel export (lazy) |
-| `src/features/projects/Projects.tsx` | Move | From `src/components/Projects.tsx` |
-| `src/features/projects/ProjectCard.tsx` | Move | From `src/components/ProjectCard.tsx` |
-| `src/features/projects/types.ts` | Create | Project type |
-| `src/features/projects/i18n.ts` | Create | Register projects translations |
-| `src/features/contact/index.ts` | Create | Barrel export (lazy) |
-| `src/features/contact/Contact.tsx` | Move | From `src/components/Contact.tsx` |
-| `src/features/contact/ContactForm.tsx` | Move | From `src/components/ContactForm.tsx` |
-| `src/features/contact/i18n.ts` | Create | Register contact translations |
-| `src/data/translations/header/pt-BR.json` | Create | Split from header.json |
-| `src/data/translations/header/en-US.json` | Create | Split from header.json |
-| `src/data/translations/hero/pt-BR.json` | Create | Split from hero.json |
-| `src/data/translations/hero/en-US.json` | Create | Split from hero.json |
-| `src/data/translations/about/pt-BR.json` | Create | Split from about.json |
-| `src/data/translations/about/en-US.json` | Create | Split from about.json |
-| `src/data/translations/skills/pt-BR.json` | Create | Split from skills.json |
-| `src/data/translations/skills/en-US.json` | Create | Split from skills.json |
-| `src/data/translations/experience/pt-BR.json` | Create | Split from experience.json |
-| `src/data/translations/experience/en-US.json` | Create | Split from experience.json |
-| `src/data/translations/projects/pt-BR.json` | Create | Split from projects.json |
-| `src/data/translations/projects/en-US.json` | Create | Split from projects.json |
-| `src/data/translations/contact/pt-BR.json` | Create | Split from contact.json |
-| `src/data/translations/contact/en-US.json` | Create | Split from contact.json |
-| `src/data/translations/ui/pt-BR.json` | Create | Split from ui.json |
-| `src/data/translations/ui/en-US.json` | Create | Split from ui.json |
-| `src/data/translations/links/pt-BR.json` | Create | Split from links.json |
-| `src/data/translations/links/en-US.json` | Create | Split from links.json |
-| `src/i18n.ts` | Modify | Remove static resources, keep header only |
-| `src/App.tsx` | Modify | Add lazy() + Suspense for Projects/Contact |
-| `src/lib/social-icons.tsx` | Move | To `src/shared/lib/social-icons.tsx` |
-| `src/data/types.ts` | Move | To `src/shared/types.ts` |
+| Path                                           | Action | Purpose                                         |
+| ---------------------------------------------- | ------ | ----------------------------------------------- |
+| `src/shared/lib/cv.ts`                         | Create | Single source of truth for CV_MAP               |
+| `src/shared/lib/utils.ts`                      | Move   | From `src/lib/utils.ts`                         |
+| `src/shared/lib/schemas.ts`                    | Move   | From `src/lib/schemas.ts` (used by Contact)     |
+| `src/shared/lib/service.ts`                    | Move   | From `src/lib/service.ts` (used by Contact)     |
+| `src/shared/hooks/useDocumentMeta.ts`          | Create | Replaces `useDocumentLang`                      |
+| `src/shared/hooks/useBodyScrollLock.ts`        | Create | Extract from Header                             |
+| `src/shared/hooks/useClickOutsideEscape.ts`    | Create | Extract from ProjectCard                        |
+| `src/shared/hooks/useCarouselScroll.ts`        | Create | Extract from Projects                           |
+| `src/shared/components/CtaButton.tsx`          | Create | Hero + About CTA pattern                        |
+| `src/shared/components/SkillList.tsx`          | Create | Badge list with index > 2 rule                  |
+| `src/shared/components/SectionHeader.tsx`      | Create | h2 + description                                |
+| `src/shared/components/HorizontalCarousel.tsx` | Create | Generic carousel with prev/next                 |
+| `src/shared/components/SectionLoading.tsx`     | Create | Skeleton fallback for Suspense                  |
+| `src/shared/ui/skeleton.tsx`                   | Create | shadcn skeleton primitive                       |
+| `src/shared/ui/Section.tsx`                    | Move   | From `src/components/ui/Section.tsx`            |
+| `src/shared/ui/*`                              | Move   | All shadcn primitives from `src/components/ui/` |
+| `src/features/header/index.ts`                 | Create | Barrel export                                   |
+| `src/features/header/Header.tsx`               | Move   | From `src/components/Header.tsx`                |
+| `src/features/header/Logo.tsx`                 | Move   | From `src/components/Logo.tsx`                  |
+| `src/features/header/i18n.ts`                  | Create | Register header translations                    |
+| `src/features/hero/index.ts`                   | Create | Barrel export                                   |
+| `src/features/hero/Hero.tsx`                   | Move   | From `src/components/Hero.tsx`                  |
+| `src/features/hero/i18n.ts`                    | Create | Register hero translations                      |
+| `src/features/about/index.ts`                  | Create | Barrel export                                   |
+| `src/features/about/About.tsx`                 | Move   | From `src/components/About.tsx`                 |
+| `src/features/about/i18n.ts`                   | Create | Register about translations                     |
+| `src/features/skills/index.ts`                 | Create | Barrel export                                   |
+| `src/features/skills/SkillsWrapper.tsx`        | Move   | From `src/components/SkillsWrapper.tsx`         |
+| `src/features/skills/i18n.ts`                  | Create | Register skills translations                    |
+| `src/features/experience/index.ts`             | Create | Barrel export                                   |
+| `src/features/experience/Experience.tsx`       | Move   | From `src/components/Experience.tsx`            |
+| `src/features/experience/ExperienceItem.tsx`   | Create | Extract from Experience.tsx                     |
+| `src/features/experience/types.ts`             | Create | ExperienceType                                  |
+| `src/features/experience/i18n.ts`              | Create | Register experience translations                |
+| `src/features/projects/index.ts`               | Create | Barrel export (lazy)                            |
+| `src/features/projects/Projects.tsx`           | Move   | From `src/components/Projects.tsx`              |
+| `src/features/projects/ProjectCard.tsx`        | Move   | From `src/components/ProjectCard.tsx`           |
+| `src/features/projects/types.ts`               | Create | Project type                                    |
+| `src/features/projects/i18n.ts`                | Create | Register projects translations                  |
+| `src/features/contact/index.ts`                | Create | Barrel export (lazy)                            |
+| `src/features/contact/Contact.tsx`             | Move   | From `src/components/Contact.tsx`               |
+| `src/features/contact/ContactForm.tsx`         | Move   | From `src/components/ContactForm.tsx`           |
+| `src/features/contact/i18n.ts`                 | Create | Register contact translations                   |
+| `src/data/translations/header/pt-BR.json`      | Create | Split from header.json                          |
+| `src/data/translations/header/en-US.json`      | Create | Split from header.json                          |
+| `src/data/translations/hero/pt-BR.json`        | Create | Split from hero.json                            |
+| `src/data/translations/hero/en-US.json`        | Create | Split from hero.json                            |
+| `src/data/translations/about/pt-BR.json`       | Create | Split from about.json                           |
+| `src/data/translations/about/en-US.json`       | Create | Split from about.json                           |
+| `src/data/translations/skills/pt-BR.json`      | Create | Split from skills.json                          |
+| `src/data/translations/skills/en-US.json`      | Create | Split from skills.json                          |
+| `src/data/translations/experience/pt-BR.json`  | Create | Split from experience.json                      |
+| `src/data/translations/experience/en-US.json`  | Create | Split from experience.json                      |
+| `src/data/translations/projects/pt-BR.json`    | Create | Split from projects.json                        |
+| `src/data/translations/projects/en-US.json`    | Create | Split from projects.json                        |
+| `src/data/translations/contact/pt-BR.json`     | Create | Split from contact.json                         |
+| `src/data/translations/contact/en-US.json`     | Create | Split from contact.json                         |
+| `src/data/translations/ui/pt-BR.json`          | Create | Split from ui.json                              |
+| `src/data/translations/ui/en-US.json`          | Create | Split from ui.json                              |
+| `src/data/translations/links/pt-BR.json`       | Create | Split from links.json                           |
+| `src/data/translations/links/en-US.json`       | Create | Split from links.json                           |
+| `src/i18n.ts`                                  | Modify | Remove static resources, keep header only       |
+| `src/App.tsx`                                  | Modify | Add lazy() + Suspense for Projects/Contact      |
+| `src/lib/social-icons.tsx`                     | Move   | To `src/shared/lib/social-icons.tsx`            |
+| `src/data/types.ts`                            | Move   | To `src/shared/types.ts`                        |
 
 ---
 
@@ -87,6 +87,7 @@
 ### Task 1: Create CV utility
 
 **Files:**
+
 - Create: `src/shared/lib/cv.ts`
 
 - [ ] **Step 1: Create shared/lib directory**
@@ -98,16 +99,16 @@ mkdir -p /home/viniis/portfolio/src/shared/lib
 - [ ] **Step 2: Write CV utility**
 
 ```typescript
-import cvUrlPt from '@/assets/vinicius_costa_cv.docx?url';
-import cvUrlEn from '@/assets/vinicius_costa_cv_en.docx?url';
+import cvUrlPt from '@/assets/cv_vinicius_costa.docx?url'
+import cvUrlEn from '@/assets/en_cv_vinicius_costa.docx?url'
 
 export const CV_MAP: Record<string, { url: string; filename: string }> = {
-  'pt-BR': { url: cvUrlPt, filename: 'vinicius_costa_cv.docx' },
-  'en-US': { url: cvUrlEn, filename: 'vinicius_costa_cv_en.docx' },
-};
+  'pt-BR': { url: cvUrlPt, filename: 'cv_vinicius_costa.docx' },
+  'en-US': { url: cvUrlEn, filename: 'en_cv_vinicius_costa.docx' }
+}
 
 export function getCvForLang(lang: string) {
-  return CV_MAP[lang] ?? CV_MAP['pt-BR'];
+  return CV_MAP[lang] ?? CV_MAP['pt-BR']
 }
 ```
 
@@ -130,6 +131,7 @@ cd /home/viniis/portfolio && git add src/shared/lib/cv.ts && git commit -m "feat
 ### Task 2: Move lib utilities to shared
 
 **Files:**
+
 - Move: `src/lib/utils.ts` → `src/shared/lib/utils.ts`
 - Move: `src/lib/schemas.ts` → `src/shared/lib/schemas.ts`
 - Move: `src/lib/service.ts` → `src/shared/lib/service.ts`
@@ -164,13 +166,13 @@ cd /home/viniis/portfolio && mv src/lib/social-icons.tsx src/shared/lib/social-i
 In `src/shared/lib/service.ts`, change:
 
 ```typescript
-import { sendContactSchema } from "@/lib/schemas";
+import { sendContactSchema } from '@/lib/schemas'
 ```
 
 to:
 
 ```typescript
-import { sendContactSchema } from "@/shared/lib/schemas";
+import { sendContactSchema } from '@/shared/lib/schemas'
 ```
 
 - [ ] **Step 6: Remove empty lib directory**
@@ -198,6 +200,7 @@ cd /home/viniis/portfolio && git add -A && git commit -m "refactor(shared): move
 ### Task 3: Update imports to use shared/lib
 
 **Files:**
+
 - Modify: `src/components/ContactForm.tsx`
 - Modify: `src/components/ui/social-link-button.tsx`
 - Modify: All files under `src/components/ui/`
@@ -207,15 +210,15 @@ cd /home/viniis/portfolio && git add -A && git commit -m "refactor(shared): move
 In `src/components/ContactForm.tsx`, change:
 
 ```typescript
-import { sendContactEmail } from "@/lib/service";
-import { sendContactSchema } from "@/lib/schemas";
+import { sendContactEmail } from '@/lib/service'
+import { sendContactSchema } from '@/lib/schemas'
 ```
 
 to:
 
 ```typescript
-import { sendContactEmail } from "@/shared/lib/service";
-import { sendContactSchema } from "@/shared/lib/schemas";
+import { sendContactEmail } from '@/shared/lib/service'
+import { sendContactSchema } from '@/shared/lib/schemas'
 ```
 
 - [ ] **Step 2: Update social-link-button imports**
@@ -223,13 +226,13 @@ import { sendContactSchema } from "@/shared/lib/schemas";
 In `src/components/ui/social-link-button.tsx`, change:
 
 ```typescript
-import { socialIconMap, type SocialIcon } from "@/lib/social-icons";
+import { socialIconMap, type SocialIcon } from '@/lib/social-icons'
 ```
 
 to:
 
 ```typescript
-import { socialIconMap, type SocialIcon } from "@/shared/lib/social-icons";
+import { socialIconMap, type SocialIcon } from '@/shared/lib/social-icons'
 ```
 
 - [ ] **Step 3: Update all ui component imports**
@@ -237,16 +240,17 @@ import { socialIconMap, type SocialIcon } from "@/shared/lib/social-icons";
 In all files under `src/components/ui/` that import `utils`, change:
 
 ```typescript
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
 ```
 
 to:
 
 ```typescript
-import { cn } from "@/shared/lib/utils";
+import { cn } from '@/shared/lib/utils'
 ```
 
 Files to update:
+
 - `src/components/ui/badge.tsx`
 - `src/components/ui/button.tsx`
 - `src/components/ui/button-group.tsx`
@@ -281,6 +285,7 @@ cd /home/viniis/portfolio && git add -A && git commit -m "refactor: update impor
 ### Task 4: Create useDocumentMeta hook
 
 **Files:**
+
 - Create: `src/shared/hooks/useDocumentMeta.ts`
 
 - [ ] **Step 1: Create shared/hooks directory**
@@ -292,34 +297,36 @@ mkdir -p /home/viniis/portfolio/src/shared/hooks
 - [ ] **Step 2: Write useDocumentMeta hook**
 
 ```typescript
-import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const SEO_DATA: Record<string, { title: string; description: string }> = {
   'pt-BR': {
     title: 'Vinícius Costa - Desenvolvedor Front-end',
-    description: 'Vinícius Costa — desenvolvedor front-end. Experiência com React, TypeScript, Next.js e Tailwind.'
+    description:
+      'Vinícius Costa — desenvolvedor front-end. Experiência com React, TypeScript, Next.js e Tailwind.'
   },
   'en-US': {
     title: 'Vinícius Costa - Front-end Developer',
-    description: 'Vinícius Costa — front-end developer. Experience with React, TypeScript, Next.js and Tailwind.'
+    description:
+      'Vinícius Costa — front-end developer. Experience with React, TypeScript, Next.js and Tailwind.'
   }
-};
+}
 
 export function useDocumentMeta() {
-  const { i18n } = useTranslation();
+  const { i18n } = useTranslation()
 
   useEffect(() => {
-    document.documentElement.lang = i18n.language;
+    document.documentElement.lang = i18n.language
 
-    const seoData = SEO_DATA[i18n.language] ?? SEO_DATA['en-US'];
-    document.title = seoData.title;
+    const seoData = SEO_DATA[i18n.language] ?? SEO_DATA['en-US']
+    document.title = seoData.title
 
-    const metaDescription = document.querySelector('meta[name="description"]');
+    const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-      metaDescription.setAttribute('content', seoData.description);
+      metaDescription.setAttribute('content', seoData.description)
     }
-  }, [i18n.language]);
+  }, [i18n.language])
 }
 ```
 
@@ -342,24 +349,25 @@ cd /home/viniis/portfolio && git add src/shared/hooks/useDocumentMeta.ts && git 
 ### Task 5: Create useBodyScrollLock hook
 
 **Files:**
+
 - Create: `src/shared/hooks/useBodyScrollLock.ts`
 
 - [ ] **Step 1: Write useBodyScrollLock hook**
 
 ```typescript
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
 export function useBodyScrollLock(locked: boolean) {
   useEffect(() => {
-    if (!locked) return;
+    if (!locked) return
 
-    const previous = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
+    const previous = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
 
     return () => {
-      document.body.style.overflow = previous;
-    };
-  }, [locked]);
+      document.body.style.overflow = previous
+    }
+  }, [locked])
 }
 ```
 
@@ -382,45 +390,46 @@ cd /home/viniis/portfolio && git add src/shared/hooks/useBodyScrollLock.ts && gi
 ### Task 6: Create useClickOutsideEscape hook
 
 **Files:**
+
 - Create: `src/shared/hooks/useClickOutsideEscape.ts`
 
 - [ ] **Step 1: Write useClickOutsideEscape hook**
 
 ```typescript
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
 interface UseClickOutsideEscapeOptions {
-  active: boolean;
-  ignoreInside?: string;
-  onDismiss: () => void;
+  active: boolean
+  ignoreInside?: string
+  onDismiss: () => void
 }
 
 export function useClickOutsideEscape({
   active,
   ignoreInside,
-  onDismiss,
+  onDismiss
 }: UseClickOutsideEscapeOptions) {
   useEffect(() => {
-    if (!active) return;
+    if (!active) return
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onDismiss();
-    };
+      if (e.key === 'Escape') onDismiss()
+    }
 
     const handleMouseDown = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (ignoreInside && target.closest(ignoreInside)) return;
-      onDismiss();
-    };
+      const target = e.target as HTMLElement
+      if (ignoreInside && target.closest(ignoreInside)) return
+      onDismiss()
+    }
 
-    document.addEventListener('keydown', handleKeyDown);
-    document.addEventListener('mousedown', handleMouseDown, true);
+    document.addEventListener('keydown', handleKeyDown)
+    document.addEventListener('mousedown', handleMouseDown, true)
 
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      document.removeEventListener('mousedown', handleMouseDown, true);
-    };
-  }, [active, ignoreInside, onDismiss]);
+      document.removeEventListener('keydown', handleKeyDown)
+      document.removeEventListener('mousedown', handleMouseDown, true)
+    }
+  }, [active, ignoreInside, onDismiss])
 }
 ```
 
@@ -443,53 +452,54 @@ cd /home/viniis/portfolio && git add src/shared/hooks/useClickOutsideEscape.ts &
 ### Task 7: Create useCarouselScroll hook
 
 **Files:**
+
 - Create: `src/shared/hooks/useCarouselScroll.ts`
 
 - [ ] **Step 1: Write useCarouselScroll hook**
 
 ```typescript
-import { RefObject, useCallback, useEffect, useState } from 'react';
+import { RefObject, useCallback, useEffect, useState } from 'react'
 
 export function useCarouselScroll(ref: RefObject<HTMLDivElement>) {
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
+  const [canScrollPrev, setCanScrollPrev] = useState(false)
+  const [canScrollNext, setCanScrollNext] = useState(false)
 
   const updateScrollState = useCallback(() => {
-    const el = ref.current;
-    if (!el) return;
-    setCanScrollPrev(el.scrollLeft > 0);
-    setCanScrollNext(el.scrollLeft < el.scrollWidth - el.clientWidth - 1);
-  }, [ref]);
+    const el = ref.current
+    if (!el) return
+    setCanScrollPrev(el.scrollLeft > 0)
+    setCanScrollNext(el.scrollLeft < el.scrollWidth - el.clientWidth - 1)
+  }, [ref])
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+    const el = ref.current
+    if (!el) return
 
-    updateScrollState();
-    el.addEventListener('scroll', updateScrollState, { passive: true });
-    window.addEventListener('resize', updateScrollState);
+    updateScrollState()
+    el.addEventListener('scroll', updateScrollState, { passive: true })
+    window.addEventListener('resize', updateScrollState)
 
     return () => {
-      el.removeEventListener('scroll', updateScrollState);
-      window.removeEventListener('resize', updateScrollState);
-    };
-  }, [updateScrollState, ref]);
+      el.removeEventListener('scroll', updateScrollState)
+      window.removeEventListener('resize', updateScrollState)
+    }
+  }, [updateScrollState, ref])
 
   const scrollPrev = useCallback(() => {
     ref.current?.scrollBy({
       left: -ref.current.clientWidth,
-      behavior: 'smooth',
-    });
-  }, [ref]);
+      behavior: 'smooth'
+    })
+  }, [ref])
 
   const scrollNext = useCallback(() => {
     ref.current?.scrollBy({
       left: ref.current.clientWidth,
-      behavior: 'smooth',
-    });
-  }, [ref]);
+      behavior: 'smooth'
+    })
+  }, [ref])
 
-  return { canScrollPrev, canScrollNext, scrollPrev, scrollNext };
+  return { canScrollPrev, canScrollNext, scrollPrev, scrollNext }
 }
 ```
 
@@ -514,6 +524,7 @@ cd /home/viniis/portfolio && git add src/shared/hooks/useCarouselScroll.ts && gi
 ### Task 8: Install shadcn skeleton
 
 **Files:**
+
 - Create: `src/shared/ui/skeleton.tsx`
 
 - [ ] **Step 1: Create shared/ui directory**
@@ -541,13 +552,13 @@ cd /home/viniis/portfolio && mv src/components/ui/skeleton.tsx src/shared/ui/ske
 In `src/shared/ui/skeleton.tsx`, change:
 
 ```typescript
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
 ```
 
 to:
 
 ```typescript
-import { cn } from "@/shared/lib/utils"
+import { cn } from '@/shared/lib/utils'
 ```
 
 - [ ] **Step 5: Run TypeScript check**
@@ -569,6 +580,7 @@ cd /home/viniis/portfolio && git add -A && git commit -m "feat(shared): add skel
 ### Task 9: Create CtaButton component
 
 **Files:**
+
 - Create: `src/shared/components/CtaButton.tsx`
 
 - [ ] **Step 1: Create shared/components directory**
@@ -633,6 +645,7 @@ cd /home/viniis/portfolio && git add src/shared/components/CtaButton.tsx && git 
 ### Task 10: Create SkillList component
 
 **Files:**
+
 - Create: `src/shared/components/SkillList.tsx`
 
 - [ ] **Step 1: Write SkillList component**
@@ -693,6 +706,7 @@ cd /home/viniis/portfolio && git add src/shared/components/SkillList.tsx && git 
 ### Task 11: Create SectionHeader component
 
 **Files:**
+
 - Create: `src/shared/components/SectionHeader.tsx`
 
 - [ ] **Step 1: Write SectionHeader component**
@@ -732,6 +746,7 @@ cd /home/viniis/portfolio && git add src/shared/components/SectionHeader.tsx && 
 ### Task 12: Create HorizontalCarousel component
 
 **Files:**
+
 - Create: `src/shared/components/HorizontalCarousel.tsx`
 
 - [ ] **Step 1: Write HorizontalCarousel component**
@@ -820,6 +835,7 @@ cd /home/viniis/portfolio && git add src/shared/components/HorizontalCarousel.ts
 ### Task 13: Create SectionLoading component
 
 **Files:**
+
 - Create: `src/shared/components/SectionLoading.tsx`
 
 - [ ] **Step 1: Write SectionLoading component**
@@ -876,6 +892,7 @@ cd /home/viniis/portfolio && git add src/shared/components/SectionLoading.tsx &&
 ### Task 14: Move all UI components to shared/ui
 
 **Files:**
+
 - Move: All files from `src/components/ui/` → `src/shared/ui/`
 
 - [ ] **Step 1: Move all ui components**
@@ -895,16 +912,17 @@ cd /home/viniis/portfolio && rmdir src/components/ui
 In all files under `src/components/`, change imports from:
 
 ```typescript
-import { Component } from "./ui/component";
+import { Component } from './ui/component'
 ```
 
 to:
 
 ```typescript
-import { Component } from "@/shared/ui/component";
+import { Component } from '@/shared/ui/component'
 ```
 
 Files to update:
+
 - `src/components/About.tsx`
 - `src/components/Contact.tsx`
 - `src/components/ContactForm.tsx`
@@ -945,6 +963,7 @@ cd /home/viniis/portfolio && git add -A && git commit -m "refactor: move ui prim
 ### Task 15: Split header translations
 
 **Files:**
+
 - Create: `src/data/translations/header/pt-BR.json`
 - Create: `src/data/translations/header/en-US.json`
 
@@ -1020,6 +1039,7 @@ cd /home/viniis/portfolio && git add src/data/translations/header/ && git commit
 ### Task 16: Split hero translations
 
 **Files:**
+
 - Create: `src/data/translations/hero/pt-BR.json`
 - Create: `src/data/translations/hero/en-US.json`
 
@@ -1091,6 +1111,7 @@ cd /home/viniis/portfolio && git add src/data/translations/hero/ && git commit -
 ### Task 17: Split about translations
 
 **Files:**
+
 - Create: `src/data/translations/about/pt-BR.json`
 - Create: `src/data/translations/about/en-US.json`
 
@@ -1128,6 +1149,7 @@ cd /home/viniis/portfolio && git add src/data/translations/about/ && git commit 
 ### Task 18: Split skills translations
 
 **Files:**
+
 - Create: `src/data/translations/skills/pt-BR.json`
 - Create: `src/data/translations/skills/en-US.json`
 
@@ -1165,6 +1187,7 @@ cd /home/viniis/portfolio && git add src/data/translations/skills/ && git commit
 ### Task 19: Split experience translations
 
 **Files:**
+
 - Create: `src/data/translations/experience/pt-BR.json`
 - Create: `src/data/translations/experience/en-US.json`
 
@@ -1202,6 +1225,7 @@ cd /home/viniis/portfolio && git add src/data/translations/experience/ && git co
 ### Task 20: Split projects translations
 
 **Files:**
+
 - Create: `src/data/translations/projects/pt-BR.json`
 - Create: `src/data/translations/projects/en-US.json`
 
@@ -1239,6 +1263,7 @@ cd /home/viniis/portfolio && git add src/data/translations/projects/ && git comm
 ### Task 21: Split contact translations
 
 **Files:**
+
 - Create: `src/data/translations/contact/pt-BR.json`
 - Create: `src/data/translations/contact/en-US.json`
 
@@ -1276,6 +1301,7 @@ cd /home/viniis/portfolio && git add src/data/translations/contact/ && git commi
 ### Task 22: Split ui translations
 
 **Files:**
+
 - Create: `src/data/translations/ui/pt-BR.json`
 - Create: `src/data/translations/ui/en-US.json`
 
@@ -1313,6 +1339,7 @@ cd /home/viniis/portfolio && git add src/data/translations/ui/ && git commit -m 
 ### Task 23: Split links translations
 
 **Files:**
+
 - Create: `src/data/translations/links/pt-BR.json`
 - Create: `src/data/translations/links/en-US.json`
 
@@ -1352,6 +1379,7 @@ cd /home/viniis/portfolio && git add src/data/translations/links/ && git commit 
 ### Task 24: Create header feature
 
 **Files:**
+
 - Create: `src/features/header/index.ts`
 - Create: `src/features/header/i18n.ts`
 - Move: `src/components/Header.tsx` → `src/features/header/Header.tsx`
@@ -1380,18 +1408,18 @@ cd /home/viniis/portfolio && mv src/components/Logo.tsx src/features/header/Logo
 In `src/features/header/Header.tsx`, change:
 
 ```typescript
-import { Logo } from "./Logo";
-import { Button } from "./ui/button";
-import { HamburgerButton } from "./ui/hamburger-button";
+import { Logo } from './Logo'
+import { Button } from './ui/button'
+import { HamburgerButton } from './ui/hamburger-button'
 ```
 
 to:
 
 ```typescript
-import { Logo } from './Logo';
-import { Button } from '@/shared/ui/button';
-import { HamburgerButton } from '@/shared/ui/hamburger-button';
-import { useBodyScrollLock } from '@/shared/hooks/useBodyScrollLock';
+import { Logo } from './Logo'
+import { Button } from '@/shared/ui/button'
+import { HamburgerButton } from '@/shared/ui/hamburger-button'
+import { useBodyScrollLock } from '@/shared/hooks/useBodyScrollLock'
 ```
 
 - [ ] **Step 5: Refactor Header to use useBodyScrollLock**
@@ -1399,7 +1427,7 @@ import { useBodyScrollLock } from '@/shared/hooks/useBodyScrollLock';
 In `src/features/header/Header.tsx`, replace the `useEffect` block that manages `body.overflow` (lines 31-41 in original) with:
 
 ```typescript
-useBodyScrollLock(isOpen);
+useBodyScrollLock(isOpen)
 ```
 
 Remove the second `useEffect` and just keep the hook call at the top level.
@@ -1409,16 +1437,16 @@ Remove the second `useEffect` and just keep the hook call at the top level.
 Create `src/features/header/i18n.ts`:
 
 ```typescript
-import type { i18n as I18n } from 'i18next';
-import headerPt from '@/data/translations/header/pt-BR.json';
-import headerEn from '@/data/translations/header/en-US.json';
+import type { i18n as I18n } from 'i18next'
+import headerPt from '@/data/translations/header/pt-BR.json'
+import headerEn from '@/data/translations/header/en-US.json'
 
-export const headerPtBR = headerPt;
-export const headerEnUS = headerEn;
+export const headerPtBR = headerPt
+export const headerEnUS = headerEn
 
 export function mountHeaderTranslations(i18n: I18n) {
-  i18n.addResourceBundle('pt-BR', 'translation', headerPt, true, true);
-  i18n.addResourceBundle('en-US', 'translation', headerEn, true, true);
+  i18n.addResourceBundle('pt-BR', 'translation', headerPt, true, true)
+  i18n.addResourceBundle('en-US', 'translation', headerEn, true, true)
 }
 ```
 
@@ -1427,7 +1455,7 @@ export function mountHeaderTranslations(i18n: I18n) {
 Create `src/features/header/index.ts`:
 
 ```typescript
-export { Header } from './Header';
+export { Header } from './Header'
 ```
 
 - [ ] **Step 8: Run TypeScript check**
@@ -1449,6 +1477,7 @@ cd /home/viniis/portfolio && git add -A && git commit -m "feat(features): create
 ### Task 25: Create hero feature
 
 **Files:**
+
 - Create: `src/features/hero/index.ts`
 - Create: `src/features/hero/i18n.ts`
 - Move: `src/components/Hero.tsx` → `src/features/hero/Hero.tsx`
@@ -1470,17 +1499,17 @@ cd /home/viniis/portfolio && mv src/components/Hero.tsx src/features/hero/Hero.t
 In `src/features/hero/Hero.tsx`, change:
 
 ```typescript
-import { Button } from "./ui/button";
-import { Section } from "./ui/Section";
-import { SocialLinks } from "./ui/social-links";
+import { Button } from './ui/button'
+import { Section } from './ui/Section'
+import { SocialLinks } from './ui/social-links'
 ```
 
 to:
 
 ```typescript
-import { Section } from '@/shared/ui/Section';
-import { SocialLinks } from '@/shared/ui/social-links';
-import { CtaButton } from '@/shared/components/CtaButton';
+import { Section } from '@/shared/ui/Section'
+import { SocialLinks } from '@/shared/ui/social-links'
+import { CtaButton } from '@/shared/components/CtaButton'
 ```
 
 - [ ] **Step 4: Refactor Hero to use CtaButton**
@@ -1502,13 +1531,13 @@ Remove the unused `Button` import.
 Create `src/features/hero/i18n.ts`:
 
 ```typescript
-import type { i18n as I18n } from 'i18next';
-import heroPt from '@/data/translations/hero/pt-BR.json';
-import heroEn from '@/data/translations/hero/en-US.json';
+import type { i18n as I18n } from 'i18next'
+import heroPt from '@/data/translations/hero/pt-BR.json'
+import heroEn from '@/data/translations/hero/en-US.json'
 
 export function mountHeroTranslations(i18n: I18n) {
-  i18n.addResourceBundle('pt-BR', 'translation', heroPt, true, true);
-  i18n.addResourceBundle('en-US', 'translation', heroEn, true, true);
+  i18n.addResourceBundle('pt-BR', 'translation', heroPt, true, true)
+  i18n.addResourceBundle('en-US', 'translation', heroEn, true, true)
 }
 ```
 
@@ -1517,21 +1546,21 @@ export function mountHeroTranslations(i18n: I18n) {
 Create `src/features/hero/index.ts`:
 
 ```typescript
-import i18n from '@/i18n';
-import { Hero } from './Hero';
-import { mountHeroTranslations } from './i18n';
+import i18n from '@/i18n'
+import { Hero } from './Hero'
+import { mountHeroTranslations } from './i18n'
 
-let registered = false;
+let registered = false
 function setup() {
   if (!registered) {
-    mountHeroTranslations(i18n);
-    registered = true;
+    mountHeroTranslations(i18n)
+    registered = true
   }
 }
 
-setup();
+setup()
 
-export { Hero };
+export { Hero }
 ```
 
 - [ ] **Step 7: Run TypeScript check**
@@ -1553,6 +1582,7 @@ cd /home/viniis/portfolio && git add -A && git commit -m "feat(features): create
 ### Task 26: Create about feature
 
 **Files:**
+
 - Create: `src/features/about/index.ts`
 - Create: `src/features/about/i18n.ts`
 - Move: `src/components/About.tsx` → `src/features/about/About.tsx`
@@ -1574,18 +1604,18 @@ cd /home/viniis/portfolio && mv src/components/About.tsx src/features/about/Abou
 In `src/features/about/About.tsx`, change:
 
 ```typescript
-import { Section } from "./ui/Section";
-import { Button } from "./ui/button";
-import { SocialLinks } from "./ui/social-links";
+import { Section } from './ui/Section'
+import { Button } from './ui/button'
+import { SocialLinks } from './ui/social-links'
 ```
 
 to:
 
 ```typescript
-import { Section } from '@/shared/ui/Section';
-import { SocialLinks } from '@/shared/ui/social-links';
-import { CtaButton } from '@/shared/components/CtaButton';
-import { getCvForLang } from '@/shared/lib/cv';
+import { Section } from '@/shared/ui/Section'
+import { SocialLinks } from '@/shared/ui/social-links'
+import { CtaButton } from '@/shared/components/CtaButton'
+import { getCvForLang } from '@/shared/lib/cv'
 ```
 
 - [ ] **Step 4: Refactor About to use CtaButton and getCvForLang**
@@ -1597,7 +1627,7 @@ Remove the `CV_MAP` constant and the `cvUrlPt`/`cvUrlEn` imports.
 Replace the `cv` variable line with:
 
 ```typescript
-const cv = getCvForLang(i18n.language);
+const cv = getCvForLang(i18n.language)
 ```
 
 Replace the CTA button code (lines 32-41 in original) with:
@@ -1616,13 +1646,13 @@ Replace the CTA button code (lines 32-41 in original) with:
 Create `src/features/about/i18n.ts`:
 
 ```typescript
-import type { i18n as I18n } from 'i18next';
-import aboutPt from '@/data/translations/about/pt-BR.json';
-import aboutEn from '@/data/translations/about/en-US.json';
+import type { i18n as I18n } from 'i18next'
+import aboutPt from '@/data/translations/about/pt-BR.json'
+import aboutEn from '@/data/translations/about/en-US.json'
 
 export function mountAboutTranslations(i18n: I18n) {
-  i18n.addResourceBundle('pt-BR', 'translation', aboutPt, true, true);
-  i18n.addResourceBundle('en-US', 'translation', aboutEn, true, true);
+  i18n.addResourceBundle('pt-BR', 'translation', aboutPt, true, true)
+  i18n.addResourceBundle('en-US', 'translation', aboutEn, true, true)
 }
 ```
 
@@ -1631,21 +1661,21 @@ export function mountAboutTranslations(i18n: I18n) {
 Create `src/features/about/index.ts`:
 
 ```typescript
-import i18n from '@/i18n';
-import { About } from './About';
-import { mountAboutTranslations } from './i18n';
+import i18n from '@/i18n'
+import { About } from './About'
+import { mountAboutTranslations } from './i18n'
 
-let registered = false;
+let registered = false
 function setup() {
   if (!registered) {
-    mountAboutTranslations(i18n);
-    registered = true;
+    mountAboutTranslations(i18n)
+    registered = true
   }
 }
 
-setup();
+setup()
 
-export { About };
+export { About }
 ```
 
 - [ ] **Step 7: Run TypeScript check**
@@ -1667,6 +1697,7 @@ cd /home/viniis/portfolio && git add -A && git commit -m "feat(features): create
 ### Task 27: Create skills feature
 
 **Files:**
+
 - Create: `src/features/skills/index.ts`
 - Create: `src/features/skills/i18n.ts`
 - Move: `src/components/SkillsWrapper.tsx` → `src/features/skills/SkillsWrapper.tsx`
@@ -1688,16 +1719,16 @@ cd /home/viniis/portfolio && mv src/components/SkillsWrapper.tsx src/features/sk
 In `src/features/skills/SkillsWrapper.tsx`, change:
 
 ```typescript
-import { Section } from "./ui/Section";
-import { Button } from "./ui/button";
+import { Section } from './ui/Section'
+import { Button } from './ui/button'
 ```
 
 to:
 
 ```typescript
-import { Section } from '@/shared/ui/Section';
-import { Button } from '@/shared/ui/button';
-import { SkillList } from '@/shared/components/SkillList';
+import { Section } from '@/shared/ui/Section'
+import { Button } from '@/shared/ui/button'
+import { SkillList } from '@/shared/components/SkillList'
 ```
 
 - [ ] **Step 4: Refactor SkillsWrapper to use SkillList**
@@ -1724,13 +1755,13 @@ In `src/features/skills/SkillsWrapper.tsx`, replace the skills list rendering (l
 Create `src/features/skills/i18n.ts`:
 
 ```typescript
-import type { i18n as I18n } from 'i18next';
-import skillsPt from '@/data/translations/skills/pt-BR.json';
-import skillsEn from '@/data/translations/skills/en-US.json';
+import type { i18n as I18n } from 'i18next'
+import skillsPt from '@/data/translations/skills/pt-BR.json'
+import skillsEn from '@/data/translations/skills/en-US.json'
 
 export function mountSkillsTranslations(i18n: I18n) {
-  i18n.addResourceBundle('pt-BR', 'translation', skillsPt, true, true);
-  i18n.addResourceBundle('en-US', 'translation', skillsEn, true, true);
+  i18n.addResourceBundle('pt-BR', 'translation', skillsPt, true, true)
+  i18n.addResourceBundle('en-US', 'translation', skillsEn, true, true)
 }
 ```
 
@@ -1739,21 +1770,21 @@ export function mountSkillsTranslations(i18n: I18n) {
 Create `src/features/skills/index.ts`:
 
 ```typescript
-import i18n from '@/i18n';
-import { SkillsWrapper } from './SkillsWrapper';
-import { mountSkillsTranslations } from './i18n';
+import i18n from '@/i18n'
+import { SkillsWrapper } from './SkillsWrapper'
+import { mountSkillsTranslations } from './i18n'
 
-let registered = false;
+let registered = false
 function setup() {
   if (!registered) {
-    mountSkillsTranslations(i18n);
-    registered = true;
+    mountSkillsTranslations(i18n)
+    registered = true
   }
 }
 
-setup();
+setup()
 
-export { SkillsWrapper };
+export { SkillsWrapper }
 ```
 
 - [ ] **Step 7: Run TypeScript check**
@@ -1775,6 +1806,7 @@ cd /home/viniis/portfolio && git add -A && git commit -m "feat(features): create
 ### Task 28: Create experience feature
 
 **Files:**
+
 - Create: `src/features/experience/index.ts`
 - Create: `src/features/experience/i18n.ts`
 - Create: `src/features/experience/types.ts`
@@ -1799,12 +1831,12 @@ Create `src/features/experience/types.ts`:
 
 ```typescript
 export type ExperienceType = {
-  role: string;
-  company: string;
-  period: { start: string; end: string };
-  responsibilities: string[];
-  skills: string[];
-};
+  role: string
+  company: string
+  period: { start: string; end: string }
+  responsibilities: string[]
+  skills: string[]
+}
 ```
 
 - [ ] **Step 4: Write ExperienceItem.tsx**
@@ -1860,19 +1892,19 @@ export function ExperienceItem({
 In `src/features/experience/Experience.tsx`, change:
 
 ```typescript
-import { Section } from "./ui/Section";
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
-import { Separator } from "./ui/separator";
+import { Section } from './ui/Section'
+import { Badge } from './ui/badge'
+import { Button } from './ui/button'
+import { Separator } from './ui/separator'
 ```
 
 to:
 
 ```typescript
-import { Section } from '@/shared/ui/Section';
-import { Button } from '@/shared/ui/button';
-import { ExperienceItem } from './ExperienceItem';
-import type { ExperienceType } from './types';
+import { Section } from '@/shared/ui/Section'
+import { Button } from '@/shared/ui/button'
+import { ExperienceItem } from './ExperienceItem'
+import type { ExperienceType } from './types'
 ```
 
 - [ ] **Step 6: Refactor Experience to use ExperienceItem**
@@ -1890,13 +1922,13 @@ The render should already use the `ExperienceItem` component.
 Create `src/features/experience/i18n.ts`:
 
 ```typescript
-import type { i18n as I18n } from 'i18next';
-import experiencePt from '@/data/translations/experience/pt-BR.json';
-import experienceEn from '@/data/translations/experience/en-US.json';
+import type { i18n as I18n } from 'i18next'
+import experiencePt from '@/data/translations/experience/pt-BR.json'
+import experienceEn from '@/data/translations/experience/en-US.json'
 
 export function mountExperienceTranslations(i18n: I18n) {
-  i18n.addResourceBundle('pt-BR', 'translation', experiencePt, true, true);
-  i18n.addResourceBundle('en-US', 'translation', experienceEn, true, true);
+  i18n.addResourceBundle('pt-BR', 'translation', experiencePt, true, true)
+  i18n.addResourceBundle('en-US', 'translation', experienceEn, true, true)
 }
 ```
 
@@ -1905,21 +1937,21 @@ export function mountExperienceTranslations(i18n: I18n) {
 Create `src/features/experience/index.ts`:
 
 ```typescript
-import i18n from '@/i18n';
-import { Experience } from './Experience';
-import { mountExperienceTranslations } from './i18n';
+import i18n from '@/i18n'
+import { Experience } from './Experience'
+import { mountExperienceTranslations } from './i18n'
 
-let registered = false;
+let registered = false
 function setup() {
   if (!registered) {
-    mountExperienceTranslations(i18n);
-    registered = true;
+    mountExperienceTranslations(i18n)
+    registered = true
   }
 }
 
-setup();
+setup()
 
-export { Experience };
+export { Experience }
 ```
 
 - [ ] **Step 9: Run TypeScript check**
@@ -1941,6 +1973,7 @@ cd /home/viniis/portfolio && git add -A && git commit -m "feat(features): create
 ### Task 29: Create projects feature (lazy)
 
 **Files:**
+
 - Create: `src/features/projects/index.ts`
 - Create: `src/features/projects/i18n.ts`
 - Create: `src/features/projects/types.ts`
@@ -1971,12 +2004,12 @@ Create `src/features/projects/types.ts`:
 
 ```typescript
 export type Project = {
-  name: string;
-  deployUrl: string;
-  githubUrl: string;
-  skills: string[];
-  description?: string;
-};
+  name: string
+  deployUrl: string
+  githubUrl: string
+  skills: string[]
+  description?: string
+}
 ```
 
 - [ ] **Step 5: Update ProjectCard imports**
@@ -1984,18 +2017,18 @@ export type Project = {
 In `src/features/projects/ProjectCard.tsx`, change:
 
 ```typescript
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
+import { Badge } from './ui/badge'
+import { Button } from './ui/button'
 ```
 
 to:
 
 ```typescript
-import { Badge } from '@/shared/ui/badge';
-import { Button } from '@/shared/ui/button';
-import { SkillList } from '@/shared/components/SkillList';
-import { useClickOutsideEscape } from '@/shared/hooks/useClickOutsideEscape';
-import type { Project } from './types';
+import { Badge } from '@/shared/ui/badge'
+import { Button } from '@/shared/ui/button'
+import { SkillList } from '@/shared/components/SkillList'
+import { useClickOutsideEscape } from '@/shared/hooks/useClickOutsideEscape'
+import type { Project } from './types'
 ```
 
 Remove the `type Project` definition (lines 7-13 in original) and the `export type { Project }` at the bottom.
@@ -2010,8 +2043,8 @@ Replace the `useEffect` block that manages Esc + click-outside (lines 27-42 in o
 useClickOutsideEscape({
   active,
   ignoreInside: 'iframe',
-  onDismiss: () => setActive(false),
-});
+  onDismiss: () => setActive(false)
+})
 ```
 
 Replace the skills list rendering (lines 117-123 in original) with:
@@ -2025,19 +2058,19 @@ Replace the skills list rendering (lines 117-123 in original) with:
 In `src/features/projects/Projects.tsx`, change:
 
 ```typescript
-import { Section } from "./ui/Section";
-import { Button } from "./ui/button";
-import { ProjectCard, type Project } from "./ProjectCard";
+import { Section } from './ui/Section'
+import { Button } from './ui/button'
+import { ProjectCard, type Project } from './ProjectCard'
 ```
 
 to:
 
 ```typescript
-import { Section } from '@/shared/ui/Section';
-import { SectionHeader } from '@/shared/components/SectionHeader';
-import { HorizontalCarousel } from '@/shared/components/HorizontalCarousel';
-import { ProjectCard } from './ProjectCard';
-import type { Project } from './types';
+import { Section } from '@/shared/ui/Section'
+import { SectionHeader } from '@/shared/components/SectionHeader'
+import { HorizontalCarousel } from '@/shared/components/HorizontalCarousel'
+import { ProjectCard } from './ProjectCard'
+import type { Project } from './types'
 ```
 
 - [ ] **Step 8: Refactor Projects to use SectionHeader and HorizontalCarousel**
@@ -2073,13 +2106,13 @@ Remove the carousel implementation (lines 12-47 and 60-93 in original) and repla
 Create `src/features/projects/i18n.ts`:
 
 ```typescript
-import type { i18n as I18n } from 'i18next';
-import projectsPt from '@/data/translations/projects/pt-BR.json';
-import projectsEn from '@/data/translations/projects/en-US.json';
+import type { i18n as I18n } from 'i18next'
+import projectsPt from '@/data/translations/projects/pt-BR.json'
+import projectsEn from '@/data/translations/projects/en-US.json'
 
 export function mountProjectsTranslations(i18n: I18n) {
-  i18n.addResourceBundle('pt-BR', 'translation', projectsPt, true, true);
-  i18n.addResourceBundle('en-US', 'translation', projectsEn, true, true);
+  i18n.addResourceBundle('pt-BR', 'translation', projectsPt, true, true)
+  i18n.addResourceBundle('en-US', 'translation', projectsEn, true, true)
 }
 ```
 
@@ -2088,21 +2121,21 @@ export function mountProjectsTranslations(i18n: I18n) {
 Create `src/features/projects/index.ts`:
 
 ```typescript
-import i18n from '@/i18n';
-import { Projects } from './Projects';
-import { mountProjectsTranslations } from './i18n';
+import i18n from '@/i18n'
+import { Projects } from './Projects'
+import { mountProjectsTranslations } from './i18n'
 
-let registered = false;
+let registered = false
 function setup() {
   if (!registered) {
-    mountProjectsTranslations(i18n);
-    registered = true;
+    mountProjectsTranslations(i18n)
+    registered = true
   }
 }
 
-setup();
+setup()
 
-export { Projects };
+export { Projects }
 ```
 
 - [ ] **Step 11: Run TypeScript check**
@@ -2124,6 +2157,7 @@ cd /home/viniis/portfolio && git add -A && git commit -m "feat(features): create
 ### Task 30: Create contact feature (lazy)
 
 **Files:**
+
 - Create: `src/features/contact/index.ts`
 - Create: `src/features/contact/i18n.ts`
 - Move: `src/components/Contact.tsx` → `src/features/contact/Contact.tsx`
@@ -2152,11 +2186,11 @@ cd /home/viniis/portfolio && mv src/components/ContactForm.tsx src/features/cont
 In `src/features/contact/ContactForm.tsx`, change all relative `./ui/` imports to `@/shared/ui/`:
 
 ```typescript
-import { Field, FieldError, FieldGroup, FieldLabel } from '@/shared/ui/field';
-import { Input } from '@/shared/ui/input';
-import { Textarea } from '@/shared/ui/textarea';
-import { Separator } from '@/shared/ui/separator';
-import { LoadingButton } from '@/shared/ui/loading-button';
+import { Field, FieldError, FieldGroup, FieldLabel } from '@/shared/ui/field'
+import { Input } from '@/shared/ui/input'
+import { Textarea } from '@/shared/ui/textarea'
+import { Separator } from '@/shared/ui/separator'
+import { LoadingButton } from '@/shared/ui/loading-button'
 ```
 
 The imports to `@/shared/lib/service` and `@/shared/lib/schemas` should already be correct from Task 3.
@@ -2166,20 +2200,20 @@ The imports to `@/shared/lib/service` and `@/shared/lib/schemas` should already 
 In `src/features/contact/Contact.tsx`, change:
 
 ```typescript
-import { Section } from "./ui/Section";
-import { SocialLinks } from "./ui/social-links";
-import { Button } from "./ui/button";
-import { Spinner } from "./ui/spinner";
+import { Section } from './ui/Section'
+import { SocialLinks } from './ui/social-links'
+import { Button } from './ui/button'
+import { Spinner } from './ui/spinner'
 ```
 
 to:
 
 ```typescript
-import { Section } from '@/shared/ui/Section';
-import { SocialLinks } from '@/shared/ui/social-links';
-import { Button } from '@/shared/ui/button';
-import { Spinner } from '@/shared/ui/spinner';
-import { getCvForLang } from '@/shared/lib/cv';
+import { Section } from '@/shared/ui/Section'
+import { SocialLinks } from '@/shared/ui/social-links'
+import { Button } from '@/shared/ui/button'
+import { Spinner } from '@/shared/ui/spinner'
+import { getCvForLang } from '@/shared/lib/cv'
 ```
 
 - [ ] **Step 6: Refactor Contact to use getCvForLang**
@@ -2191,7 +2225,7 @@ Remove the `CV_MAP` constant and the `cvUrlPt`/`cvUrlEn` imports.
 Replace the `cv` variable line with:
 
 ```typescript
-const cv = getCvForLang(i18n.language);
+const cv = getCvForLang(i18n.language)
 ```
 
 - [ ] **Step 7: Update Contact lazy import**
@@ -2200,17 +2234,19 @@ In `src/features/contact/Contact.tsx`, change the lazy import:
 
 ```typescript
 const ContactForm = lazy(async () => {
-  const module = await import("./ContactForm");
+  const module = await import('./ContactForm')
   return {
-    default: module.ContactForm,
-  };
-});
+    default: module.ContactForm
+  }
+})
 ```
 
 to:
 
 ```typescript
-const ContactForm = lazy(() => import('./ContactForm').then((m) => ({ default: m.ContactForm })));
+const ContactForm = lazy(() =>
+  import('./ContactForm').then((m) => ({ default: m.ContactForm }))
+)
 ```
 
 - [ ] **Step 8: Write contact i18n.ts**
@@ -2218,17 +2254,17 @@ const ContactForm = lazy(() => import('./ContactForm').then((m) => ({ default: m
 Create `src/features/contact/i18n.ts`:
 
 ```typescript
-import type { i18n as I18n } from 'i18next';
-import contactPt from '@/data/translations/contact/pt-BR.json';
-import contactEn from '@/data/translations/contact/en-US.json';
-import uiPt from '@/data/translations/ui/pt-BR.json';
-import uiEn from '@/data/translations/ui/en-US.json';
+import type { i18n as I18n } from 'i18next'
+import contactPt from '@/data/translations/contact/pt-BR.json'
+import contactEn from '@/data/translations/contact/en-US.json'
+import uiPt from '@/data/translations/ui/pt-BR.json'
+import uiEn from '@/data/translations/ui/en-US.json'
 
 export function mountContactTranslations(i18n: I18n) {
-  i18n.addResourceBundle('pt-BR', 'translation', contactPt, true, true);
-  i18n.addResourceBundle('en-US', 'translation', contactEn, true, true);
-  i18n.addResourceBundle('pt-BR', 'translation', uiPt, true, true);
-  i18n.addResourceBundle('en-US', 'translation', uiEn, true, true);
+  i18n.addResourceBundle('pt-BR', 'translation', contactPt, true, true)
+  i18n.addResourceBundle('en-US', 'translation', contactEn, true, true)
+  i18n.addResourceBundle('pt-BR', 'translation', uiPt, true, true)
+  i18n.addResourceBundle('en-US', 'translation', uiEn, true, true)
 }
 ```
 
@@ -2237,21 +2273,21 @@ export function mountContactTranslations(i18n: I18n) {
 Create `src/features/contact/index.ts`:
 
 ```typescript
-import i18n from '@/i18n';
-import { Contact } from './Contact';
-import { mountContactTranslations } from './i18n';
+import i18n from '@/i18n'
+import { Contact } from './Contact'
+import { mountContactTranslations } from './i18n'
 
-let registered = false;
+let registered = false
 function setup() {
   if (!registered) {
-    mountContactTranslations(i18n);
-    registered = true;
+    mountContactTranslations(i18n)
+    registered = true
   }
 }
 
-setup();
+setup()
 
-export { Contact };
+export { Contact }
 ```
 
 - [ ] **Step 10: Run TypeScript check**
@@ -2275,6 +2311,7 @@ cd /home/viniis/portfolio && git add -A && git commit -m "feat(features): create
 ### Task 31: Update i18n.ts to only load header eagerly
 
 **Files:**
+
 - Modify: `src/i18n.ts`
 
 - [ ] **Step 1: Rewrite i18n.ts**
@@ -2282,16 +2319,16 @@ cd /home/viniis/portfolio && git add -A && git commit -m "feat(features): create
 Replace the entire content of `src/i18n.ts` with:
 
 ```typescript
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import headerPt from '@/data/translations/header/pt-BR.json';
-import headerEn from '@/data/translations/header/en-US.json';
-import linksPt from '@/data/translations/links/pt-BR.json';
-import linksEn from '@/data/translations/links/en-US.json';
+import i18n from 'i18next'
+import { initReactI18next } from 'react-i18next'
+import LanguageDetector from 'i18next-browser-languagedetector'
+import headerPt from '@/data/translations/header/pt-BR.json'
+import headerEn from '@/data/translations/header/en-US.json'
+import linksPt from '@/data/translations/links/pt-BR.json'
+import linksEn from '@/data/translations/links/en-US.json'
 
-const headerAndLinksPt = { ...headerPt, links: linksPt.links };
-const headerAndLinksEn = { ...headerEn, links: linksEn.links };
+const headerAndLinksPt = { ...headerPt, links: linksPt.links }
+const headerAndLinksEn = { ...headerEn, links: linksEn.links }
 
 i18n
   .use(LanguageDetector)
@@ -2299,7 +2336,7 @@ i18n
   .init({
     resources: {
       'pt-BR': { translation: headerAndLinksPt },
-      'en-US': { translation: headerAndLinksEn },
+      'en-US': { translation: headerAndLinksEn }
     },
     fallbackLng: 'en-US',
     interpolation: { escapeValue: false },
@@ -2308,11 +2345,11 @@ i18n
       lookupQuerystring: 'lang',
       caches: ['localStorage'],
       convertDetectedLanguage: (lng: string) =>
-        lng.startsWith('pt') ? 'pt-BR' : 'en-US',
-    },
-  });
+        lng.startsWith('pt') ? 'pt-BR' : 'en-US'
+    }
+  })
 
-export default i18n;
+export default i18n
 ```
 
 - [ ] **Step 2: Run TypeScript check**
@@ -2334,6 +2371,7 @@ cd /home/viniis/portfolio && git add src/i18n.ts && git commit -m "refactor(i18n
 ### Task 32: Update App.tsx with lazy loading
 
 **Files:**
+
 - Modify: `src/App.tsx`
 
 - [ ] **Step 1: Rewrite App.tsx**
@@ -2409,6 +2447,7 @@ cd /home/viniis/portfolio && git add src/App.tsx && git commit -m "feat(app): wi
 ### Task 33: Remove old components directory
 
 **Files:**
+
 - Delete: `src/components/` (should be empty or only have useDocumentLang.ts left)
 
 - [ ] **Step 1: Check what remains**
@@ -2442,6 +2481,7 @@ cd /home/viniis/portfolio && git add -A && git commit -m "refactor: remove old c
 ### Task 34: Remove old translation files
 
 **Files:**
+
 - Delete: All `src/data/translations/*.json` files (not directories)
 
 - [ ] **Step 1: List old translation files**
@@ -2469,6 +2509,7 @@ cd /home/viniis/portfolio && git add -A && git commit -m "refactor(i18n): remove
 ### Task 35: Move data/types.ts to shared
 
 **Files:**
+
 - Move: `src/data/types.ts` → `src/shared/types.ts` (if exists)
 
 - [ ] **Step 1: Check if data/types.ts exists**
@@ -2492,7 +2533,7 @@ Search for any imports of `@/data/types` and change to `@/shared/types`.
 In `src/shared/ui/social-links.tsx`, if it imports from `@/data/types`, change to:
 
 ```typescript
-import type { SocialLinkItem } from '@/shared/types';
+import type { SocialLinkItem } from '@/shared/types'
 ```
 
 - [ ] **Step 4: Run TypeScript check**
@@ -2516,6 +2557,7 @@ cd /home/viniis/portfolio && git add -A && git commit -m "refactor: move types t
 ### Task 36: Run full build and verification
 
 **Files:**
+
 - None (verification only)
 
 - [ ] **Step 1: Run lint**
@@ -2548,7 +2590,7 @@ Expected: Build succeeds
 cd /home/viniis/portfolio && ls -lh dist/assets/*.js
 ```
 
-Expected: Multiple JS files including lazy chunks (projects-*.js, contact-*.js)
+Expected: Multiple JS files including lazy chunks (projects-_.js, contact-_.js)
 
 - [ ] **Step 5: Start dev server**
 
