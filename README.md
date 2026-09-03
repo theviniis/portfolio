@@ -117,6 +117,9 @@ pnpm preview
 # Run linting
 pnpm lint
 
+# Format code with Prettier
+pnpm format
+
 # Type check
 pnpm exec tsc --noEmit -p tsconfig.app.json
 ```
