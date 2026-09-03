@@ -1,0 +1,11 @@
+{
+  "header": {
+    "items": [
+      { "url": "#about-me", "name": "About" },
+      { "url": "#skills", "name": "Skills" },
+      { "url": "#experience", "name": "Experience" },
+      { "url": "#projects", "name": "Projects" },
+      { "url": "#contact", "name": "Contact" }
+    ]
+  }
+}
