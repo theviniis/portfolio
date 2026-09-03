@@ -1,28 +1,16 @@
+import { lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { Section } from "@/shared/ui/Section";
 import { SocialLinks } from "@/shared/ui/social-links";
 import { Button } from "@/shared/ui/button";
-
-import cvUrlPt from "../assets/vinicius_costa_cv.docx?url";
-import cvUrlEn from "../assets/vinicius_costa_cv_en.docx?url";
-import { lazy, Suspense } from "react";
 import { Spinner } from "@/shared/ui/spinner";
+import { getCvForLang } from "@/shared/lib/cv";
 
-const ContactForm = lazy(async () => {
-  const module = await import("./ContactForm");
-  return {
-    default: module.ContactForm,
-  };
-});
-
-const CV_MAP: Record<string, { url: string; filename: string }> = {
-  "pt-BR": { url: cvUrlPt, filename: "vinicius_costa_cv.docx" },
-  "en-US": { url: cvUrlEn, filename: "vinicius_costa_cv_en.docx" },
-};
+const ContactForm = lazy(() => import('./ContactForm').then((m) => ({ default: m.ContactForm })));
 
 const Contact = () => {
   const { t, i18n } = useTranslation();
-  const cv = CV_MAP[i18n.language] || CV_MAP["pt-BR"];
+  const cv = getCvForLang(i18n.language);
 
   return (
     <Section id={t("contact.id")}>

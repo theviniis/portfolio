@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Logo } from "./Logo";
 import { Button } from "@/shared/ui/button";
 import { HamburgerButton } from "@/shared/ui/hamburger-button";
+import { useBodyScrollLock } from "@/shared/hooks/useBodyScrollLock";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -28,17 +29,7 @@ const Header = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isOpen]);
+  useBodyScrollLock(isOpen);
 
   return (
     <>

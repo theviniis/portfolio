@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Section } from "@/shared/ui/Section";
 import { Button } from "@/shared/ui/button";
+import { SkillList } from "@/shared/components/SkillList";
 
 const SkillsWrapper = () => {
   const { t } = useTranslation();
@@ -10,18 +11,18 @@ const SkillsWrapper = () => {
       <h2>{t('skills.title')}</h2>
       <div className="space-y-8">
         <p>{t('skills.description')}</p>
-        <ul className="flex flex-wrap gap-2">
-          {(t('skills.list', { returnObjects: true }) as string[]).map((skill, index) => (
+        <SkillList
+          skills={t('skills.list', { returnObjects: true }) as string[]}
+          renderItem={(skill, variant) => (
             <Button
-              key={skill}
-              variant={index > 2 ? "outline" : "default"}
+              variant={variant}
               className="pointer-events-none"
               asChild
             >
               <li className="flex-1">{skill}</li>
             </Button>
-          ))}
-        </ul>
+          )}
+        />
       </div>
     </Section>
   );

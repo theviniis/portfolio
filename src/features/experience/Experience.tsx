@@ -1,58 +1,10 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Section } from "@/shared/ui/Section";
-import { Badge } from "@/shared/ui/badge";
-import { Button } from "@/shared/ui/button";
-import { Separator } from "@/shared/ui/separator";
 import { ChevronDown } from "lucide-react";
-
-type ExperienceType = {
-  role: string;
-  company: string;
-  period: { start: string; end: string };
-  responsibilities: string[];
-  skills: string[];
-};
-
-const ExperienceItem = ({
-  company,
-  responsibilities,
-  period,
-  role,
-  skills,
-  isLast,
-}: ExperienceType & { isLast: boolean }) => {
-  return (
-    <li className="space-y-4">
-      <div>
-        <h3 className="text-h4">{company}</h3>
-        <h4 className="text-h5">{role}</h4>
-        <p>
-          {period.start} — {period.end}
-        </p>
-        <ul className="flex flex-wrap items-center gap-2 mt-2">
-          {skills.map((skill, index) => (
-            <li key={skill}>
-              <Badge variant={index > 2 ? "outline" : "default"}>{skill}</Badge>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <ul className="space-y-1">
-        {responsibilities.map((resp) => (
-          <li
-            key={resp}
-            className="text-muted-foreground text-justify hyphens-auto"
-          >
-            • {resp}
-          </li>
-        ))}
-      </ul>
-      {!isLast && <Separator />}
-    </li>
-  );
-};
+import { Section } from "@/shared/ui/Section";
+import { Button } from "@/shared/ui/button";
+import { ExperienceItem } from "./ExperienceItem";
+import type { ExperienceType } from "./types";
 
 const ITEMS_PER_PAGE = 3;
 

@@ -1,16 +1,11 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { ExternalLink, MouseLeft } from "lucide-react";
 import { Badge } from "@/shared/ui/badge";
 import { Button } from "@/shared/ui/button";
-
-type Project = {
-  name: string;
-  deployUrl: string;
-  githubUrl: string;
-  skills: string[];
-  description?: string;
-};
+import { SkillList } from "@/shared/components/SkillList";
+import { useClickOutsideEscape } from "@/shared/hooks/useClickOutsideEscape";
+import type { Project } from "./types";
 
 const ProjectCard = ({
   name,
@@ -24,22 +19,11 @@ const ProjectCard = ({
 
   const handleOverlayClick = useCallback(() => setActive(true), []);
 
-  useEffect(() => {
-    if (!active) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setActive(false);
-    };
-    const handleMouseDown = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (!target.closest("iframe")) setActive(false);
-    };
-    document.addEventListener("keydown", handleKeyDown);
-    document.addEventListener("mousedown", handleMouseDown, true);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.removeEventListener("mousedown", handleMouseDown, true);
-    };
-  }, [active]);
+  useClickOutsideEscape({
+    active,
+    ignoreInside: "iframe",
+    onDismiss: () => setActive(false),
+  });
 
   return (
     <div className="flex flex-col gap-4 min-w-0">
@@ -114,17 +98,10 @@ const ProjectCard = ({
           <p className="text-sm text-muted-foreground">{description}</p>
         )}
 
-        <ul className="flex flex-wrap gap-2">
-          {skills.map((skill, index) => (
-            <li key={skill}>
-              <Badge variant={index > 2 ? "outline" : "default"}>{skill}</Badge>
-            </li>
-          ))}
-        </ul>
+        <SkillList skills={skills} />
       </div>
     </div>
   );
 };
 
 export { ProjectCard };
-export type { Project };

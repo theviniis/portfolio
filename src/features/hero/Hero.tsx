@@ -1,10 +1,10 @@
 import { Pointer } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { Button } from "@/shared/ui/button";
 import { Section } from "@/shared/ui/Section";
 import { SocialLinks } from "@/shared/ui/social-links";
+import { CtaButton } from "@/shared/components/CtaButton";
 
-import profile from "../assets/profile.webp";
+import profile from "../../assets/profile.webp";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -25,16 +25,11 @@ const Hero = () => {
           </p>
         </div>
         <div className="flex items-center gap-4">
-          <Button size="lg" className="pe-1 " asChild>
-            <a href={`#${t("contact.id")}`}>
-              <span>{t("hero.cta")}</span>
-              <Button asChild variant="secondary" size="icon-sm">
-                <span>
-                  <Pointer className="text-primary" />
-                </span>
-              </Button>
-            </a>
-          </Button>
+          <CtaButton
+            label={t("hero.cta")}
+            icon={<Pointer className="text-primary" />}
+            href={`#${t("contact.id")}`}
+          />
           <SocialLinks />
         </div>
       </div>

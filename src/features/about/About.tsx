@@ -1,20 +1,13 @@
 import { Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Section } from "@/shared/ui/Section";
-import { Button } from "@/shared/ui/button";
 import { SocialLinks } from "@/shared/ui/social-links";
-
-import cvUrlPt from "../assets/vinicius_costa_cv.docx?url";
-import cvUrlEn from "../assets/vinicius_costa_cv_en.docx?url";
-
-const CV_MAP: Record<string, { url: string; filename: string }> = {
-  'pt-BR': { url: cvUrlPt, filename: 'vinicius_costa_cv.docx' },
-  'en-US': { url: cvUrlEn, filename: 'vinicius_costa_cv_en.docx' }
-};
+import { CtaButton } from "@/shared/components/CtaButton";
+import { getCvForLang } from "@/shared/lib/cv";
 
 const About = () => {
   const { t, i18n } = useTranslation();
-  const cv = CV_MAP[i18n.language] || CV_MAP['pt-BR'];
+  const cv = getCvForLang(i18n.language);
 
   return (
     <Section id={t('about.id')}>
@@ -29,17 +22,12 @@ const About = () => {
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <Button size="lg" className="pe-1" asChild>
-            <a href={cv.url} download={cv.filename}>
-              <span>{t('about.cvLabel')}</span>
-              <Button asChild variant="secondary" size="icon-sm">
-                <span>
-                  <Download />
-                </span>
-              </Button>
-            </a>
-          </Button>
-
+          <CtaButton
+            label={t('about.cvLabel')}
+            icon={<Download />}
+            href={cv.url}
+            download={cv.filename}
+          />
           <SocialLinks />
         </div>
       </div>
