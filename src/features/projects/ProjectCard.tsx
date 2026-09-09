@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { ExternalLink, MouseLeft } from 'lucide-react'
 import { Button } from '@/shared/ui/button'
 import { SkillList } from '@/shared/components/SkillList'
+import { LazyIframe } from '@/shared/components/LazyIframe'
 import { useClickOutsideEscape } from '@/shared/hooks/useClickOutsideEscape'
 import type { Project } from './types'
 
@@ -27,12 +28,11 @@ const ProjectCard = ({
   return (
     <div className="flex flex-col gap-4 min-w-0">
       <div className="relative w-full aspect-3/4 md:aspect-video overflow-hidden rounded-lg border bg-muted">
-        <iframe
+        <LazyIframe
           src={deployUrl}
           title={name}
-          loading="lazy"
-          className={`absolute inset-0 h-full w-full min-w-0 min-h-0 border-0 ${active ? 'pointer-events-auto' : 'pointer-events-none'}`}
           sandbox="allow-scripts allow-same-origin"
+          className={active ? 'pointer-events-auto' : 'pointer-events-none'}
         />
         {!active && (
           <button
