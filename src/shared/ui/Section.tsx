@@ -15,7 +15,7 @@ const Section = ({
   return (
     <section className={cn('wrapper py-8 lg:py-16', className)} {...props}>
       <m.div
-        className="grid md:grid-cols-[1fr_1fr] gap-8 lg:gap-16 focus-within:opacity-100! focus-within:transform-none! motion-reduce:opacity-100! motion-reduce:transform-none!"
+        className="grid md:grid-cols-[0.80fr_1fr] gap-8 lg:gap-16 focus-within:opacity-100! focus-within:transform-none! motion-reduce:opacity-100! motion-reduce:transform-none!"
         initial={shouldReveal ? { opacity: 0, y: 22 } : false}
         whileInView={shouldReveal ? { opacity: 1, y: 0 } : undefined}
         viewport={{ once: true, margin: '0px 0px -56px 0px' }}
