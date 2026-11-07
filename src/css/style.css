@@ -50,6 +50,8 @@
   --input: oklch(0.92 0.004 286.32);
   --ring: oklch(0.705 0.015 286.067);
   --radius: 0.875rem;
+  --viewport-padding: 16px;
+  --recommended-width: 120ch;
   --header-height: 92px;
   --header-height-compact: calc(var(--header-height) - 1rem);
   --shadow-color: hsla(0, 0%, 20%, 0.18);
@@ -105,12 +107,57 @@
 
 @layer components {
   .section-parallax-pattern {
+    --section-edge: max(
+      var(--viewport-padding),
+      calc((100% - var(--recommended-width)) / 2)
+    );
     background-image: repeating-linear-gradient(
       135deg,
-      color-mix(in oklch, var(--primary) 12%, transparent) 0 1px,
+      color-mix(in oklch, var(--primary) 9%, transparent) 0 1px,
       transparent 1px 24px
     );
-    mask-image: linear-gradient(to right, black, transparent 28% 72%, black);
+    mask-image: linear-gradient(
+      to right,
+      black,
+      transparent var(--section-edge) calc(100% - var(--section-edge)),
+      black
+    );
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .section-parallax-pattern::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: inherit;
+      mask-image: linear-gradient(
+        to right,
+        transparent 35%,
+        black,
+        transparent 65%
+      );
+      mask-size: 240% 100%;
+      mask-repeat: no-repeat;
+      animation: section-line-shimmer 12s ease-in-out infinite;
+    }
+  }
+
+  @keyframes section-line-shimmer {
+    0% {
+      mask-position: 100% 0;
+      opacity: 0;
+    }
+
+    10%,
+    50% {
+      opacity: 0.4;
+    }
+
+    62%,
+    100% {
+      mask-position: 0 0;
+      opacity: 0;
+    }
   }
 
   .sliding-underline {
@@ -155,8 +202,6 @@ img {
 }
 
 @utility wrapper {
-  --viewport-padding: 16px;
-  --recommended-width: 120ch;
   display: grid;
   grid-template-columns:
     1fr
