@@ -12,7 +12,7 @@ const Projects = () => {
   if (!projects.length) return null
 
   return (
-    <Section id={t('projects.id')}>
+    <Section>
       <SectionHeader
         title={t('projects.title')}
         description={t('projects.description')}

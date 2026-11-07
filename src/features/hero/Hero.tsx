@@ -28,7 +28,7 @@ const Hero = () => {
           <CtaButton
             label={t('hero.cta')}
             icon={<Pointer className="text-primary" />}
-            href={`#${t('contact.id')}`}
+            href={`#${t('header.items.contact.id')}`}
           />
           <SocialLinks />
         </div>

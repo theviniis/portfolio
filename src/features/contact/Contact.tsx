@@ -15,7 +15,7 @@ const Contact = () => {
   const cv = getCvForLang(i18n.language)
 
   return (
-    <Section id={t('contact.id')}>
+    <Section>
       <div className="space-y-4">
         <h2>{t('contact.title')}</h2>
         <div>

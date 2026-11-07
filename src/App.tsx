@@ -1,4 +1,5 @@
 import { lazy, Suspense } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Header } from '@/features/header'
 import { Hero } from '@/features/hero'
 import { About } from '@/features/about'
@@ -17,6 +18,7 @@ const Contact = lazy(() =>
 )
 
 function App() {
+  const { t } = useTranslation()
   useDocumentMeta()
 
   return (
@@ -31,13 +33,17 @@ function App() {
         <Separator />
         <Experience />
         <Separator />
-        <Suspense fallback={<SectionLoading variant="projects" />}>
-          <Projects />
-        </Suspense>
+        <div id={t('header.items.projects.id')}>
+          <Suspense fallback={<SectionLoading variant="projects" />}>
+            <Projects />
+          </Suspense>
+        </div>
         <Separator />
-        <Suspense fallback={<SectionLoading variant="contact" />}>
-          <Contact />
-        </Suspense>
+        <div id={t('header.items.contact.id')}>
+          <Suspense fallback={<SectionLoading variant="contact" />}>
+            <Contact />
+          </Suspense>
+        </div>
       </main>
       <Toaster />
     </>

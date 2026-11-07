@@ -19,7 +19,7 @@ const Experience = () => {
     : experiences.slice(0, ITEMS_PER_PAGE)
 
   return (
-    <Section id={t('experience.id')}>
+    <Section id={t('header.items.experience.id')}>
       <h2>{t('experience.title')}</h2>
       <div>
         <ul className="space-y-6" id="experience-list">

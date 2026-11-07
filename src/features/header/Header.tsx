@@ -8,20 +8,18 @@ import { useBodyScrollLock } from '@/shared/hooks/useBodyScrollLock'
 const Header = () => {
   const { t } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
-  const headerItems = t('header.items', { returnObjects: true }) as Array<{
-    url: string
-    name: string
-  }>
+  const headerItems = t('header.items', { returnObjects: true }) as Record<
+    string,
+    { id: string; name: string }
+  >
   const projects = t('projects.list', { returnObjects: true }) as unknown[]
   const hasProjects = projects.length > 0
 
   const toggleMenu = () => setIsOpen((prev) => !prev)
 
-  const filteredItems = hasProjects
-    ? headerItems
-    : headerItems.filter(
-        ({ url }) => url !== '#projects' && url !== '#projetos'
-      )
+  const filteredItems = Object.entries(headerItems).filter(
+    ([section]) => section !== 'projects' || hasProjects
+  )
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,14 +43,14 @@ const Header = () => {
           <Logo />
 
           <div className="hidden md:flex items-center">
-            {filteredItems.map(({ name, url }) => (
+            {filteredItems.map(([section, { id, name }]) => (
               <Button
-                key={name}
+                key={section}
                 asChild
                 variant="link"
                 className="text-md transition-all motion-reduce:transition-none"
               >
-                <a href={url}>{name}</a>
+                <a href={`#${id}`}>{name}</a>
               </Button>
             ))}
           </div>
@@ -74,16 +72,16 @@ const Header = () => {
           }
         `}
       >
-        {filteredItems.map(({ name, url }) => (
+        {filteredItems.map(([section, { id, name }]) => (
           <Button
-            key={name}
+            key={section}
             asChild
             variant="link"
             className="text-2xl w-full"
             onClick={() => setIsOpen(false)}
             size="lg"
           >
-            <a href={url}>{name}</a>
+            <a href={`#${id}`}>{name}</a>
           </Button>
         ))}
       </div>

@@ -10,7 +10,7 @@ const About = () => {
   const cv = getCvForLang(i18n.language)
 
   return (
-    <Section id={t('about.id')}>
+    <Section id={t('header.items.about.id')}>
       <h2>{t('about.heading')}</h2>
       <div className="space-y-8">
         <div className="space-y-4">

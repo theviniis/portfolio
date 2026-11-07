@@ -1,6 +1,5 @@
 {
   "projects": {
-    "id": "projetos",
     "title": "Projetos",
     "description": "Uma seleção de projetos que desenvolvi. Cada um tem uma pré-visualização ao vivo que você pode interagir.",
     "clickToInteract": "Clique para interagir",

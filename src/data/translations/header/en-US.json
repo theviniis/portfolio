@@ -1,11 +1,11 @@
 {
   "header": {
-    "items": [
-      { "url": "#about-me", "name": "About" },
-      { "url": "#skills", "name": "Skills" },
-      { "url": "#experience", "name": "Experience" },
-      { "url": "#projects", "name": "Projects" },
-      { "url": "#contact", "name": "Contact" }
-    ]
+    "items": {
+      "about": { "id": "about-me", "name": "About" },
+      "skills": { "id": "skills", "name": "Skills" },
+      "experience": { "id": "experience", "name": "Experience" },
+      "projects": { "id": "projects", "name": "Projects" },
+      "contact": { "id": "contact", "name": "Contact" }
+    }
   }
 }
