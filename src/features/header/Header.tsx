@@ -3,11 +3,13 @@ import { useTranslation } from 'react-i18next'
 import { Logo } from './Logo'
 import { Button } from '@/shared/ui/button'
 import { HamburgerButton } from '@/shared/ui/hamburger-button'
+import { SlidingUnderlineGroup } from '@/shared/ui/sliding-underline-group'
 import { useBodyScrollLock } from '@/shared/hooks/useBodyScrollLock'
 
 const Header = () => {
   const { t } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
+  const [isCompact, setIsCompact] = useState(false)
   const headerItems = t('header.items', { returnObjects: true }) as Record<
     string,
     { id: string; name: string }
@@ -20,6 +22,14 @@ const Header = () => {
   const filteredItems = Object.entries(headerItems).filter(
     ([section]) => section !== 'projects' || hasProjects
   )
+
+  useEffect(() => {
+    const updateHeight = () => setIsCompact(window.scrollY >= 48)
+
+    updateHeight()
+    window.addEventListener('scroll', updateHeight, { passive: true })
+    return () => window.removeEventListener('scroll', updateHeight)
+  }, [])
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,31 +48,39 @@ const Header = () => {
 
   return (
     <>
-      <header className="wrapper py-6 sticky top-0 w-full z-50 bg-background/80 shadow-md ring-1 ring-border backdrop-blur-xl">
-        <nav className="flex justify-between items-center">
-          <Logo />
+      <header className="pointer-events-none sticky top-0 z-50 h-(--header-height) w-full">
+        <div
+          className={`wrapper pointer-events-auto bg-background/80 shadow-md ring-1 ring-border backdrop-blur-xl transition-[height] duration-200 ease-out motion-reduce:transition-none ${
+            isCompact ? 'h-(--header-height-compact)' : 'h-(--header-height)'
+          }`}
+        >
+          <nav className="flex justify-between items-center">
+            <Logo />
 
-          <div className="hidden md:flex items-center">
-            {filteredItems.map(([section, { id, name }]) => (
-              <Button
-                key={section}
-                asChild
-                variant="link"
-                className="text-md transition-all motion-reduce:transition-none"
-              >
-                <a href={`#${id}`}>{name}</a>
-              </Button>
-            ))}
-          </div>
+            <SlidingUnderlineGroup className="hidden md:flex items-center">
+              {filteredItems.map(([section, { id, name }]) => (
+                <Button
+                  key={section}
+                  asChild
+                  variant="link"
+                  className="text-md transition-all motion-reduce:transition-none"
+                >
+                  <a href={`#${id}`}>
+                    <span className="sliding-underline">{name}</span>
+                  </a>
+                </Button>
+              ))}
+            </SlidingUnderlineGroup>
 
-          <HamburgerButton isOpen={isOpen} onClick={toggleMenu} />
-        </nav>
+            <HamburgerButton isOpen={isOpen} onClick={toggleMenu} />
+          </nav>
+        </div>
       </header>
 
       <div
         className={`
           fixed inset-0 z-40 bg-background/95 backdrop-blur-xl
-          flex flex-col items-center justify-center gap-6 p-6 md:hidden
+          flex items-center justify-center p-6 md:hidden
           transition-all duration-300 ease-in-out
           motion-reduce:transition-none
           ${
@@ -72,18 +90,22 @@ const Header = () => {
           }
         `}
       >
-        {filteredItems.map(([section, { id, name }]) => (
-          <Button
-            key={section}
-            asChild
-            variant="link"
-            className="text-2xl w-full"
-            onClick={() => setIsOpen(false)}
-            size="lg"
-          >
-            <a href={`#${id}`}>{name}</a>
-          </Button>
-        ))}
+        <SlidingUnderlineGroup className="flex w-full flex-col gap-6">
+          {filteredItems.map(([section, { id, name }]) => (
+            <Button
+              key={section}
+              asChild
+              variant="link"
+              className="text-2xl w-full"
+              onClick={() => setIsOpen(false)}
+              size="lg"
+            >
+              <a href={`#${id}`}>
+                <span className="sliding-underline">{name}</span>
+              </a>
+            </Button>
+          ))}
+        </SlidingUnderlineGroup>
       </div>
     </>
   )

@@ -50,8 +50,15 @@
   --input: oklch(0.92 0.004 286.32);
   --ring: oklch(0.705 0.015 286.067);
   --radius: 0.875rem;
-  --header-height: 84px;
+  --header-height: 92px;
+  --header-height-compact: calc(var(--header-height) - 1rem);
   --shadow-color: hsla(0, 0%, 20%, 0.18);
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --header-height: 84px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -96,9 +103,50 @@
   }
 }
 
+@layer components {
+  .section-parallax-pattern {
+    background-image: repeating-linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--primary) 12%, transparent) 0 1px,
+      transparent 1px 24px
+    );
+    mask-image: linear-gradient(to right, black, transparent 28% 72%, black);
+  }
+
+  .sliding-underline {
+    position: relative;
+  }
+
+  .sliding-underline::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    bottom: -0.2em;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+  }
+
+  :focus-visible > .sliding-underline::after {
+    transform: scaleX(1);
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: reduce) {
+    :hover > .sliding-underline::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--header-height);
+  scroll-padding-top: var(--header-height-compact);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 img {

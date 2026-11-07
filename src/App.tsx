@@ -5,10 +5,11 @@ import { Hero } from '@/features/hero'
 import { About } from '@/features/about'
 import { SkillsWrapper } from '@/features/skills'
 import { Experience } from '@/features/experience'
-import { Separator } from '@/shared/ui/separator'
 import { Toaster } from '@/shared/ui/sonner'
 import { SectionLoading } from '@/shared/components/SectionLoading'
+import { SectionBackdrop } from '@/shared/components/SectionBackdrop'
 import { useDocumentMeta } from '@/shared/hooks/useDocumentMeta'
+import { useWheelMomentum } from '@/shared/hooks/useWheelMomentum'
 
 const Projects = lazy(() =>
   import('@/features/projects').then((m) => ({ default: m.Projects }))
@@ -20,30 +21,28 @@ const Contact = lazy(() =>
 function App() {
   const { t } = useTranslation()
   useDocumentMeta()
+  useWheelMomentum()
 
   return (
     <>
       <main className="bg-background">
         <Header />
         <Hero />
-        <Separator />
-        <About />
-        <Separator />
-        <SkillsWrapper />
-        <Separator />
-        <Experience />
-        <Separator />
-        <div id={t('header.items.projects.id')}>
-          <Suspense fallback={<SectionLoading variant="projects" />}>
-            <Projects />
-          </Suspense>
-        </div>
-        <Separator />
-        <div id={t('header.items.contact.id')}>
-          <Suspense fallback={<SectionLoading variant="contact" />}>
-            <Contact />
-          </Suspense>
-        </div>
+        <SectionBackdrop>
+          <About />
+          <SkillsWrapper />
+          <Experience />
+          <div id={t('header.items.projects.id')}>
+            <Suspense fallback={<SectionLoading variant="projects" />}>
+              <Projects />
+            </Suspense>
+          </div>
+          <div id={t('header.items.contact.id')}>
+            <Suspense fallback={<SectionLoading variant="contact" />}>
+              <Contact />
+            </Suspense>
+          </div>
+        </SectionBackdrop>
       </main>
       <Toaster />
     </>

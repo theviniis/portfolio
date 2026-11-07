@@ -4,6 +4,7 @@ import { Section } from '@/shared/ui/Section'
 import { SocialLinks } from '@/shared/ui/social-links'
 import { Button } from '@/shared/ui/button'
 import { Spinner } from '@/shared/ui/spinner'
+import { SlidingUnderlineGroup } from '@/shared/ui/sliding-underline-group'
 import { getCvForLang } from '@/shared/lib/cv'
 
 const ContactForm = lazy(() =>
@@ -18,11 +19,13 @@ const Contact = () => {
     <Section>
       <div className="space-y-4">
         <h2>{t('contact.title')}</h2>
-        <div>
+        <SlidingUnderlineGroup>
           <p>
             {t('contact.emailLabel')}{' '}
             <Button className="p-0 text-base" variant="link" asChild>
-              <a href={`mailto:${t('contact.email')}`}>{t('contact.email')}</a>
+              <a href={`mailto:${t('contact.email')}`}>
+                <span className="sliding-underline">{t('contact.email')}</span>
+              </a>
             </Button>
           </p>
 
@@ -30,11 +33,11 @@ const Contact = () => {
             {t('contact.cvLabel')}{' '}
             <Button className="p-0 text-base" variant="link" asChild>
               <a href={cv.url} download={cv.filename}>
-                {t('contact.cvLink')}
+                <span className="sliding-underline">{t('contact.cvLink')}</span>
               </a>
             </Button>
           </p>
-        </div>
+        </SlidingUnderlineGroup>
         <Suspense
           fallback={
             <div>
