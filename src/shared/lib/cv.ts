@@ -1,9 +1,9 @@
-import cvUrlPt from '@/assets/cv_vinicius_costa.docx?url'
-import cvUrlEn from '@/assets/en_cv_vinicius_costa.docx?url'
+import cvUrlPt from '@/assets/cv_vinicius_costa.pdf?url'
+import cvUrlEn from '@/assets/en_cv_vinicius_costa.pdf?url'
 
 export const CV_MAP: Record<string, { url: string; filename: string }> = {
-  'pt-BR': { url: cvUrlPt, filename: 'cv_vinicius_costa.docx' },
-  'en-US': { url: cvUrlEn, filename: 'en_cv_vinicius_costa.docx' }
+  'pt-BR': { url: cvUrlPt, filename: 'cv_vinicius_costa.pdf' },
+  'en-US': { url: cvUrlEn, filename: 'en_cv_vinicius_costa.pdf' }
 }
 
 export function getCvForLang(lang: string) {
