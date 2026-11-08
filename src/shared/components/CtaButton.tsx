@@ -1,6 +1,7 @@
 import { useReducedMotion } from 'motion/react'
 import * as m from 'motion/react-m'
 import { Button, type ButtonProps } from '@/shared/ui/button'
+import { ButtonShine } from '@/shared/ui/button-shine'
 import { cn } from '@/shared/lib/utils'
 
 interface CtaButtonProps extends Omit<ButtonProps, 'size' | 'asChild'> {
@@ -41,18 +42,7 @@ export function CtaButton({
         whileTap={reduceMotion ? undefined : { scale: 0.98 }}
         transition={{ duration: 0.16, ease: 'easeOut' }}
       >
-        <m.span
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 left-0 -z-10 w-1/2 bg-linear-[105deg,transparent,white_50%,transparent] motion-reduce:hidden"
-          variants={{
-            rest: { x: '-100%', opacity: 0, transition: { duration: 0 } },
-            hover: {
-              x: '200%',
-              opacity: [0, 0.4, 0.4, 0],
-              transition: { duration: 0.55, ease: 'easeOut' }
-            }
-          }}
-        />
+        <ButtonShine />
         <span>{label}</span>
         <Button asChild variant="secondary" size="icon-sm">
           <span aria-hidden="true">{icon}</span>

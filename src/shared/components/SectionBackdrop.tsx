@@ -17,7 +17,7 @@ export function SectionBackdrop({ children }: { children: ReactNode }) {
     <div ref={ref} className="relative isolate">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden [--section-parallax-travel:80px] md:[--section-parallax-travel:144px]"
+        className="section-parallax-frame pointer-events-none absolute inset-0 -z-10 overflow-hidden [--section-parallax-travel:80px] md:[--section-parallax-travel:144px]"
       >
         <m.div
           className="section-parallax-pattern absolute -top-36 right-0 bottom-0 left-0 motion-reduce:transform-none!"

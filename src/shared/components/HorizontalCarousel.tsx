@@ -21,13 +21,13 @@ export function HorizontalCarousel({
 }: HorizontalCarouselProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const { canScrollPrev, canScrollNext, scrollPrev, scrollNext } =
-    useCarouselScroll(scrollRef as React.RefObject<HTMLDivElement>)
+    useCarouselScroll(scrollRef)
 
   return (
     <div className="relative overflow-hidden">
       <div
         ref={scrollRef}
-        className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none"
+        className="relative flex gap-6 overflow-x-auto snap-x snap-mandatory data-[dragging]:cursor-grabbing data-[dragging]:select-none data-[dragging]:[&_*]:cursor-grabbing! [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none"
       >
         {itemKeys.map((key) => (
           <div

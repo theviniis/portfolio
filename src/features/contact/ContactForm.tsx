@@ -4,7 +4,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Field, FieldError, FieldGroup, FieldLabel } from '@/shared/ui/field'
 import { Input } from '@/shared/ui/input'
 import { Textarea } from '@/shared/ui/textarea'
-import { Separator } from '@/shared/ui/separator'
 import { sendContactEmail } from '@/shared/lib/service'
 import { sendContactSchema } from '@/shared/lib/schemas'
 import { LoadingButton } from '@/shared/ui/loading-button'
@@ -92,7 +91,7 @@ const ContactForm = () => {
                 <FieldLabel htmlFor={field.name}>
                   {t('contact.formFields.message')}
                 </FieldLabel>
-                <Textarea id={field.name} {...field} />
+                <Textarea id={field.name} {...field} className="h-45" />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
                 )}
@@ -101,9 +100,9 @@ const ContactForm = () => {
           />
         </FieldGroup>
       </div>
-      <Separator />
       <div className="flex gap-4 justify-end">
         <LoadingButton
+          type="submit"
           className="min-w-20"
           size="lg"
           isLoading={form.formState.isSubmitting}

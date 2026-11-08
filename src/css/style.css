@@ -106,6 +106,14 @@
 }
 
 @layer components {
+  .section-parallax-frame {
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black clamp(4rem, 8vw, 8rem)
+    );
+  }
+
   .section-parallax-pattern {
     --section-edge: max(
       var(--viewport-padding),

@@ -25,7 +25,11 @@ const Hero = () => {
   })
 
   return (
-    <Section ref={heroRef} reveal={false}>
+    <Section
+      ref={heroRef}
+      reveal={false}
+      className="min-h-[calc(100dvh-var(--header-height))] items-center py-6 lg:py-8"
+    >
       <div className="grid md:place-content-center gap-y-8 lg:gap-y-16">
         <div className="space-y-2 lg:space-y-4">
           <div>
@@ -39,7 +43,7 @@ const Hero = () => {
             {t('hero.descriptionSuffix')}
           </p>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4">
           <CtaButton
             label={t('hero.cta')}
             icon={<Pointer className="text-primary" />}
@@ -48,7 +52,7 @@ const Hero = () => {
           <SocialLinks />
         </div>
       </div>
-      <div className="bg-secondary rounded-4xl overflow-hidden relative aspect-square lg:aspect-3/4 isolate transform-gpu [-webkit-mask-image:-webkit-radial-gradient(white,black)] [--portrait-travel:0.5] md:[--portrait-travel:1]">
+      <div className="relative isolate mx-auto aspect-square w-full max-w-[min(20rem,43dvh)] self-center overflow-hidden rounded-4xl bg-secondary transform-gpu [-webkit-mask-image:-webkit-radial-gradient(white,black)] [--portrait-travel:0.5] md:max-w-[clamp(10rem,calc((100dvh-var(--header-height)-4rem)*0.75),32rem)] md:[--portrait-travel:1] lg:aspect-3/4">
         <m.img
           src={profile}
           alt={t('hero.alt')}

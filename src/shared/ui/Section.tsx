@@ -13,7 +13,7 @@ const Section = ({
   const shouldReveal = reveal && !reduceMotion
 
   return (
-    <section className={cn('wrapper py-8 lg:py-16', className)} {...props}>
+    <section className={cn('wrapper py-8 lg:py-10', className)} {...props}>
       <m.div
         className="grid md:grid-cols-[0.80fr_1fr] gap-8 lg:gap-16 focus-within:opacity-100! focus-within:transform-none! motion-reduce:opacity-100! motion-reduce:transform-none!"
         initial={shouldReveal ? { opacity: 0, y: 22 } : false}
