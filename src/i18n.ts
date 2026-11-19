@@ -24,7 +24,7 @@ i18n
     detection: {
       order: ['navigator', 'htmlTag'],
       lookupQuerystring: 'lang',
-      caches: ['localStorage'],
+      caches: [],
       convertDetectedLanguage: (lng: string) => {
         return lng.startsWith('pt') ? 'pt-BR' : 'en-US'
       }

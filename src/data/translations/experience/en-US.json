@@ -5,9 +5,12 @@
     "showLess": "Show less",
     "experiences": [
       {
-        "role": "Front-end Developer",
+        "role": "Mid-level Front-end Developer",
         "company": "Sympla",
-        "period": { "start": "nov/2025", "end": "jun/2026" },
+        "period": {
+          "start": "Nov 2025",
+          "end": "Jun 2026"
+        },
         "responsibilities": [
           "Led the development and maintenance of the ticketing platform using React, Next.js and TypeScript, optimizing performance and user experience throughout the purchase journey.",
           "Structured analytics tracking via Mixpanel across 5 applications, mapping 100+ events for behavior analysis, which drove platform usage by 400%.",
@@ -32,7 +35,10 @@
       {
         "role": "Front-end Developer",
         "company": "InfoPrice",
-        "period": { "start": "jun/2023", "end": "oct/2025" },
+        "period": {
+          "start": "Jun 2023",
+          "end": "oct 2025"
+        },
         "responsibilities": [
           "Led the front-end evolution of a B2B SaaS pricing platform for 27,000 stores, using React, TypeScript and Redux to ensure scalability and performance.",
           "Optimized the development cycle by 30% by standardizing components in the Design System with SASS and LESS, ensuring visual consistency and high code reuse.",
@@ -52,7 +58,10 @@
       {
         "role": "Front-end Developer",
         "company": "Bornlogic",
-        "period": { "start": "aug/2022", "end": "jan/2023" },
+        "period": {
+          "start": "aug 2022",
+          "end": "Jan 2023"
+        },
         "responsibilities": [
           "Led the Design System structuring with Storybook and MDX, boosting team productivity through the creation of 50+ reusable components and reducing development time by 30%.",
           "Architected scalable, responsive and accessible interfaces with React, TypeScript and Styled-components, mitigating 40% of rework from visual inconsistencies through technical standardization.",
@@ -71,7 +80,10 @@
       {
         "role": "Front-end Developer",
         "company": "E-SHOOTS LTD",
-        "period": { "start": "may/2022", "end": "jul/2022" },
+        "period": {
+          "start": "may 2022",
+          "end": "Jul 2022"
+        },
         "responsibilities": [
           "Developed the interface of a web application for a photography platform, working end-to-end on front-end structuring with Ruby on Rails.",
           "Structured and applied project styling using SASS, delivering a cohesive, responsive, and intuitively navigable visual experience for users."
@@ -87,7 +99,10 @@
       {
         "role": "Front-end Developer",
         "company": "Espaço Plannar",
-        "period": { "start": "may/2021", "end": "jul/2021" },
+        "period": {
+          "start": "may 2021",
+          "end": "Jul 2021"
+        },
         "responsibilities": [
           "Built an interactive and responsive landing page from scratch using HTML5, CSS3, and vanilla JavaScript, focusing on semantics, performance, and user conversion.",
           "Migrated the developed interface to the WordPress ecosystem, implementing and configuring Custom Fields (CMS) to enable autonomous and dynamic content management by the client."

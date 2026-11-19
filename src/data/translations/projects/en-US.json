@@ -15,31 +15,31 @@
           "React Hook Form",
           "Zod"
         ],
-        "description": "Social network for dogs"
+        "description": "A social network for sharing dog photos. Built with Next.js and TypeScript, with forms validated using React Hook Form and Zod and an interface styled with Tailwind CSS."
       },
       {
         "name": "Tibia Tools",
         "deployUrl": "https://tibia-tools-amber.vercel.app/",
         "githubUrl": "https://github.com/theviniis/tibia-tools",
         "skills": ["Next.js", "TypeScript", "Tailwind CSS"],
-        "description": "Platform for calculating Tibia speed"
+        "description": "A tool for calculating character speed in Tibia. Built with Next.js, TypeScript and Tailwind CSS, it provides a dedicated interface for looking up and calculating in-game speed."
       },
       {
         "name": "Swars",
         "deployUrl": "https://swars-wine.vercel.app/",
         "githubUrl": "https://github.com/theviniis/swars",
         "skills": ["React", "JavaScript", "SCSS", "REST API"],
-        "description": "Star Wars social network"
+        "description": "A social network inspired by the Star Wars universe. Developed with React and JavaScript, it combines an SCSS-styled interface with REST API integration."
       },
       {
-        "name": "Espaço Plannar",
+        "name": "EspaÃ§o Plannar",
         "deployUrl": "https://theviniis.github.io/espaco-plannar/",
         "githubUrl": "https://github.com/theviniis/espaco-plannar/",
         "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],
-        "description": "Landing Page created for Espaço Plannar clients"
+        "description": "A landing page developed for Espaço Plannar. A client project built with HTML, CSS and JavaScript, presenting the venue through a responsive interface."
       },
       {
-        "name": "Animais Fantásticos",
+        "name": "Animais FantÃ¡sticos",
         "deployUrl": "https://theviniis.github.io/animais-fantasticos/",
         "githubUrl": "https://github.com/theviniis/animais-fantasticos",
         "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],

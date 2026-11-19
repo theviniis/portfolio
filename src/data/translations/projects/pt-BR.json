@@ -15,28 +15,28 @@
           "React Hook Form",
           "Zod"
         ],
-        "description": "Rede social para cachorros"
+        "description": "Rede social para compartilhar fotos de cachorros. Uma aplicação construída com Next.js e TypeScript, com formulários validados por React Hook Form e Zod e uma interface desenvolvida com Tailwind CSS."
       },
       {
         "name": "Tibia Tools",
         "deployUrl": "https://tibia-tools-amber.vercel.app/",
         "githubUrl": "https://github.com/theviniis/tibia-tools",
         "skills": ["Next.js", "TypeScript", "Tailwind CSS"],
-        "description": "Plataforma para realizar o calculo de speed no Tibia"
+        "description": "Ferramenta para calcular a velocidade de personagens no Tibia. O projeto reúne Next.js, TypeScript e Tailwind CSS em uma interface dedicada a facilitar a consulta e o cálculo de speed no jogo."
       },
       {
         "name": "Swars",
         "deployUrl": "https://swars-wine.vercel.app/",
         "githubUrl": "https://github.com/theviniis/swars",
         "skills": ["React", "JavaScript", "SCSS", "REST API"],
-        "description": "Rede social do Star Wars"
+        "description": "Rede social inspirada no universo de Star Wars. Desenvolvida com React e JavaScript, combina uma interface estilizada com SCSS e integração com uma API REST."
       },
       {
         "name": "Espaço Plannar",
         "deployUrl": "https://theviniis.github.io/espaco-plannar/",
         "githubUrl": "https://github.com/theviniis/espaco-plannar/",
         "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3", "Git"],
-        "description": "Landing Page criada para cliente do Espaço Plannar"
+        "description": "Landing page desenvolvida para o Espaço Plannar. Um projeto para cliente, construído com HTML, CSS e JavaScript, com foco na apresentação do espaço em uma interface responsiva."
       },
       {
         "name": "Animais Fantásticos",
