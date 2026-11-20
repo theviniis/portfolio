@@ -17,18 +17,14 @@ export default function App() {
   return (
     <>
       <Header />
-      <main className="mx-auto max-w-260 px-6 md:space-y-13.5 sm:space-y-5">
+      <main className="mx-auto max-w-260 px-6">
         <Hero hasScrolled={hasScrolled} />
         <Projects hasScrolled={hasScrolled} />
         <Experience />
         <About />
         <Contact />
       </main>
-      <Footer
-        className="md:mt-13.5 sm:mt-5"
-        name={profile.name}
-        year={new Date().getFullYear()}
-      />
+      <Footer name={profile.name} year={new Date().getFullYear()} />
     </>
   )
 }
