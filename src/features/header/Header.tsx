@@ -7,7 +7,7 @@ import { NavigationLink, type NavigationItem } from './NavigationLink'
 
 export function Header() {
   const { t, i18n } = usePortfolioTranslation()
-  const active = useActiveSection()
+  const { active, select } = useActiveSection()
   const reduceMotion = useReducedMotion()
   const [hovered, setHovered] = useState<string | null>(null)
   const navRef = useRef<HTMLElement>(null)
@@ -77,7 +77,10 @@ export function Header() {
             active={active === item.id}
             highlighted={(hovered ?? active) === item.id}
             onHighlight={setHovered}
-            onSelect={() => setHovered(null)}
+            onSelect={() => {
+              setHovered(null)
+              select(item.id)
+            }}
           />
         ))}
       </nav>
