@@ -1,0 +1,12 @@
+Icons: Icons8 Doodle collection
+Source: https://icons8.com/icons/doodle
+License and free-use attribution requirements: https://icons8.com/license
+The site footer links to Icons8 as required for free use.
+Original PNG files are stored locally, without recoloring or path edits.
+
+code.png: https://icons8.com/icon/AoAaWNCurE_G/code-file
+components.png: https://icons8.com/icon/V7bWlRbkNWas/module
+interface.png: https://icons8.com/icon/72390/monitor
+quality.png: https://icons8.com/icon/Ihw7rsNxtanQ/inspection
+design.png: https://icons8.com/icon/WOEYzdYCr1UZ/figma
+github.png: https://icons8.com/icon/80462/github

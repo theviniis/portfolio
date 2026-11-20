@@ -1,70 +1,102 @@
-import { useRef } from 'react'
-import { Pointer } from 'lucide-react'
-import { useReducedMotion, useScroll, useTransform } from 'motion/react'
+import { useMediaQuery } from '@/shared/hooks/useMediaQuery'
+import { useLayoutEffect, useRef, useState } from 'react'
+import { useReducedMotion } from 'motion/react'
 import * as m from 'motion/react-m'
-import { useTranslation } from 'react-i18next'
-import { Section } from '@/shared/ui/Section'
-import { SocialLinks } from '@/shared/ui/social-links'
-import { CtaButton } from '@/shared/components/CtaButton'
+import { profile } from '@/data/profile'
+import { RevealSection } from '@/shared/components/RevealSection'
+import { usePortfolioTranslation } from '@/shared/hooks/usePortfolioTranslation'
+import { FlipPortrait } from './FlipPortrait'
+import { HeroSticker } from './HeroSticker'
+import { OrbitHalo } from './OrbitHalo'
+import { heroStickers } from './stickers'
 
-import profile from '../../assets/profile.webp'
-
-const Hero = () => {
-  const { t } = useTranslation()
-  const heroRef = useRef<HTMLElement>(null)
+export function Hero({ hasScrolled }: { hasScrolled: boolean }) {
+  const { t } = usePortfolioTranslation()
   const reduceMotion = useReducedMotion()
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ['start 84px', 'end 84px']
+  const isMobile = useMediaQuery('(max-width: 767px)')
+  const [universe, setUniverse] = useState(true)
+  const interacted = useRef(false)
+  const stageRef = useRef<HTMLDivElement>(null)
+  const [orbitRadius, setOrbitRadius] = useState(230)
+  useLayoutEffect(() => {
+    const stage = stageRef.current
+    if (!stage) return
+    const measure = () =>
+      setOrbitRadius(Math.min(stage.clientWidth * 0.45, 230))
+    measure()
+    const observer = new ResizeObserver(measure)
+    observer.observe(stage)
+    return () => observer.disconnect()
+  }, [])
+  const orbiting = (isMobile || universe) && !reduceMotion
+  const enter = (delay: number) => ({
+    initial: reduceMotion ? (false as const) : { opacity: 0, y: 18 },
+    animate: { opacity: 1, y: 0 },
+    transition: {
+      duration: 0.65,
+      delay: reduceMotion ? 0 : delay,
+      ease: [0.22, 1, 0.36, 1] as const
+    }
   })
-  const portraitY = useTransform(() => {
-    // Ease the portrait back into its original framing before the Hero exits.
-    const phase = Math.min(scrollYProgress.get() / 0.8, 1)
-    const distance = 18 * Math.sin(Math.PI * phase) ** 2
-    return `calc(${distance}px * var(--portrait-travel))`
-  })
-
   return (
-    <Section
-      ref={heroRef}
+    <RevealSection
+      id="inicio"
       reveal={false}
-      className="min-h-[calc(100dvh-var(--header-height))] items-center py-6 lg:py-8"
+      className="min-h-[760px] pt-[92px] text-center [overflow-anchor:none] max-[767px]:min-h-0 max-[767px]:pt-8"
     >
-      <div className="grid md:place-content-center gap-y-8 lg:gap-y-16">
-        <div className="space-y-2 lg:space-y-4">
-          <div>
-            <span className="text-h3">{t('hero.greeting')}</span>
-            <h1>{t('hero.name')}</h1>
-          </div>
-          <p>
-            {t('hero.descriptionPrefix')}
-            <strong>{t('hero.location')}</strong>.
-            <br />
-            {t('hero.descriptionSuffix')}
-          </p>
-        </div>
-        <div className="flex flex-wrap items-center gap-4">
-          <CtaButton
-            label={t('hero.cta')}
-            icon={<Pointer className="text-primary" />}
-            href={`#${t('header.items.contact.id')}`}
+      <m.h1
+        {...enter(0.3)}
+        className="font-sans text-5xl font-normal normal-case leading-[1.2] tracking-[-0.035em] max-[767px]:text-4xl"
+      >
+        {t('hero.greeting')} <strong>{profile.firstName}</strong>
+      </m.h1>
+      <m.p
+        {...enter(0.44)}
+        className="my-3 text-[17px] leading-[1.7] text-muted-foreground"
+      >
+        {t('hero.role')}
+        <br />
+        React · TypeScript · Next.js
+      </m.p>
+      <div
+        ref={stageRef}
+        className="relative isolate mx-auto grid w-full max-w-[720px] place-items-center [container-type:inline-size] [--orbit-radius:min(45cqw,230px)] max-[767px]:scale-[0.78]"
+        style={{ height: orbitRadius * 2.3 + 48 }}
+        onPointerLeave={() => {
+          if (!isMobile && interacted.current) setUniverse(false)
+        }}
+      >
+        <div
+          className="relative grid size-full place-items-center"
+          style={{ transform: `translateY(${-orbitRadius * 0.025}px)` }}
+        >
+          <OrbitHalo active={Boolean(orbiting)} />
+          <FlipPortrait
+            src={profile.image}
+            alt={profile.name}
+            circleLabel={t('hero.circleLabel')}
+            flipLabel={t('hero.flipLabel')}
+            scrollLabel={t('hero.scrollLabel')}
+            hasScrolled={hasScrolled}
+            orbiting={Boolean(orbiting)}
+            onPointerEnter={(event) => {
+              if (event.pointerType !== 'touch') {
+                interacted.current = true
+                setUniverse(true)
+              }
+            }}
           />
-          <SocialLinks />
+          {heroStickers.map((config, index) => (
+            <HeroSticker
+              key={config.id}
+              config={config}
+              orbitRadius={orbitRadius}
+              index={index}
+              orbiting={Boolean(orbiting)}
+            />
+          ))}
         </div>
       </div>
-      <div className="relative isolate mx-auto aspect-square w-full max-w-[min(20rem,43dvh)] self-center overflow-hidden rounded-4xl bg-secondary transform-gpu [-webkit-mask-image:-webkit-radial-gradient(white,black)] [--portrait-travel:0.5] md:max-w-[clamp(10rem,calc((100dvh-var(--header-height)-4rem)*0.75),32rem)] md:[--portrait-travel:1] lg:aspect-3/4">
-        <m.img
-          src={profile}
-          alt={t('hero.alt')}
-          className="drop-shadow absolute bottom-0 motion-reduce:transform-none!"
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-          style={{ y: reduceMotion ? 0 : portraitY }}
-        />
-      </div>
-    </Section>
+    </RevealSection>
   )
 }
-
-export { Hero }

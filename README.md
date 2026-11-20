@@ -10,19 +10,19 @@ Personal portfolio website built with React, TypeScript, Vite, and Tailwind CSS.
 - **UI Components**: Radix UI + shadcn/ui (in `src/shared/ui/`)
 - **Forms**: React Hook Form + Zod (schemas in `src/shared/lib/schemas.ts`)
 - **Icons**: Lucide React
-- **Theme**: next-themes (dark/light mode)
+- **Theme**: shadcn tokens + prefers-color-scheme
 - **Internationalization**: react-i18next with automatic language detection
 
 ## Features
 
 - Responsive design with mobile-first approach
-- Dark/Light theme toggle
-- Smooth animations with tw-animate-css
-- Contact form with validation
+- Light/dark colors following the browser and operating system
+- Motion animations with reduced-motion support, hero flip and orbit effects, draggable polaroid
+- Direct contact links (LinkedIn, email, GitHub and WhatsApp)
 - Downloadable CV (different versions for pt-BR and en-US)
 - SEO optimized
 - Automatic language detection (pt-BR / en-US)
-- Code-split bundle with lazy-loaded sections
+- Iframe previews loaded on first visibility with react-intersection-observer and kept mounted afterward
 
 ## Adding a New Social Link
 
@@ -30,7 +30,12 @@ Personal portfolio website built with React, TypeScript, Vite, and Tailwind CSS.
 2. Import it in `src/shared/lib/social-icons.tsx` and add to the icon map
 3. Add the link data to `src/data/translations/links/en-US.json`:
    ```json
-   { "url": "https://...", "name": "Twitter", "ariaLabel": "Twitter profile", "iconName": "twitter" }
+   {
+     "url": "https://...",
+     "name": "Twitter",
+     "ariaLabel": "Twitter profile",
+     "iconName": "twitter"
+   }
    ```
 4. Add the same entry to `src/data/translations/links/pt-BR.json`
 
@@ -38,14 +43,14 @@ Personal portfolio website built with React, TypeScript, Vite, and Tailwind CSS.
 
 The portfolio supports two languages with automatic detection based on browser settings:
 
-- **Portuguese (pt-BR)**: Default fallback language
-- **English (en-US)**: Detected automatically
+- **Portuguese (pt-BR)**: Selected automatically for Portuguese browser locales
+- **English (en-US)**: Selected for other browser locales and used as fallback
 
 ### How it works
 
 - Uses `i18next-browser-languagedetector` to detect browser language
 - Translation files are per-section in `src/data/translations/{section}/{pt-BR,en-US}.json`
-- Only `header` and `links` translations are loaded eagerly; all others load on demand
+- The shared portfolio copy, header and links load with i18n; section entry points register their existing data bundles
 - All components use the `useTranslation` hook
 - CV downloads are language-specific
 - SEO meta tags update dynamically
@@ -71,8 +76,9 @@ src/
 │   ├── about/         # About me section
 │   ├── skills/        # Skills showcase
 │   ├── experience/    # Work experience
-│   ├── projects/      # Project cards (lazy-loaded)
-│   └── contact/       # Contact form (lazy-loaded)
+│   ├── projects/      # Stacked project cards and visible iframe previews
+│   ├── contact/       # Contact links and animated typing indicator
+│   └── footer/        # Full-width footer band
 ├── shared/
 │   ├── components/    # CtaButton, SkillList, SectionHeader, HorizontalCarousel, SectionLoading
 │   ├── hooks/         # useDocumentMeta, useBodyScrollLock, useClickOutsideEscape, useCarouselScroll
@@ -88,9 +94,22 @@ src/
 └── main.tsx           # Entry point
 ```
 
-## Lazy Loading
+## UI composition
 
-Heavy sections (`Projects` and `Contact`) are lazy-loaded via `React.lazy()`. Translations for lazy sections load on demand when the chunk mounts, keeping the initial bundle small.
+Shared identity and contact URLs live in `src/data/profile.ts`.
+
+`App.tsx` only composes the page and coordinates initial scrolling. Each section lives in its existing `features/` folder; local interactions stay with the section that owns them.
+
+- `RevealSection` provides the initial fade-up. `SectionHeading` preserves shared heading typography.
+- `ExpandableList<T>` receives items, labels and a render function and shares animated height and the right-aligned toggle between projects and experience.
+- `AnimatedAction` composes shadcn `Button` with Motion. `TechnologyTags` composes the existing `SkillList` and shadcn `Badge`; previews use shadcn `Skeleton`.
+- Hero stickers, the flipping portrait, orbit halo, polaroid and typing indicator are feature components with explicit props.
+- Layout, responsive rules and decoration use Tailwind utilities. `style.css` only defines shadcn theme tokens, document defaults and the legacy shared wrapper utility. There is no separate redesign stylesheet.
+- Approved page copy is stored in `data/translations/portfolio/`; project and experience data retain their section translation files. Language detection remains automatic.
+
+## Preview loading
+
+`ProjectPreview` mounts an iframe when its preview first enters the viewport and keeps it mounted when scrolling away, keeps its dimensions while loading, and shows shadcn skeleton blocks on an opaque background. Interaction is opt-in and can be stopped with the exit button, Escape or an outside click.
 
 ## Getting Started
 

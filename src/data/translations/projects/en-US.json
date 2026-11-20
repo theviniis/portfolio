@@ -32,14 +32,14 @@
         "description": "A social network inspired by the Star Wars universe. Developed with React and JavaScript, it combines an SCSS-styled interface with REST API integration."
       },
       {
-        "name": "EspaÃ§o Plannar",
+        "name": "Espaço Plannar",
         "deployUrl": "https://theviniis.github.io/espaco-plannar/",
         "githubUrl": "https://github.com/theviniis/espaco-plannar/",
         "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],
         "description": "A landing page developed for Espaço Plannar. A client project built with HTML, CSS and JavaScript, presenting the venue through a responsive interface."
       },
       {
-        "name": "Animais FantÃ¡sticos",
+        "name": "Animais Fantásticos",
         "deployUrl": "https://theviniis.github.io/animais-fantasticos/",
         "githubUrl": "https://github.com/theviniis/animais-fantasticos",
         "skills": ["JavaScript (Vanilla)", "HTML5", "CSS3"],

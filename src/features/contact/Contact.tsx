@@ -1,57 +1,45 @@
-import { lazy, Suspense } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Section } from '@/shared/ui/Section'
-import { SocialLinks } from '@/shared/ui/social-links'
-import { Button } from '@/shared/ui/button'
-import { Spinner } from '@/shared/ui/spinner'
-import { SlidingUnderlineGroup } from '@/shared/ui/sliding-underline-group'
-import { getCvForLang } from '@/shared/lib/cv'
+import { profile } from '@/data/profile'
+import { RevealSection } from '@/shared/components/RevealSection'
+import { SectionHeading } from '@/shared/components/SectionHeading'
+import { AnimatedAction } from '@/shared/components/AnimatedAction'
+import { usePortfolioTranslation } from '@/shared/hooks/usePortfolioTranslation'
+import { TypingIndicator } from './TypingIndicator'
 
-const ContactForm = lazy(() =>
-  import('./ContactForm').then((m) => ({ default: m.ContactForm }))
-)
-
-const Contact = () => {
-  const { t, i18n } = useTranslation()
-  const cv = getCvForLang(i18n.language)
-
+export function Contact() {
+  const { t } = usePortfolioTranslation()
+  const links = [
+    { href: profile.linkedin, label: 'LinkedIn' },
+    { href: `mailto:${profile.email}`, label: t('contact.emailLabel') },
+    { href: profile.github, label: 'GitHub' },
+    { href: profile.whatsapp, label: 'WhatsApp' }
+  ]
   return (
-    <Section>
-      <div className="space-y-4">
-        <h2>{t('contact.title')}</h2>
-        <SlidingUnderlineGroup>
-          <p>
-            {t('contact.emailLabel')}{' '}
-            <Button className="p-0 text-base" variant="link" asChild>
-              <a href={`mailto:${t('contact.email')}`}>
-                <span className="sliding-underline">{t('contact.email')}</span>
-              </a>
-            </Button>
-          </p>
-
-          <p>
-            {t('contact.cvLabel')}{' '}
-            <Button className="p-0 text-base" variant="link" asChild>
-              <a href={cv.url} download={cv.filename}>
-                <span className="sliding-underline">{t('contact.cvLink')}</span>
-              </a>
-            </Button>
-          </p>
-        </SlidingUnderlineGroup>
-        <Suspense
-          fallback={
-            <div>
-              <Spinner />
-              {t('common.sending')}
-            </div>
-          }
-        >
-          <SocialLinks />
-        </Suspense>
+    <RevealSection
+      id="contato"
+      className="mx-auto grid max-w-[800px] grid-cols-[160px_minmax(0,1fr)] items-center gap-14 max-[767px]:grid-cols-1 max-[767px]:gap-6 max-[767px]:pt-6 max-[767px]:pb-[30px]"
+    >
+      <TypingIndicator />
+      <div>
+        <SectionHeading className="mb-[14px]">
+          {t('contact.heading')}
+        </SectionHeading>
+        <p className="max-w-[480px] text-[15px] leading-[1.45] text-muted-foreground">
+          {t('contact.description')}
+        </p>
+        <div className="mt-6 grid max-w-[480px] grid-cols-2 gap-3 max-[767px]:max-w-none">
+          {links.map((link) => (
+            <AnimatedAction
+              key={link.href}
+              href={link.href}
+              variant="contact"
+              target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+              rel={link.href.startsWith('mailto:') ? undefined : 'noreferrer'}
+            >
+              {link.label}
+            </AnimatedAction>
+          ))}
+        </div>
       </div>
-      <ContactForm />
-    </Section>
+    </RevealSection>
   )
 }
-
-export { Contact }

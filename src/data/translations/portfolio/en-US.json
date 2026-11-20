@@ -1,0 +1,55 @@
+{
+  "portfolio": {
+    "nav": {
+      "home": "Home",
+      "projects": "Projects",
+      "experience": "Experience",
+      "about": "About",
+      "contact": "Contact",
+      "label": "Main navigation"
+    },
+    "hero": {
+      "greeting": "Hi, I’m",
+      "role": "Front-end Developer",
+      "flipLabel": "Flip portrait of Vinícius Costa",
+      "scrollLabel": "SCROLL TO EXPLORE",
+      "circleLabel": "FRONT-END · INTERFACES · ACCESSIBILITY · REACT · AI"
+    },
+    "projects": {
+      "heading": "Featured projects",
+      "view": "View project",
+      "more": "More projects"
+    },
+    "common": {
+      "less": "Show less"
+    },
+    "experience": {
+      "heading": "Experience & journey",
+      "more": "Show more"
+    },
+    "about": {
+      "heading": "About me",
+      "intro": "I’m a front-end developer based in Rio Grande, Brazil. I build and evolve web applications with React, TypeScript and Next.js, with experience in B2B SaaS products.",
+      "description": "I enjoy collaborating with multidisciplinary teams to turn business needs into accessible, consistent and maintainable interfaces. Reusable components, testing and performance are part of that work.",
+      "cvTitle": "Professional résumé",
+      "cvHint": "Download PDF",
+      "cvDownload": "Download résumé",
+      "caption": "Thoughtful interfaces start with good questions."
+    },
+    "contact": {
+      "emailLabel": "Email",
+      "heading": "Let’s work together?",
+      "description": "For front-end opportunities, web projects or a conversation about technology."
+    },
+    "preview": {
+      "loading": "Loading preview",
+      "title": "Live preview: {{name}}",
+      "interact": "Interact with {{name}}",
+      "activate": "Click to interact",
+      "stop": "Stop interacting"
+    },
+    "footer": {
+      "iconCredit": "Icons by Icons8"
+    }
+  }
+}

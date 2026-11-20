@@ -1,114 +1,86 @@
-import { useState, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Logo } from './Logo'
-import { Button } from '@/shared/ui/button'
-import { HamburgerButton } from '@/shared/ui/hamburger-button'
-import { SlidingUnderlineGroup } from '@/shared/ui/sliding-underline-group'
-import { useBodyScrollLock } from '@/shared/hooks/useBodyScrollLock'
+import { useLayoutEffect, useRef, useState } from 'react'
+import { useReducedMotion } from 'motion/react'
+import * as m from 'motion/react-m'
+import { useActiveSection } from '@/shared/hooks/useActiveSection'
+import { usePortfolioTranslation } from '@/shared/hooks/usePortfolioTranslation'
+import { NavigationLink, type NavigationItem } from './NavigationLink'
 
-const Header = () => {
-  const { t } = useTranslation()
-  const [isOpen, setIsOpen] = useState(false)
-  const [isCompact, setIsCompact] = useState(false)
-  const headerItems = t('header.items', { returnObjects: true }) as Record<
-    string,
-    { id: string; name: string }
-  >
-  const projects = t('projects.list', { returnObjects: true }) as unknown[]
-  const hasProjects = projects.length > 0
-
-  const toggleMenu = () => setIsOpen((prev) => !prev)
-
-  const filteredItems = Object.entries(headerItems).filter(
-    ([section]) => section !== 'projects' || hasProjects
-  )
-
-  useEffect(() => {
-    const updateHeight = () => setIsCompact(window.scrollY >= 48)
-
-    updateHeight()
-    window.addEventListener('scroll', updateHeight, { passive: true })
-    return () => window.removeEventListener('scroll', updateHeight)
-  }, [])
-
-  useEffect(() => {
-    const handleResize = () => {
-      setTimeout(() => {
-        if (window.innerWidth >= 768) {
-          setIsOpen(false)
-        }
-      }, 500)
+export function Header() {
+  const { t, i18n } = usePortfolioTranslation()
+  const active = useActiveSection()
+  const reduceMotion = useReducedMotion()
+  const [hovered, setHovered] = useState<string | null>(null)
+  const navRef = useRef<HTMLElement>(null)
+  const [highlight, setHighlight] = useState({
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+  })
+  const items: NavigationItem[] = [
+    { id: 'inicio', label: t('nav.home') },
+    { id: 'projetos', label: t('nav.projects') },
+    { id: 'experiencia', label: t('nav.experience') },
+    { id: 'sobre', label: t('nav.about') },
+    { id: 'contato', label: t('nav.contact') }
+  ]
+  useLayoutEffect(() => {
+    const nav = navRef.current
+    if (!nav) return
+    const measure = () => {
+      const link = nav.querySelector<HTMLElement>(
+        `[href="#${hovered ?? active}"]`
+      )
+      if (link)
+        setHighlight({
+          x: link.offsetLeft,
+          y: link.offsetTop,
+          width: link.offsetWidth,
+          height: link.offsetHeight
+        })
     }
-
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  useBodyScrollLock(isOpen)
-
+    measure()
+    const observer = new ResizeObserver(measure)
+    observer.observe(nav)
+    return () => observer.disconnect()
+  }, [active, hovered, i18n.language])
   return (
-    <>
-      <header className="pointer-events-none sticky top-0 z-50 h-(--header-height) w-full">
-        <div
-          className={`wrapper pointer-events-auto bg-background/80 shadow-md ring-1 ring-border backdrop-blur-xl transition-[height] duration-200 ease-out motion-reduce:transition-none ${
-            isCompact ? 'h-(--header-height-compact)' : 'h-(--header-height)'
-          }`}
-        >
-          <nav className="flex justify-between items-center">
-            <Logo />
-
-            <SlidingUnderlineGroup className="hidden md:flex items-center">
-              {filteredItems.map(([section, { id, name }]) => (
-                <Button
-                  key={section}
-                  asChild
-                  variant="link"
-                  className="text-md transition-all motion-reduce:transition-none"
-                >
-                  <a href={`#${id}`}>
-                    <span className="sliding-underline">{name}</span>
-                  </a>
-                </Button>
-              ))}
-            </SlidingUnderlineGroup>
-
-            <HamburgerButton isOpen={isOpen} onClick={toggleMenu} />
-          </nav>
-        </div>
-      </header>
-
-      <div
-        className={`
-          fixed inset-0 z-40 bg-background/95 backdrop-blur-xl
-          flex items-center justify-center p-6 md:hidden
-          transition-all duration-300 ease-in-out
-          motion-reduce:transition-none
-          ${
-            isOpen
-              ? 'opacity-100 visible pointer-events-auto scale-100'
-              : 'opacity-0 invisible pointer-events-none scale-95'
-          }
-        `}
+    <m.header
+      data-testid="navigation"
+      className="fixed top-[14px] left-1/2 z-50 flex -translate-x-1/2 items-center rounded-[40px] border border-border bg-[color-mix(in_srgb,var(--background)_72%,transparent)] p-[5px] whitespace-nowrap shadow-[0_1px_4px_#00000008] backdrop-blur-[20px] backdrop-saturate-[160%] max-[767px]:top-auto max-[767px]:bottom-[max(14px,env(safe-area-inset-bottom))] max-[767px]:p-1"
+      initial={reduceMotion ? false : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.45, delay: reduceMotion ? 0 : 0.12 }}
+    >
+      <nav
+        id="main-navigation"
+        ref={navRef}
+        onMouseLeave={() => setHovered(null)}
+        aria-label={t('nav.label')}
+        className="relative isolate flex"
       >
-        <SlidingUnderlineGroup className="flex w-full flex-col gap-6">
-          {filteredItems.map(([section, { id, name }]) => (
-            <Button
-              key={section}
-              asChild
-              variant="link"
-              className="text-2xl w-full"
-              onClick={() => setIsOpen(false)}
-              size="lg"
-            >
-              <a href={`#${id}`}>
-                <span className="sliding-underline">{name}</span>
-              </a>
-            </Button>
-          ))}
-        </SlidingUnderlineGroup>
-      </div>
-    </>
+        <m.span
+          aria-hidden="true"
+          className="pointer-events-none absolute top-0 left-0 rounded-[30px] bg-[#f4f4f5]"
+          initial={false}
+          animate={highlight}
+          transition={
+            reduceMotion
+              ? { duration: 0 }
+              : { type: 'spring', stiffness: 380, damping: 35, mass: 0.7 }
+          }
+        />
+        {items.map((item) => (
+          <NavigationLink
+            key={item.id}
+            item={item}
+            active={active === item.id}
+            highlighted={(hovered ?? active) === item.id}
+            onHighlight={setHovered}
+            onSelect={() => setHovered(null)}
+          />
+        ))}
+      </nav>
+    </m.header>
   )
 }
-
-export { Header }

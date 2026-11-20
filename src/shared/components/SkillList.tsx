@@ -7,24 +7,30 @@ interface SkillListProps {
   primaryCount?: number
   renderItem?: (skill: string, variant: 'default' | 'outline') => ReactNode
   className?: string
+  badgeClassName?: string
+  itemClassName?: string
 }
 
 export function SkillList({
   skills,
   primaryCount = 3,
   renderItem,
-  className
+  className,
+  badgeClassName,
+  itemClassName
 }: SkillListProps) {
   return (
     <ul className={cn('flex flex-wrap gap-2', className)}>
       {skills.map((skill, index) => {
         const variant = index > primaryCount - 1 ? 'outline' : 'default'
         return (
-          <li key={skill}>
+          <li key={skill} className={itemClassName}>
             {renderItem ? (
               renderItem(skill, variant)
             ) : (
-              <Badge variant={variant}>{skill}</Badge>
+              <Badge variant={variant} className={badgeClassName}>
+                {skill}
+              </Badge>
             )}
           </li>
         )

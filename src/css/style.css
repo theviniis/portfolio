@@ -2,7 +2,6 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 @import '@fontsource-variable/inter';
-
 @import 'typography.css';
 
 @theme inline {
@@ -33,60 +32,56 @@
 }
 
 :root {
-  --background: oklch(100% 0.00011 271.152);
-  --foreground: oklch(29.276% 0.00175 106.803);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
+  --background: #fff;
+  --foreground: #111;
+  --card: #fff;
+  --card-foreground: #111;
   --primary: hsl(72, 60%, 45%);
-  --primary-foreground: oklch(29.276% 0.00175 106.803);
-  --secondary: oklch(97.961% 0.00161 66.235);
-  --secondary-foreground: oklch(29.276% 0.00175 106.803);
+  --primary-foreground: #111;
+  --secondary: #f6f6f6;
+  --secondary-foreground: #111;
   --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
+  --muted-foreground: #686868;
   --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
+  --accent-foreground: #111;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
+  --border: #e6e6e6;
+  --input: #e6e6e6;
   --ring: oklch(0.705 0.015 286.067);
   --radius: 0.875rem;
   --viewport-padding: 16px;
   --recommended-width: 120ch;
   --header-height: 92px;
   --header-height-compact: calc(var(--header-height) - 1rem);
-  --shadow-color: hsla(0, 0%, 20%, 0.18);
-}
-
-@media (min-width: 48rem) {
-  :root {
-    --header-height: 84px;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: oklch(21.342% 0.00002 271.152);
-    --foreground: oklch(92.494% 0.00011 271.152);
-    --card: oklch(0.21 0.006 285.885);
-    --card-foreground: oklch(0.985 0 0);
+    --background: #181818;
+    --foreground: #f4f4f4;
+    --card: #181818;
+    --card-foreground: #f4f4f4;
     --primary: hsl(72, 72%, 70%);
-    --primary-foreground: oklch(0.141 0.005 285.823);
-    --secondary: oklch(0.274 0.006 286.033);
-    --secondary-foreground: oklch(92.494% 0.00011 271.152);
+    --primary-foreground: #181818;
+    --secondary: #242424;
+    --secondary-foreground: #f4f4f4;
     --muted: oklch(0.274 0.006 286.033);
-    --muted-foreground: hsl(240, 5%, 70%);
+    --muted-foreground: #b3b3b3;
     --accent: oklch(0.274 0.006 286.033);
-    --accent-foreground: oklch(0.985 0 0);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.552 0.016 285.938);
-    --shadow-color: hsla(0, 0%, 10%, 0.7);
+    --accent-foreground: #f4f4f4;
+    --border: #383838;
+    --input: #383838;
   }
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+  }
+  html {
+    color-scheme: light dark;
+    scroll-padding-top: 100px;
+    @apply font-sans antialiased;
   }
   body {
     @apply bg-background text-foreground;
@@ -95,135 +90,33 @@
   [role='button']:not(:disabled) {
     cursor: pointer;
   }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 5px;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
   html {
-    color-scheme: light dark;
-    @apply font-sans;
+    scroll-behavior: smooth;
   }
-  button:not(:disabled),
-  [role='button']:not(:disabled) {
-    cursor: pointer;
-  }
-}
-
-@layer components {
-  .section-parallax-frame {
-    mask-image: linear-gradient(
-      to bottom,
-      transparent,
-      black clamp(4rem, 8vw, 8rem)
-    );
-  }
-
-  .section-parallax-pattern {
-    --section-edge: max(
-      var(--viewport-padding),
-      calc((100% - var(--recommended-width)) / 2)
-    );
-    background-image: repeating-linear-gradient(
-      135deg,
-      color-mix(in oklch, var(--primary) 9%, transparent) 0 1px,
-      transparent 1px 24px
-    );
-    mask-image: linear-gradient(
-      to right,
-      black,
-      transparent var(--section-edge) calc(100% - var(--section-edge)),
-      black
-    );
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .section-parallax-pattern::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: inherit;
-      mask-image: linear-gradient(
-        to right,
-        transparent 35%,
-        black,
-        transparent 65%
-      );
-      mask-size: 240% 100%;
-      mask-repeat: no-repeat;
-      animation: section-line-shimmer 12s ease-in-out infinite;
-    }
-  }
-
-  @keyframes section-line-shimmer {
-    0% {
-      mask-position: 100% 0;
-      opacity: 0;
-    }
-
-    10%,
-    50% {
-      opacity: 0.4;
-    }
-
-    62%,
-    100% {
-      mask-position: 0 0;
-      opacity: 0;
-    }
-  }
-
-  .sliding-underline {
-    position: relative;
-  }
-
-  .sliding-underline::after {
-    content: '';
-    position: absolute;
-    inset-inline: 0;
-    bottom: -0.2em;
-    height: 1px;
-    background: currentColor;
-    transform: scaleX(0);
-  }
-
-  :focus-visible > .sliding-underline::after {
-    transform: scaleX(1);
-  }
-
-  @media (hover: hover) and (prefers-reduced-motion: reduce) {
-    :hover > .sliding-underline::after {
-      transform: scaleX(1);
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
     }
   }
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--header-height-compact);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
+/* Kept for the existing shared Section primitive. New sections compose RevealSection. */
 @utility wrapper {
   display: grid;
   grid-template-columns:
-    1fr
-    min(var(--recommended-width), calc(100% - var(--viewport-padding) * 2))
+    1fr min(var(--recommended-width), calc(100% - var(--viewport-padding) * 2))
     1fr;
   gap: 0 var(--viewport-padding);
 }
-
 .wrapper > * {
   grid-column: 2;
-}
-
-@utility drop-shadow {
-  filter: drop-shadow(2px 4px 0px var(--shadow-color))
-    drop-shadow(4px 8px 8px var(--shadow-color))
-    drop-shadow(6px 10px 12px var(--shadow-color));
 }

@@ -1,3 +1,5 @@
+import portfolioPt from '@/data/translations/portfolio/pt-BR.json'
+import portfolioEn from '@/data/translations/portfolio/en-US.json'
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
@@ -6,8 +8,8 @@ import headerEn from '@/data/translations/header/en-US.json'
 import linksPt from '@/data/translations/links/pt-BR.json'
 import linksEn from '@/data/translations/links/en-US.json'
 
-const headerAndLinksPt = { ...headerPt, links: linksPt.links }
-const headerAndLinksEn = { ...headerEn, links: linksEn.links }
+const headerAndLinksPt = { ...portfolioPt, ...headerPt, links: linksPt.links }
+const headerAndLinksEn = { ...portfolioEn, ...headerEn, links: linksEn.links }
 
 i18n
   .use(LanguageDetector)

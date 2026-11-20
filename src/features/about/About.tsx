@@ -1,40 +1,58 @@
-import { Download } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
-import { Section } from '@/shared/ui/Section'
-import { SocialLinks } from '@/shared/ui/social-links'
-import { CtaButton } from '@/shared/components/CtaButton'
+import { Mail, Briefcase, Download } from 'lucide-react'
+import { profile } from '@/data/profile'
+import { RevealSection } from '@/shared/components/RevealSection'
+import { FullBleedBackground } from '@/shared/components/FullBleedBackground'
+import { SectionHeading } from '@/shared/components/SectionHeading'
+import { AnimatedAction } from '@/shared/components/AnimatedAction'
+import { ContactDetail } from '@/shared/components/ContactDetail'
 import { getCvForLang } from '@/shared/lib/cv'
+import { usePortfolioTranslation } from '@/shared/hooks/usePortfolioTranslation'
+import { Polaroid } from './Polaroid'
 
-const About = () => {
-  const { t, i18n } = useTranslation()
+export function About() {
+  const { t, i18n } = usePortfolioTranslation()
   const cv = getCvForLang(i18n.language)
-
   return (
-    <Section id={t('header.items.about.id')}>
-      <h2>{t('about.heading')}</h2>
-      <div className="space-y-8">
-        <div className="space-y-4">
-          <h3>{t('about.title')}</h3>
-          <div className="text-justify space-y-2">
-            {(t('about.paragraphs', { returnObjects: true }) as string[]).map(
-              (paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              )
-            )}
-          </div>
-        </div>
-        <div className="flex items-center gap-4">
-          <CtaButton
-            label={t('about.cvLabel')}
-            icon={<Download />}
-            href={cv.url}
-            download={cv.filename}
+    <RevealSection
+      id="sobre"
+      className="relative isolate grid grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] items-center gap-[72px] max-[767px]:grid-cols-1 max-[767px]:gap-11 max-[767px]:py-6"
+    >
+      <FullBleedBackground />
+      <div>
+        <SectionHeading className="mb-[18px]">
+          {t('about.heading')}
+        </SectionHeading>
+        <p className="text-base leading-[1.65] text-pretty text-muted-foreground">
+          {t('about.intro')}
+        </p>
+        <p className="mt-4 text-base leading-[1.65] text-pretty text-muted-foreground">
+          {t('about.description')}
+        </p>
+        <ul className="my-[30px] grid list-none gap-[22px] p-0">
+          <ContactDetail
+            icon={Mail}
+            label={`${t('contact.emailLabel')}:`}
+            description={profile.email}
+            href={`mailto:${profile.email}`}
           />
-          <SocialLinks />
-        </div>
+          <ContactDetail
+            icon={Briefcase}
+            label="LinkedIn:"
+            description="in/viniis"
+            href={profile.linkedin}
+            target="_blank"
+            rel="noreferrer"
+          />
+        </ul>
+        <AnimatedAction href={cv.url} download={cv.filename}>
+          {t('about.cvDownload')} <Download aria-hidden="true" className="size-4" />
+        </AnimatedAction>
       </div>
-    </Section>
+      <Polaroid
+        src={profile.image}
+        alt={profile.name}
+        caption={t('about.caption')}
+      />
+    </RevealSection>
   )
 }
-
-export { About }

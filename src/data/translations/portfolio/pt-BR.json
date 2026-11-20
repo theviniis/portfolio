@@ -1,0 +1,55 @@
+{
+  "portfolio": {
+    "nav": {
+      "home": "Início",
+      "projects": "Projetos",
+      "experience": "Experiência",
+      "about": "Sobre",
+      "contact": "Contato",
+      "label": "Menu principal"
+    },
+    "hero": {
+      "greeting": "Oi, eu sou o",
+      "role": "Desenvolvedor Front-end",
+      "flipLabel": "Virar retrato de Vinícius Costa",
+      "scrollLabel": "ROLE PARA VER O CONTEÚDO",
+      "circleLabel": "FRONT-END · INTERFACES · ACESSIBILIDADE · REACT · IA"
+    },
+    "projects": {
+      "heading": "Projetos em destaque",
+      "view": "Ver projeto",
+      "more": "Ver mais projetos"
+    },
+    "common": {
+      "less": "Ver menos"
+    },
+    "experience": {
+      "heading": "Experiência e trajetória",
+      "more": "Ver mais"
+    },
+    "about": {
+      "heading": "Sobre mim",
+      "intro": "Sou desenvolvedor front-end em Rio Grande, RS. Construo e evoluo aplicações web com React, TypeScript e Next.js, com experiência em produtos SaaS B2B.",
+      "description": "Gosto de colaborar com equipes multidisciplinares para transformar necessidades de negócio em interfaces acessíveis, consistentes e fáceis de manter. Componentes reutilizáveis, testes e performance fazem parte desse trabalho.",
+      "cvTitle": "Currículo profissional",
+      "cvHint": "Baixar em PDF",
+      "cvDownload": "Baixar currículo",
+      "caption": "Interfaces bem pensadas começam com boas perguntas."
+    },
+    "contact": {
+      "emailLabel": "E-mail",
+      "heading": "Vamos trabalhar juntos?",
+      "description": "Para oportunidades em front-end, projetos web ou uma conversa sobre tecnologia."
+    },
+    "preview": {
+      "loading": "Carregando pré-visualização",
+      "title": "Pré-visualização: {{name}}",
+      "interact": "Interagir com {{name}}",
+      "activate": "Clique para interagir",
+      "stop": "Sair da interação"
+    },
+    "footer": {
+      "iconCredit": "Ícones por Icons8"
+    }
+  }
+}
