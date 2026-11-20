@@ -15,7 +15,7 @@ export function About() {
   return (
     <RevealSection
       id="sobre"
-      className="relative isolate grid grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] items-center gap-[72px] max-[767px]:grid-cols-1 max-[767px]:gap-11 max-[767px]:py-6"
+      className="relative isolate grid grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] items-center gap-[72px] max-[767px]:grid-cols-1 max-[767px]:gap-11"
     >
       <FullBleedBackground />
       <div>

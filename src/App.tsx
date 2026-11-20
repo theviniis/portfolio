@@ -17,7 +17,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <main className="mx-auto max-w-260 px-6">
+      <main className="mx-auto max-w-260 px-6 md:px-18">
         <Hero hasScrolled={hasScrolled} />
         <Projects hasScrolled={hasScrolled} />
         <Experience />

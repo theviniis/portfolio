@@ -47,7 +47,7 @@ export function Header() {
   return (
     <m.header
       data-testid="navigation"
-      className="fixed top-[14px] left-1/2 z-50 flex -translate-x-1/2 items-center rounded-[40px] border border-border bg-[color-mix(in_srgb,var(--background)_72%,transparent)] p-[5px] whitespace-nowrap shadow-[0_1px_4px_#00000008] backdrop-blur-[20px] backdrop-saturate-[160%] max-[767px]:top-auto max-[767px]:bottom-[max(14px,env(safe-area-inset-bottom))] max-[767px]:p-1"
+      className="fixed top-[14px] left-1/2 z-50 flex -translate-x-1/2 items-center rounded-[40px] border border-border bg-[color-mix(in_srgb,var(--background)_72%,transparent)] p-[5px] whitespace-nowrap shadow-[0_1px_4px_#00000008] backdrop-blur-[20px] backdrop-saturate-[160%] max-[767px]:top-auto max-[767px]:bottom-[max(14px,env(safe-area-inset-bottom))] max-[767px]:p-1 md:[&+*]:mt-16"
       initial={reduceMotion ? false : { opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.45, delay: reduceMotion ? 0 : 0.12 }}

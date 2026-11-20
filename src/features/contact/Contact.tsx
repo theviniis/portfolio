@@ -16,7 +16,7 @@ export function Contact() {
   return (
     <RevealSection
       id="contato"
-      className="mx-auto grid max-w-[800px] grid-cols-[160px_minmax(0,1fr)] items-center gap-14 max-[767px]:grid-cols-1 max-[767px]:gap-6 max-[767px]:pt-6 max-[767px]:pb-[30px]"
+      className="mx-auto grid max-w-[800px] grid-cols-[160px_minmax(0,1fr)] items-center gap-14 max-[767px]:grid-cols-1 max-[767px]:gap-6"
     >
       <TypingIndicator />
       <div>

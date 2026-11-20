@@ -29,6 +29,8 @@ export function Hero({ hasScrolled }: { hasScrolled: boolean }) {
     return () => observer.disconnect()
   }, [])
   const orbiting = (isMobile || universe) && !reduceMotion
+  const stageHeight = orbitRadius * 2.3 + 48
+  const stageScale = isMobile ? 0.78 : 1
   const enter = (delay: number) => ({
     initial: reduceMotion ? (false as const) : { opacity: 0, y: 18 },
     animate: { opacity: 1, y: 0 },
@@ -42,7 +44,7 @@ export function Hero({ hasScrolled }: { hasScrolled: boolean }) {
     <RevealSection
       id="inicio"
       reveal={false}
-      className="min-h-[760px] pt-8 text-center [overflow-anchor:none] sm:pt-8 md:pt-[92px] max-[767px]:min-h-0"
+      className="min-h-[760px] text-center [overflow-anchor:none] max-[767px]:min-h-0"
     >
       <m.h1
         {...enter(0.3)}
@@ -60,15 +62,18 @@ export function Hero({ hasScrolled }: { hasScrolled: boolean }) {
       </m.p>
       <div
         ref={stageRef}
-        className="relative isolate mx-auto grid w-full max-w-[720px] place-items-center [container-type:inline-size] [--orbit-radius:min(45cqw,230px)] max-[767px]:scale-[0.78]"
-        style={{ height: orbitRadius * 2.3 + 48 }}
+        className="relative isolate mx-auto grid w-full max-w-[720px] place-items-center [container-type:inline-size] [--orbit-radius:min(45cqw,230px)]"
+        style={{ height: stageHeight * stageScale }}
         onPointerLeave={() => {
           if (!isMobile && interacted.current) setUniverse(false)
         }}
       >
         <div
-          className="relative grid size-full place-items-center"
-          style={{ transform: `translateY(${-orbitRadius * 0.025}px)` }}
+          className="absolute inset-x-0 top-0 grid origin-top place-items-center"
+          style={{
+            height: stageHeight,
+            transform: `translateY(${-orbitRadius * 0.025}px) scale(${stageScale})`
+          }}
         >
           <OrbitHalo active={Boolean(orbiting)} />
           <FlipPortrait
