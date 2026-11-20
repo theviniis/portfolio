@@ -30,7 +30,7 @@ export function RevealSection({
     <m.section
       {...props}
       ref={ref}
-      className={cn('px-8 max-[767px]:px-0 md:py-6.5 sm:py-4', className)}
+      className={cn('px-8 max-[767px]:px-0 md:py-8 sm:py-4', className)}
       initial={reveal && !reduceMotion ? { opacity: 0, y: 24 } : false}
       animate={{ opacity: visible ? 1 : 0, y: visible ? 0 : 24 }}
       transition={{
