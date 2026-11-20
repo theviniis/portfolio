@@ -77,7 +77,7 @@ export function HeroSticker({
             decoding="async"
             className={cn(
               'object-contain max-[767px]:size-12',
-              compact ? 'size-[61px]' : 'size-[73px]'
+              compact ? 'size-15.25' : 'size-18.25'
             )}
           />
         </m.span>

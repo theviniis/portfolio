@@ -45,7 +45,7 @@ export function FlipPortrait({
   return (
     <m.div
       data-testid="hero-portrait"
-      className="relative size-[300px] p-8 max-[767px]:size-60 max-[767px]:p-[27px]"
+      className="relative size-75 p-8 max-[767px]:size-60 max-[767px]:p-6.75"
       onPointerEnter={onPointerEnter}
       initial={reduceMotion ? false : { opacity: 0, scale: 0.94 }}
       animate={{ opacity: 1, scale: orbiting ? 1.025 : 1 }}
@@ -95,7 +95,7 @@ export function FlipPortrait({
               >
                 ↓
               </m.span>
-              <span className="max-w-[140px] text-center text-[11px] leading-[1.6] tracking-[1px]">
+              <span className="max-w-35 text-center text-[11px] leading-[1.6] tracking-[1px]">
                 {scrollLabel}
               </span>
             </span>

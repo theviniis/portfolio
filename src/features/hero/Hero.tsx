@@ -44,7 +44,7 @@ export function Hero({ hasScrolled }: { hasScrolled: boolean }) {
     <RevealSection
       id="inicio"
       reveal={false}
-      className="min-h-[760px] text-center [overflow-anchor:none] max-[767px]:min-h-0"
+      className="min-h-190 text-center [overflow-anchor:none] max-[767px]:min-h-0"
     >
       <m.h1
         {...enter(0.3)}
@@ -62,7 +62,7 @@ export function Hero({ hasScrolled }: { hasScrolled: boolean }) {
       </m.p>
       <div
         ref={stageRef}
-        className="relative isolate mx-auto grid w-full max-w-[720px] place-items-center [container-type:inline-size] [--orbit-radius:min(45cqw,230px)]"
+        className="relative isolate mx-auto grid w-full max-w-180 place-items-center @container [--orbit-radius:min(45cqw,230px)]"
         style={{ height: stageHeight * stageScale }}
         onPointerLeave={() => {
           if (!isMobile && interacted.current) setUniverse(false)

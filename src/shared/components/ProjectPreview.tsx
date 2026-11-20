@@ -21,8 +21,8 @@ function PreviewSkeleton({ label }: { label: string }) {
           aria-hidden="true"
           className={
             wide
-              ? 'col-span-full h-[65px] rounded-[5px] border border-border motion-reduce:animate-none'
-              : 'h-[18px] rounded-[5px] border border-border motion-reduce:animate-none'
+              ? 'col-span-full h-16.25 rounded-[5px] border border-border motion-reduce:animate-none'
+              : 'h-4.5 rounded-[5px] border border-border motion-reduce:animate-none'
           }
         />
       ))}
@@ -67,7 +67,7 @@ function PreviewFrame({
       <iframe
         src={src}
         title={t('preview.title', { name })}
-        className="absolute inset-0 h-[562.5px] w-[1000px] origin-top-left border-0 bg-white"
+        className="absolute inset-0 h-[562.5px] w-250 origin-top-left border-0 bg-white"
         style={{
           transform: `scale(${scale})`,
           pointerEvents: active ? 'auto' : 'none',
@@ -137,9 +137,9 @@ export function ProjectPreview({ src, name }: { src: string; name: string }) {
       data-testid="project-preview"
       className="min-w-0 overflow-hidden rounded-[14px] bg-background max-[767px]:row-start-1 min-[768px]:self-center"
     >
-      <div aria-hidden="true" className="flex items-center gap-[5px] p-2.5">
+      <div aria-hidden="true" className="flex items-center gap-1.25 p-2.5">
         {[0, 1, 2].map((dot) => (
-          <i key={dot} className="size-[7px] rounded-full bg-border" />
+          <i key={dot} className="size-1.75 rounded-full bg-border" />
         ))}
         <span className="m-auto text-[10px] leading-normal text-muted-foreground">
           {name}

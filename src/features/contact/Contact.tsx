@@ -16,17 +16,17 @@ export function Contact() {
   return (
     <RevealSection
       id="contato"
-      className="mx-auto grid max-w-[800px] grid-cols-[160px_minmax(0,1fr)] items-center gap-14 max-[767px]:grid-cols-1 max-[767px]:gap-6"
+      className="mx-auto grid max-w-200 grid-cols-[160px_minmax(0,1fr)] items-center gap-14 max-[767px]:grid-cols-1 max-[767px]:gap-6"
     >
       <TypingIndicator />
       <div>
-        <SectionHeading className="mb-[14px]">
+        <SectionHeading className="mb-3.5">
           {t('contact.heading')}
         </SectionHeading>
-        <p className="max-w-[480px] text-[15px] leading-[1.45] text-muted-foreground">
+        <p className="max-w-120 text-[15px] leading-[1.45] text-muted-foreground">
           {t('contact.description')}
         </p>
-        <div className="mt-6 grid max-w-[480px] grid-cols-2 gap-3 max-[767px]:max-w-none">
+        <div className="mt-6 grid max-w-120 grid-cols-2 gap-3 max-[767px]:max-w-none">
           {links.map((link) => (
             <AnimatedAction
               key={link.href}

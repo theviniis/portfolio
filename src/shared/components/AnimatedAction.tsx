@@ -11,9 +11,9 @@ type ActionProps = { variant?: ActionVariant; className?: string } & (
 )
 const variants: Record<ActionVariant, string> = {
   solid:
-    'rounded-[30px] bg-foreground px-[18px] py-2.5 text-background hover:bg-foreground hover:text-background dark:hover:bg-foreground',
+    'rounded-[30px] bg-foreground px-4.5 py-2.5 text-background hover:bg-foreground hover:text-background dark:hover:bg-foreground',
   outline:
-    'rounded-[30px] border border-border px-[18px] py-2.5 text-foreground',
+    'rounded-[30px] border border-border px-4.5 py-2.5 text-foreground',
   contact:
     'flex min-h-11 rounded-[30px] border border-foreground px-5 py-2.5 text-foreground',
   plain: 'rounded-none p-0 text-foreground'

@@ -21,7 +21,7 @@ export function Experience() {
         initialCount={3}
         moreLabel={t('experience.more')}
         lessLabel={t('common.less')}
-        className="relative grid gap-6 before:absolute before:inset-y-0 before:left-[244px] before:border-l before:border-dashed before:border-border max-[767px]:before:left-1"
+        className="relative grid gap-6 before:absolute before:inset-y-0 before:left-61 before:border-l before:border-dashed before:border-border max-[767px]:before:left-1"
         renderItem={(item) => <ExperienceItem key={item.company} {...item} />}
       />
     </RevealSection>

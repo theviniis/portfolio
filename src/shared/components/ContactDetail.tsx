@@ -13,10 +13,10 @@ export function ContactDetail({
 }) {
   return (
     <li className="flex items-start gap-3">
-      <Icon size={19} aria-hidden="true" className="mt-[3px] shrink-0" />
+      <Icon size={19} aria-hidden="true" className="mt-0.75 shrink-0" />
       <a
         {...props}
-        className="grid gap-[3px] text-sm leading-[1.4] [overflow-wrap:anywhere] hover:opacity-75"
+        className="grid gap-0.75 text-sm leading-[1.4] wrap-anywhere hover:opacity-75"
       >
         <strong className="font-semibold">{label}</strong>
         <span className="text-muted-foreground">{description}</span>

@@ -15,11 +15,11 @@ export function About() {
   return (
     <RevealSection
       id="sobre"
-      className="relative isolate grid grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] items-center gap-[72px] max-[767px]:grid-cols-1 max-[767px]:gap-11"
+      className="relative isolate grid grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] items-center gap-18 max-[767px]:grid-cols-1 max-[767px]:gap-11"
     >
       <FullBleedBackground />
       <div>
-        <SectionHeading className="mb-[18px]">
+        <SectionHeading className="mb-4.5">
           {t('about.heading')}
         </SectionHeading>
         <p className="text-base leading-[1.65] text-pretty text-muted-foreground">
@@ -28,7 +28,7 @@ export function About() {
         <p className="mt-4 text-base leading-[1.65] text-pretty text-muted-foreground">
           {t('about.description')}
         </p>
-        <ul className="my-[30px] grid list-none gap-[22px] p-0">
+        <ul className="my-7.5 grid list-none gap-5.5 p-0">
           <ContactDetail
             icon={Mail}
             label={`${t('contact.emailLabel')}:`}
