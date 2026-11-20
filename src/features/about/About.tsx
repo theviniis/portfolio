@@ -19,9 +19,7 @@ export function About() {
     >
       <FullBleedBackground />
       <div>
-        <SectionHeading className="mb-4.5">
-          {t('about.heading')}
-        </SectionHeading>
+        <SectionHeading className="mb-4.5">{t('about.heading')}</SectionHeading>
         <p className="text-base leading-[1.65] text-pretty text-muted-foreground">
           {t('about.intro')}
         </p>
@@ -45,11 +43,13 @@ export function About() {
           />
         </ul>
         <AnimatedAction href={cv.url} download={cv.filename}>
-          {t('about.cvDownload')} <Download aria-hidden="true" className="size-4" />
+          {t('about.cvDownload')}{' '}
+          <Download aria-hidden="true" className="size-4" />
         </AnimatedAction>
       </div>
       <Polaroid
         src={profile.image}
+        srcSet={profile.imageSrcSet}
         alt={profile.name}
         caption={t('about.caption')}
       />

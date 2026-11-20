@@ -39,7 +39,6 @@ export function Header() {
           height: link.offsetHeight
         })
     }
-    measure()
     const observer = new ResizeObserver(measure)
     observer.observe(nav)
     return () => observer.disconnect()

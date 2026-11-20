@@ -15,10 +15,9 @@ export function AnimatedHeight({
   useLayoutEffect(() => {
     const node = content.current
     if (!node) return
-    const observer = new ResizeObserver(() =>
-      setHeight(node.getBoundingClientRect().height)
+    const observer = new ResizeObserver(([entry]) =>
+      setHeight(entry.contentRect.height)
     )
-    setHeight(node.getBoundingClientRect().height)
     observer.observe(node)
     return () => observer.disconnect()
   }, [])

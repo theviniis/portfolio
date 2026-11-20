@@ -143,6 +143,27 @@ pnpm format
 pnpm exec tsc --noEmit -p tsconfig.app.json
 ```
 
+## Lighthouse
+
+Start `pnpm audit:serve` (or `npm run audit:serve`) to build and serve the production
+bundle at **http://127.0.0.1:4173**. Open that address in Chrome to use the DevTools
+Lighthouse panel. Port **5173** runs the development server, with React development
+code, HMR and unminified modules; its scores do not represent the production build.
+Do not stop your development server to run the audit: the two use separate ports.
+
+With Chrome installed, the CLI can also audit the running production preview from
+a separate terminal:
+
+```bash
+npx lighthouse@13.6.0 http://127.0.0.1:4173 --chrome-flags="--headless=new" --only-categories=performance,accessibility,best-practices,seo --output=html --output=json --output-path=./lighthouse-mobile.local
+npx lighthouse@13.6.0 http://127.0.0.1:4173 --chrome-flags="--headless=new" --preset=desktop --only-categories=performance,accessibility,best-practices,seo --output=html --output=json --output-path=./lighthouse-desktop.local
+```
+
+Lighthouse scores vary with machine load, network conditions and the system color
+scheme. Project previews load after the first scroll and their first visibility;
+desktop drag features load near the About section. The original portrait remains
+in `src/assets/profile.webp`; responsive derivatives use 240px, 320px and 480px widths.
+
 ## License
 
 MIT

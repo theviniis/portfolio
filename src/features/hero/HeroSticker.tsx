@@ -28,11 +28,10 @@ export function HeroSticker({
               opacity: 0,
               x: -offset[0] * 1.4,
               y: -offset[1],
-              rotate: index % 2 ? -10 : 10,
-              filter: 'blur(5px)'
+              rotate: index % 2 ? -10 : 10
             }
       }
-      animate={{ opacity: 1, x: 0, y: 0, rotate: 0, filter: 'blur(0px)' }}
+      animate={{ opacity: 1, x: 0, y: 0, rotate: 0 }}
       transition={{
         duration: reduceMotion ? 0 : 0.6,
         delay: reduceMotion ? 0 : 0.68 + entryOrder * 0.14,
@@ -73,6 +72,8 @@ export function HeroSticker({
           <img
             src={image}
             alt=""
+            width={compact ? 61 : 73}
+            height={compact ? 61 : 73}
             draggable={false}
             decoding="async"
             className={cn(

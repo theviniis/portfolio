@@ -30,14 +30,13 @@ export function ProjectStackCard({
     const measure = () => {
       const gap = Number.parseFloat(getComputedStyle(list).rowGap) || 0
       const lastCard = list.lastElementChild as HTMLElement | null
+      let nextExitOffset = 0
       if (lastCard && ref.current) {
         // Keep each layer's top edge visible when the whole stack leaves its container.
         const layerOffset = stackTop(total - 1) - top
-        exitOffset.set(
-          reduceMotion
-            ? 0
-            : lastCard.offsetHeight - ref.current.offsetHeight + layerOffset
-        )
+        nextExitOffset = reduceMotion
+          ? 0
+          : lastCard.offsetHeight - ref.current.offsetHeight + layerOffset
       }
       let position = list.getBoundingClientRect().top + window.scrollY
       const positions = [...list.children].map((card, cardIndex) => {
@@ -49,8 +48,8 @@ export function ProjectStackCard({
         return start
       })
       stops.set(positions.slice(index))
+      exitOffset.set(nextExitOffset)
     }
-    measure()
     const observer = new ResizeObserver(measure)
     observer.observe(list)
     for (const card of list.children) observer.observe(card)

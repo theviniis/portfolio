@@ -115,11 +115,20 @@ function PreviewFrame({
     </div>
   )
 }
-export function ProjectPreview({ src, name }: { src: string; name: string }) {
+export function ProjectPreview({
+  src,
+  name,
+  enabled = true
+}: {
+  src: string
+  name: string
+  enabled?: boolean
+}) {
   const { t } = usePortfolioTranslation()
   const { ref, inView: hasBeenVisible } = useInView({
     rootMargin: '0px',
     threshold: 0,
+    skip: !enabled,
     triggerOnce: true
   })
   const viewport = useRef<HTMLDivElement>(null)

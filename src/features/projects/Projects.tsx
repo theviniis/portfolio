@@ -32,6 +32,7 @@ export function Projects({ hasScrolled }: { hasScrolled: boolean }) {
             project={project}
             index={index}
             total={items.length}
+            previewsEnabled={hasScrolled}
           />
         )}
       />

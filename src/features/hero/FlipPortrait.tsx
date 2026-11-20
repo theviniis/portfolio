@@ -5,6 +5,7 @@ import { Button } from '@/shared/ui/button'
 
 type FlipPortraitProps = {
   src: string
+  srcSet: string
   alt: string
   circleLabel: string
   flipLabel: string
@@ -16,6 +17,7 @@ type FlipPortraitProps = {
 
 export function FlipPortrait({
   src,
+  srcSet,
   alt,
   circleLabel,
   flipLabel,
@@ -47,7 +49,7 @@ export function FlipPortrait({
       data-testid="hero-portrait"
       className="relative size-75 p-8 max-[767px]:size-60 max-[767px]:p-6.75"
       onPointerEnter={onPointerEnter}
-      initial={reduceMotion ? false : { opacity: 0, scale: 0.94 }}
+      initial={reduceMotion ? false : { scale: 0.94 }}
       animate={{ opacity: 1, scale: orbiting ? 1.025 : 1 }}
       transition={{ type: 'spring', stiffness: 150, damping: 22 }}
     >
@@ -59,7 +61,7 @@ export function FlipPortrait({
         >
           <m.button
             type="button"
-            aria-label={flipLabel}
+            aria-label={`${flipLabel} — ${scrollLabel}`}
             aria-pressed={flipped}
             onClick={() => {
               if (hasScrolled) setManualFlipped((value) => !value)
@@ -75,8 +77,12 @@ export function FlipPortrait({
             <span className={faceClass} aria-hidden={flipped}>
               <img
                 src={src}
+                srcSet={srcSet}
+                sizes="(max-width: 767px) 150px, 240px"
                 alt={alt}
                 fetchPriority="high"
+                width={480}
+                height={499}
                 className="size-full rounded-full border-2 border-foreground bg-[#d8dfd2] object-cover object-top"
               />
             </span>

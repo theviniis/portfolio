@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+lighthouse-*.local.*
 .worktrees
 
 # Editor directories and files

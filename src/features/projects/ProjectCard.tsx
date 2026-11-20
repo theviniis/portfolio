@@ -8,11 +8,13 @@ import { usePortfolioTranslation } from '@/shared/hooks/usePortfolioTranslation'
 export function ProjectCard({
   project,
   index,
-  total
+  total,
+  previewsEnabled
 }: {
   project: Project
   index: number
   total: number
+  previewsEnabled: boolean
 }) {
   const { t } = usePortfolioTranslation()
   return (
@@ -44,7 +46,11 @@ export function ProjectCard({
           </AnimatedAction>
         </div>
       </div>
-      <ProjectPreview src={project.deployUrl} name={project.name} />
+      <ProjectPreview
+        src={project.deployUrl}
+        name={project.name}
+        enabled={previewsEnabled}
+      />
     </ProjectStackCard>
   )
 }

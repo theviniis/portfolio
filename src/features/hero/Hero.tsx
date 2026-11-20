@@ -21,18 +21,16 @@ export function Hero({ hasScrolled }: { hasScrolled: boolean }) {
   useLayoutEffect(() => {
     const stage = stageRef.current
     if (!stage) return
-    const measure = () =>
-      setOrbitRadius(Math.min(stage.clientWidth * 0.45, 230))
-    measure()
-    const observer = new ResizeObserver(measure)
+    const observer = new ResizeObserver(([entry]) => {
+      setOrbitRadius(Math.min(entry.contentRect.width * 0.45, 230))
+    })
     observer.observe(stage)
     return () => observer.disconnect()
   }, [])
   const orbiting = (isMobile || universe) && !reduceMotion
-  const stageHeight = orbitRadius * 2.3 + 48
   const stageScale = isMobile ? 0.78 : 1
   const enter = (delay: number) => ({
-    initial: reduceMotion ? (false as const) : { opacity: 0, y: 18 },
+    initial: reduceMotion ? (false as const) : { y: 18 },
     animate: { opacity: 1, y: 0 },
     transition: {
       duration: 0.65,
@@ -62,44 +60,49 @@ export function Hero({ hasScrolled }: { hasScrolled: boolean }) {
       </m.p>
       <div
         ref={stageRef}
-        className="relative isolate mx-auto grid w-full max-w-180 place-items-center @container [--orbit-radius:min(45cqw,230px)]"
-        style={{ height: stageHeight * stageScale }}
+        className="mx-auto w-full max-w-180 @container"
         onPointerLeave={() => {
           if (!isMobile && interacted.current) setUniverse(false)
         }}
       >
         <div
-          className="absolute inset-x-0 top-0 grid origin-top place-items-center"
-          style={{
-            height: stageHeight,
-            transform: `translateY(${-orbitRadius * 0.025}px) scale(${stageScale})`
-          }}
+          className="relative isolate grid place-items-center [--orbit-radius:min(45cqw,230px)] [--stage-height:calc(var(--orbit-radius)*2.3+48px)]"
+          style={{ height: `calc(var(--stage-height) * ${stageScale})` }}
         >
-          <OrbitHalo active={Boolean(orbiting)} />
-          <FlipPortrait
-            src={profile.image}
-            alt={profile.name}
-            circleLabel={t('hero.circleLabel')}
-            flipLabel={t('hero.flipLabel')}
-            scrollLabel={t('hero.scrollLabel')}
-            hasScrolled={hasScrolled}
-            orbiting={Boolean(orbiting)}
-            onPointerEnter={(event) => {
-              if (event.pointerType !== 'touch') {
-                interacted.current = true
-                setUniverse(true)
-              }
+          <div
+            className="absolute inset-x-0 top-0 grid origin-top place-items-center"
+            style={{
+              height: 'var(--stage-height)',
+              transform: `translateY(calc(var(--orbit-radius) * -0.025)) scale(${stageScale})`
             }}
-          />
-          {heroStickers.map((config, index) => (
-            <HeroSticker
-              key={config.id}
-              config={config}
-              orbitRadius={orbitRadius}
-              index={index}
+          >
+            <OrbitHalo active={Boolean(orbiting)} />
+            <FlipPortrait
+              src={profile.image}
+              srcSet={profile.imageSrcSet}
+              alt={profile.name}
+              circleLabel={t('hero.circleLabel')}
+              flipLabel={t('hero.flipLabel')}
+              scrollLabel={t('hero.scrollLabel')}
+              hasScrolled={hasScrolled}
               orbiting={Boolean(orbiting)}
+              onPointerEnter={(event) => {
+                if (event.pointerType !== 'touch') {
+                  interacted.current = true
+                  setUniverse(true)
+                }
+              }}
             />
-          ))}
+            {heroStickers.map((config, index) => (
+              <HeroSticker
+                key={config.id}
+                config={config}
+                orbitRadius={orbitRadius}
+                index={index}
+                orbiting={Boolean(orbiting)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </RevealSection>
