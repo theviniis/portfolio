@@ -42,7 +42,7 @@ export function Hero({ hasScrolled }: { hasScrolled: boolean }) {
     <RevealSection
       id="inicio"
       reveal={false}
-      className="min-h-[760px] pt-[92px] text-center [overflow-anchor:none] max-[767px]:min-h-0 max-[767px]:pt-8"
+      className="min-h-[760px] pt-8 text-center [overflow-anchor:none] sm:pt-8 md:pt-[92px] max-[767px]:min-h-0"
     >
       <m.h1
         {...enter(0.3)}
