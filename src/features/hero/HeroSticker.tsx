@@ -20,38 +20,38 @@ export function HeroSticker({
   const hoverOffset = offset
   return (
     <m.span
-      className="pointer-events-none absolute inset-0"
-      initial={
-        reduceMotion
-          ? false
-          : {
-              opacity: 0,
-              x: -offset[0] * 1.4,
-              y: -offset[1],
-              rotate: index % 2 ? -10 : 10
-            }
-      }
-      animate={{ opacity: 1, x: 0, y: 0, rotate: 0 }}
-      transition={{
-        duration: reduceMotion ? 0 : 0.6,
-        delay: reduceMotion ? 0 : 0.68 + entryOrder * 0.14,
-        ease: [0.22, 1, 0.36, 1]
+      aria-hidden="true"
+      initial={false}
+      className="pointer-events-none absolute -translate-1/2 bg-transparent p-0"
+      animate={{
+        x: orbiting ? hoverOffset[0] : 0,
+        y: orbiting ? hoverOffset[1] : 0,
+        scale: orbiting ? 1.1 : 1,
+        rotate: rotation
+      }}
+      transition={{ type: 'spring', stiffness: 70, damping: 20, mass: 1 }}
+      style={{
+        left: `calc(50% + var(--orbit-radius) * ${position[0] * 0.9})`,
+        top: `calc(50% + var(--orbit-radius) * ${position[1] * 0.9})`
       }}
     >
       <m.span
-        aria-hidden="true"
-        initial={false}
-        className="pointer-events-none absolute -translate-1/2 bg-transparent p-0"
-        animate={{
-          x: orbiting ? hoverOffset[0] : 0,
-          y: orbiting ? hoverOffset[1] : 0,
-          scale: orbiting ? 1.1 : 1,
-          rotate: rotation
-        }}
-        transition={{ type: 'spring', stiffness: 70, damping: 20, mass: 1 }}
-        style={{
-          left: `calc(50% + var(--orbit-radius) * ${position[0] * 0.9})`,
-          top: `calc(50% + var(--orbit-radius) * ${position[1] * 0.9})`
+        className="block"
+        initial={
+          reduceMotion
+            ? false
+            : {
+                opacity: 0,
+                x: -offset[0] * 1.4,
+                y: -offset[1],
+                rotate: index % 2 ? -10 : 10
+              }
+        }
+        animate={{ opacity: 1, x: 0, y: 0, rotate: 0 }}
+        transition={{
+          duration: reduceMotion ? 0 : 0.6,
+          delay: reduceMotion ? 0 : 0.68 + entryOrder * 0.14,
+          ease: [0.22, 1, 0.36, 1]
         }}
       >
         <m.span
